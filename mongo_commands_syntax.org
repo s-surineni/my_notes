@@ -1,0 +1,2 @@
+* delete row
+** db.collection.remove({'object.username': "peter_parker@test.com"})
