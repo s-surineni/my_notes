@@ -1,2 +1,6 @@
 * delete row
 ** db.collection.remove({'object.username': "peter_parker@test.com"})
+* insert one row
+** db.collection.insertOne({'object': {'username': 'google.admin', 'uuid': 'google.admin'}})
+* update row
+** db.ooyala_test.com.user.updateOne({'object.username': 'username'}, {$set: {'_kind': "domainmodel"}}
