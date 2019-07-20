@@ -1,0 +1,1 @@
+* projectile is now honoring .gitignore
