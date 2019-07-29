@@ -1,0 +1,2 @@
+* rename remote
+** git remote rename origin destination

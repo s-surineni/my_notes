@@ -1,2 +1,4 @@
 * show databases
 ** \l
+* list all rows in table
+** select * from ooyala_test$com$user;
