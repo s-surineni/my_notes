@@ -1,0 +1,1 @@
+* if copy to clipboard doesn't work with mouse you can use prefix a

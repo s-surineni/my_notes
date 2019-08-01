@@ -2,3 +2,5 @@
 ** \l
 * list all rows in table
 ** select * from ooyala_test$com$user;
+* show columns
+** select * from table_name where false;
