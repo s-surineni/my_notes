@@ -1,2 +1,4 @@
 * rename remote
 ** git remote rename origin destination
+* stash specific file
+** git stash push -m log_levels avenger/settings.py
