@@ -6,3 +6,6 @@
 ** db.user.updateOne({'object.username': 'username'}, {$set: {'_kind': "domainmodel"}})
 * Show databases
 ** show dbs
+* find
+** db.user.find({'object.username': "sampath@hello.com"})
+** db.user.find({}, {'object.uuid': 1})
