@@ -4,3 +4,5 @@
 ** select * from ooyala_test$com$user;
 * show columns
 ** select * from table_name where false;
+* to get columns of table
+** \d  talend_lc$com$user;

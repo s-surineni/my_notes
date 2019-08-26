@@ -9,3 +9,5 @@
 * find
 ** db.user.find({'object.username': "sampath@hello.com"})
 ** db.user.find({}, {'object.uuid': 1})
+* connect to remote mongo 
+** mongo hostname:27107/my_database -u username -p password
