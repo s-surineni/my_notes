@@ -1,0 +1,8 @@
+* hypervisor
+* Types of services
+** IaaS
+** PaaS
+** SaaS
+* Lack of elasticity
+* s3 - simple storage service
+* 

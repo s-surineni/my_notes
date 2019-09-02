@@ -1,0 +1,17 @@
+* Call stack
+** Global execution context is added first in call stack
+* functional programming
+** pure functions
+*** only consequence no side effects
+**** side effect
+***** may be it won't change the mutable values (side effects)
+***** won't change any global values
+***** if side effects exist it will be hard to test
+**** consequence - it returns the result of function
+** higher order functions
+*** definition: A function that can take another function as parameter or returns a function
+*** Ability to leave placeholder for data like we do for parameters
+*** Nothing but passing a function as parameter to another function
+*** in javascript also functions are first class objects
+** we use callbacks and higher order functions in asynchronous programming
+* local memory is also called variable environment

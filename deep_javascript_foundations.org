@@ -1,3 +1,17 @@
 * Two things Object.is misses is NaN and -0
 * checking for Nan is Number.isNan
 * checking for -0 is by 1/-0 gives negative infinity
+* Infinity is built in in javascript
+* another way to check for Nan is Nan != Nan should be true
+* Fundamental Objects
+** with which we will use new keyword
+** Don't use new
+** spend more time on this
+** new will costruct objects
+** not new will change them into primitive types
+* conversion or coercion
+** ToPrimitive keeps on calling itself unless it gets a primitive value
+** toString
+*** -0 toString give "0"
+* To see the contents of object you can use JSON.stringify
+* toBoolean is a lookup and in javascript [] is true
