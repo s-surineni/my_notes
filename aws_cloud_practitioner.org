@@ -38,3 +38,4 @@
 *** AMI
 **** preconfigured package required to launch an EC2 instance it contains OS and software packages and settings
 **** EBS volumes persist even though instance goes down
+* ELB - elastic load balancing
