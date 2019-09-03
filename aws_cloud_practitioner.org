@@ -5,4 +5,36 @@
 ** SaaS
 * Lack of elasticity
 * s3 - simple storage service
-* 
+* we provision an virtual network called VPC
+* firt thing you do in your account is setup networking
+* IAM
+** Identity and Access Management
+*** Used from management of User accounts and Groups
+** Dont use main root account to manage AWS
+** Roles and policies are different
+** Roles are more like permission to talk between two services like EC2 and S3
+** Policies can be attached to roles also, so that AWS service can access another AWS service
+* VPC
+** virtual private cloud
+** subnet
+*** sub network
+** Internet Gateways(IG) 
+** Networking security
+*** NACL
+***** firewall at subnet level
+*** Security Group
+***** firewall at instance level
+*** Route table has IG attached to it
+* Computer
+** EC2 - Elastic Cloud Compute
+*** Operating system is like AMI
+*** CPU ista called Instance Type
+*** Types of purchasing of EC2
+**** On demand
+***** Most expensive
+**** Reserved Instance
+**** Spot instace
+***** You bid on instance and pay when price matches
+*** AMI
+**** preconfigured package required to launch an EC2 instance it contains OS and software packages and settings
+**** EBS volumes persist even though instance goes down
