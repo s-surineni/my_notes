@@ -1,0 +1,6 @@
+* higher order function
+** A function that takes other function as input or returns as output
+* closure
+** The inner function gets the enclosing (lexical)scope attached to it
+** before garbage collecting enclosing scope javascript leaves out the variables referenced in innner function
+** lexical scope (the available live data when our function was defined) is what determines our available variables and prioritizatoin at function execution, not where our function is called
