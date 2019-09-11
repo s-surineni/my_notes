@@ -4,3 +4,31 @@
 ** The inner function gets the enclosing (lexical)scope attached to it
 ** before garbage collecting enclosing scope javascript leaves out the variables referenced in innner function
 ** lexical scope (the available live data when our function was defined) is what determines our available variables and prioritizatoin at function execution, not where our function is called
+** the lexical scope is created while the function is being delared
+** closure or closed over varialbe environment
+** uses of closure
+*** make functions that can only run once
+*** memoize functions
+*** can implement module pattern in javascript
+* Asynchronous javascript
+** web browser api
+*** Timer function is provided by web browser, so setTimeout is not adeed to javascript call stack, it does something in the browser
+*** callback queue
+*** the callback queue adds its functions to stack when all the functions in stack are done
+*** 2 rules for execution of asynchronously delayed code
+*** event loop
+*** other things we depend on browser for
+**** timer
+**** information from service ajax
+**** indication portion of page has loaded
+**** user interaction
+**** writing/reading to file system
+**** writing/reading to database
+**** 
+*** checking call stack and call back queue
+*** XML HttpRequest is provided by browser
+* OOP
+** always user . notation while accessing or assigning to properties of object
+** javascript question (how new operator works(how classes work))
+** when we pass something to Object.create it create a __proto___ bond to object passed to it
+** new operator make bond from new objects _proto_ to  .prototype property of function used after new
