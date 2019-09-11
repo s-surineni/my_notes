@@ -15,3 +15,9 @@
 *** -0 toString give "0"
 * To see the contents of object you can use JSON.stringify
 * toBoolean is a lookup and in javascript [] is true
+#+BEGIN_SRC javascript
+  var y = '5'
+  y++                             // This returns number instead of string
+  y
+
+#+END_SRC
