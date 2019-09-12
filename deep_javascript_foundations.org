@@ -21,3 +21,18 @@
   y
 
 #+END_SRC
+* Topics
+** types
+*** Primitive types
+*** abstract operations
+*** coercion
+*** equality
+*** typescript, flow
+** scope
+** objects
+* Types
+** In javascript everything is not an object
+** primitive types are undefined, null, boolean, string, symbol, number and object
+*** undeclared, null, function, array, bignint
+*** objects
+**** object, function, array
