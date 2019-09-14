@@ -36,3 +36,31 @@
 *** undeclared, null, function, array, bignint
 *** objects
 **** object, function, array
+** undefined means does not have a value now
+** values returned from typeof operator are strings
+*** typeof null returns object
+*** typeof function returns function  
+*** undefined vs undeclared vs uninitialized
+**** in javascript using of undeclared object doesn't throw error but says it is undefined
+** special values
+*** NaN
+**** invalid number 
+**** NaN === NaN is false
+**** NaN != NaN returns true
+**** isNaN can be used to check if value is NaN
+**** but isNaN('my son age') returns true which is a problem, it coerces value passed to it to a number and then evaluates it
+**** so Number.isNaN should be used 
+**** type of NaN is number
+*** -0
+#+BEGIN_SRC javascript
+    var trendRate = -0
+    trendRate.toString()            // returns "0" bad idea
+    trendRate === 0                 // returns true bad idea
+    Object.is(trendRate, -0)        // returns true good idea
+    Object.is(trendRate, 0)         // returns false good idea 
+  1 / -0 == -Infinity               // gives true
+#+END_SRC
+*** value / -0 give -Infinity
+*** Fundamental objects
+**** also called built in objects
+**** native functions
