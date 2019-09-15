@@ -64,3 +64,43 @@
 *** Fundamental objects
 **** also called built in objects
 **** native functions
+**** Don't use new
+***** String, Number, Boolean
+** Abstract Operations
+*** used for type conversion
+**** toPrimitive
+***** valueOf
+***** toString
+#+BEGIN_SRC javascript
+  toString(-0)                    // gives "0" which is not good
+
+#+END_SRC
+***** toString results
+****** [] to ""
+****** [1,2,3] to 1, 2, 3
+****** [null, undefined] to ", "
+****** [[[], [], []], []] to ", , ,"
+****** [,,,,] to ",,,  "
+***** toNumber
+****** "" to 0 (root of all evil)
+****** "-0" to -0
+****** null to 0
+****** undefined to NaN
+*****  toNumber on object invokes toPrimitive with number hint, so it invokes value of first and toString next and recursively calls valueOf (or toNumber ) on return value of toString
+***** toBoolean 
+****** less algorithmic more lookup
+****** false values "", 0, -0, null, NaN, false, undefined
+****** doesn't do coercion just a lookup
+***** Cases of coercion
+****** string + number gives string
+****** unary + on string gives number
+****** - operator unary or with string invokes toNumber
+****** !! double negate could be explicit
+***** Boxing
+****** when we use methods on primitives javascript boxes them to objects automatically
+*** corner cases
+**** [[./corner_cases.png]]
+**** [[./corner_cases2.png]]
+*** Implicit coercion
+**** < operator converts strings to numbers if one of the operand is number
+**** it both are strings it wont convert them to numbers 
