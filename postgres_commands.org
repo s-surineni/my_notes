@@ -8,3 +8,5 @@
 ** \d  talend_lc$com$user;
 * switch database
 ** \connect dbname
+* show rown vertically
+** \x
