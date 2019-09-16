@@ -10,3 +10,8 @@
 ** \connect dbname
 * show rown vertically
 ** \x
+* update info in table 
+** UPDATE link
+SET last_update = DEFAULT
+WHERE
+   last_update IS NULL;
