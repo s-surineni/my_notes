@@ -6,3 +6,5 @@
 ** select * from table_name where false;
 * to get columns of table
 ** \d  talend_lc$com$user;
+* switch database
+** \connect dbname

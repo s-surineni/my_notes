@@ -104,3 +104,20 @@
 *** Implicit coercion
 **** < operator converts strings to numbers if one of the operand is number
 **** it both are strings it wont convert them to numbers 
+** double and triple equals
+*** == allows coercion
+*** === doen not allow coercion
+*** == says null and undefined are same
+*** == prefers numeric comparison
+*** 42 == [42] crazyyyyy
+**** == corner cases
+***** [] == ![] // this returns true
+#+BEGIN_SRC javascript
+  var arr1 = []
+  var arr2 = []
+
+  arr1 != arr2                    // true because they are objects and they are not same identity
+
+#+END_SRC
+**** == booleans corner cases
+***** we wouldn't need to do val == true or val == false

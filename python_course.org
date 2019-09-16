@@ -1,0 +1,13 @@
+* Strings
+** String formatting
+*** Format strings contain “replacement fields” surrounded by curly braces {}. Anything that is not contained in braces is considered literal text, which is copied unchanged to the output. If you need to include a brace character in the literal text, it can be escaped by doubling: {{ and }}
+*** Syntax for replacement field
+**** replacement_field ::=  "{" [field_name] ["!" conversion] [":" format_spec] "}"
+field_name        ::=  arg_name ("." attribute_name | "[" element_index "]")*
+arg_name          ::=  [identifier | integer]
+attribute_name    ::=  identifier
+element_index     ::=  integer | index_string
+index_string      ::=  <any source character except "]"> +
+conversion        ::=  "r" | "s" | "a"
+format_spec       ::=  <described in the next section>
+
