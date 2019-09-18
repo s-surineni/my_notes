@@ -1,5 +1,6 @@
 * delete row
 ** db.collection.remove({'object.username': "peter_parker@test.com"})
+** db.users.remove({}) removes everyone
 * insert one row
 ** db.collection.insertOne({'object': {'username': 'google.admin', 'uuid': 'google.admin'}})
 * update row
