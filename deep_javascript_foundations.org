@@ -121,3 +121,11 @@
 #+END_SRC
 **** == booleans corner cases
 ***** we wouldn't need to do val == true or val == false
+* Scope
+** where to look for things
+** compiler creates plan for scope
+** in javascript assigning to variables with same name as global variables in functoins don't create new local variables without var
+** if no variable declaration is found at runtime javascript creates a global variable in global scope
+** in strict mode global variables are not automatically created if they are not declared
+** function expressions add their names in their own local scope
+** kyle says prefer named function expressions over anonymous function expressions
