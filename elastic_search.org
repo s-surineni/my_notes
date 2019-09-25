@@ -1,0 +1,10 @@
+* add a document 
+** PUT /customer/_doc/1
+{
+  "name": "John Doe"
+}
+* search for documents
+** GET localhost_talend_lc.com/_doc/1
+{
+  "name": "John Doe"
+}
