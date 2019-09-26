@@ -1,0 +1,6 @@
+* first look for any documentation is available
+* and approach anyone who knows more about the code
+* if they are using version controlling best that you use it find out what they are doing
+* always try to understand what they are in code. Read code as steps rather than just going through it
+* spend enough time in understanding involved components and do some tutorials with them
+
