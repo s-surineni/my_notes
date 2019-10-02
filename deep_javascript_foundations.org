@@ -129,3 +129,21 @@
 ** in strict mode global variables are not automatically created if they are not declared
 ** function expressions add their names in their own local scope
 ** kyle says prefer named function expressions over anonymous function expressions
+** named function expressions name cannot be re assigned
+** we should use named function expression because
+*** it can refer itself in its body
+*** it shows up in stack trace
+** lexical scope
+*** a compiler figures out scope before execution
+*** IIFE runs and vanishes
+*** IIFE can be used to convert statements into functions like try catch
+** block scoping
+*** explicit let block
+** const
+*** not carrying its cost
+*** better to use only with immutables and specially to one's that must not be changed
+** hoisting
+*** doesn't really exist just giving and made up explanation instead of two pass correct explanation
+*** variable used before assigning error comes because parser looks at declaration statements and makes values in the scope to use during runtime and parser doesn't look at variable usages
+*** the javascript 2 pass look up makes function declarations work but not function expressions
+**** you can call a function that is declared after the statement but not the function expression
