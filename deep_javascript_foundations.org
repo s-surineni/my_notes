@@ -147,3 +147,11 @@
 *** variable used before assigning error comes because parser looks at declaration statements and makes values in the scope to use during runtime and parser doesn't look at variable usages
 *** the javascript 2 pass look up makes function declarations work but not function expressions
 **** you can call a function that is declared after the statement but not the function expression
+**** var hoist tells create a variable and set it to undefined 
+**** but let creates a variable and keeps it un initialized
+* TODO look again for two pass variable declaration and hoisting
+* Closure
+** closure is when a function remembers its lexical scope even when function is executed outside that lexical scope
+** function is closed over the enclosed scopes variables that are used in this scope
+** closure actually closes over the variable not the snapshot of value
+** let in for loop actually creates new loop variable
