@@ -155,3 +155,8 @@
 ** function is closed over the enclosed scopes variables that are used in this scope
 ** closure actually closes over the variable not the snapshot of value
 ** let in for loop actually creates new loop variable
+* modules
+** namespace pattern
+** module pattern requires encapuslation
+** the state of a module is held by its methods via closure
+** it could be a singleton like iife or multiple instances like factory functions
