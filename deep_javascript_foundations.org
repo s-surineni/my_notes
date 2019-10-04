@@ -160,3 +160,18 @@
 ** module pattern requires encapuslation
 ** the state of a module is held by its methods via closure
 ** it could be a singleton like iife or multiple instances like factory functions
+** in module anythin we export is public otherwise private
+** es6 modules are singletons
+** there are two types of imports in es6
+*** named import
+*** namespace import
+* ObjectS oriented
+** functions this references the execution context for that call and determined entirely by how the function was called
+** this keyword has to do with dynamic scoping? so that we can provide different contexts to function 
+** there are 4 different ways to invoke a function
+*** implicit binding
+*** explicit binding 
+**** call & apply
+***** hard binding
+****** setTimeout call function with this set to global object
+****** .bind produces a new function with this bound to parameter passed to it
