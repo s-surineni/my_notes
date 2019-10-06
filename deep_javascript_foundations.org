@@ -189,3 +189,14 @@
 *** it is not a hard binding to parent
 *** it resolves this lexically
 *** object braces doesn't define scope so this doesn't bind to object
+** class keyword
+*** syntactic sugar for prototype system
+*** classes can be expressions and they can be anonymous
+*** if class methods are passed to setTimeout they loss the this context
+*** assigning to this in constructor created method on instance rather can creating on pototype
+** prototype
+*** in other language class pattern may copy class code into object
+*** in javascript this doesn't happen
+*** a constructor call makes an object linked to its own prototype
+*** a constructor makes the object point to its own prototype
+*** a functions prototype is linked to objects prototype
