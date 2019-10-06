@@ -166,6 +166,7 @@
 *** named import
 *** namespace import
 * ObjectS oriented
+** the object passed to this depends on the way a function is called
 ** functions this references the execution context for that call and determined entirely by how the function was called
 ** this keyword has to do with dynamic scoping? so that we can provide different contexts to function 
 ** there are 4 different ways to invoke a function
@@ -175,3 +176,16 @@
 ***** hard binding
 ****** setTimeout call function with this set to global object
 ****** .bind produces a new function with this bound to parameter passed to it
+***** new keyword
+****** invokes a function with empty object
+*** default binding
+**** in non strict mode default binding binds to global object
+***  new
+*** call, apply, bind
+*** context object
+*** default
+** arrow functions
+*** there is no this keyword in arrow function
+*** it is not a hard binding to parent
+*** it resolves this lexically
+*** object braces doesn't define scope so this doesn't bind to object
