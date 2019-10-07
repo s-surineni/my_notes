@@ -200,3 +200,12 @@
 *** a constructor call makes an object linked to its own prototype
 *** a constructor makes the object point to its own prototype
 *** a functions prototype is linked to objects prototype
+** hard bound function can be rebound using new keyword
+** arrow functions do now have a prototype
+** overriding through prototype is not a good idea
+** no matter how high you go in prototype chaing this keyword is always the one inferred at call site
+** If you want to link prototype of one object to prototype of another object you cannot do one.prototype = other.prototype, you should do one.prototype = Object.create(other.prototype)
+** 
+** portotypal inheritance is called behavior delegation
+* OLOO 
+** Objects linked to other objects
