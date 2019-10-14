@@ -15,3 +15,5 @@
 SET last_update = DEFAULT
 WHERE
    last_update IS NULL;
+* show current database
+** select current_database();
