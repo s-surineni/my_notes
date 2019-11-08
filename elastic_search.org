@@ -8,3 +8,5 @@
 {
   "name": "John Doe"
 }
+* liest all indices
+** GET /_cat/indices?v
