@@ -8,3 +8,5 @@
 {
   "name": "John Doe"
 }
+* get mapping 
+** localhost:9200/localhost_talend_lc.com/_mapping
