@@ -10,3 +10,5 @@
 }
 * get mapping 
 ** localhost:9200/localhost_talend_lc.com/_mapping
+* liest all indices
+** GET /_cat/indices?v

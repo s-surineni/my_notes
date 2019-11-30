@@ -1,0 +1,13 @@
+* clone my_notes
+* install tmux
+* install ohmyzsh
+* download code
+* download settings repo from gitlab
+** git@gitlab.com:high-on-code/settings.git
+** paste load command in .zshrc
+* emacs
+** download myemacs from github
+** git@github.com:s-surineni/myemacs.git
+** setup virtualenv for emacs
+* install oh-my-zsh
+* 

@@ -1,0 +1,3 @@
+* delete sampath folder
+** delete settings
+** delete myemacs

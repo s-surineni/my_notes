@@ -1,0 +1,1 @@
+* ng build --prod --output-path <file_path> --watch --output-hashing none
