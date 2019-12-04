@@ -10,3 +10,9 @@
 }
 * liest all indices
 ** GET /_cat/indices?v
+* query to get all documents
+  #+BEGIN_SRC json
+  query = {
+  "query": { "match_all": {} }
+  }
+  #+END_SRC

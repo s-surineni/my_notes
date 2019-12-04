@@ -1,0 +1,21 @@
+* vuex
+** every vuex application contains only one store
+** every child component contains store option
+** getters
+*** functions that use some logic and compute values with values from store
+*** will receive state as first argument
+*** can be accessed by store.getters.<getter_name>
+** mutations
+*** only way to chagne state in vuex is by commiting mutation
+*** each mutation has string type and a handler
+*** handler function will receive state as first argument
+*** this is how you call mutation handler store.commit('increment')
+*** you can't call them directly like function
+*** we may use constant for mutation types
+*** mutations must be synchronous
+** actions
+*** actions wont mutate state but commit mutations
+*** actions can be asynchronous
+*** Action handlers receive a context object which exposes the same set of methods/properties on the store instance, so you can call context.commit to commit a mutation, or access the state and getters via context.state and context.getters
+***  We can even call other actions with context.dispatch
+*** Actions are triggered with the store.dispatch method:
