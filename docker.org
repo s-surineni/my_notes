@@ -1,0 +1,6 @@
+* run an image
+** docker run debian echo "Hello World"
+* run and get shell in an image
+** docker run -i -t debian /bin/bash
+* get info about container
+** docker inspect stupefied_turing

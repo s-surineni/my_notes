@@ -1,0 +1,11 @@
+* as replacement of cron job
+* daemon worker 
+* heartbeat for scheduling
+* rabbitmq default broker
+* celery shell to test your output
+* monitoring is builtin
+* celery can be controlled remotely
+* monitor celery
+* balthazar rouberol
+* denibertovic
+* 
