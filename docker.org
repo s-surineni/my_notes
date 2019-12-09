@@ -4,3 +4,22 @@
 ** docker run -i -t debian /bin/bash
 * get info about container
 ** docker inspect stupefied_turing
+* get what changed in container
+** docker diff stupefied_turing
+* get what happened
+** docker logs stupefied_turing
+* An exited container can be restarted by issuing docker start
+* To get rid of the container, use the docker rm command:
+* docker run exec,
+** run starts container
+** exec does something in already started container
+* To commit, we need to give the command the name of the container (“cowsay”) a name for the image (“cowsayimage”) and the name of the repository to store it in (“test”):
+** docker commit cowsay test/cowsayimage
+* docker build -t test/cowsay-dockerfile .
+* docker run test/cowsay-dockerfile /usr/games/cowsay "Moo"
+** starts a container, runs command and exits
+* The ENTRYPOINT instruction lets us specify an executable that is used to handle any arguments passed to docker run.
+* run image in background
+** docker run --rm -it --link myredis:redis redis /bin/bash
+* link two containers
+**  docker run --rm -it --link myredis:redis redis /bin/bash
