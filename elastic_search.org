@@ -16,3 +16,24 @@
   "query": { "match_all": {} }
   }
   #+END_SRC
+* use source filter to fetch only certain fields
+** 
+* use multiple filters in es 2.3
+  #+BEGIN_SRC json
+  {
+  "query":{ 
+        "filtered": {
+            "query": {
+                "bool": {
+                    "filter": 
+                        [
+                        { "term": { "OpID": "0061P00000StDOA"}}, 
+                        {"term": {"_type": "2019-13-12"}}]
+                       
+        
+
+        },}}
+
+}
+}
+  #+END_SRC
