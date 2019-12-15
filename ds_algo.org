@@ -1,2 +1,11 @@
-* trees
-** see which methods exist with tree and which stay with node and find out why is that
+* good rich
+** trees
+*** see which methods exist with tree and which stay with node and find out why is that
+*** why adding ( blindly in _parenthesize_recur
+*** while writing code make a note of which method is with tree or node
+** examples where I've constructed trees in 
+*** expression tree
+**** only used __init__ and attach
+*** Hierarchy
+**** findout methods introduced at different hierarchy level
+**** findout methods for addition, deletion and arguments taken by their methods
