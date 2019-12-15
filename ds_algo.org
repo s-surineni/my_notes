@@ -1,0 +1,2 @@
+* trees
+** see which methods exist with tree and which stay with node and find out why is that
