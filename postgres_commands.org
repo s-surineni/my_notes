@@ -18,3 +18,5 @@ WHERE
    last_update IS NULL;
 * show current database
 ** select current_database();
+* searching for string contains
+** select * from table where columns::text like '%text%';
