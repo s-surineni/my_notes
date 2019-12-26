@@ -12,10 +12,14 @@
 ** \x
 ** called extended display mode
 * update info in table
-** UPDATE link
+**
+#+BEGIN_SRC sql
+UPDATE link
 SET last_update = DEFAULT
 WHERE
    last_update IS NULL;
+#+END_SRC
+
 * show current database
 ** select current_database();
 * searching for string contains
