@@ -22,3 +22,5 @@ WHERE
 ** select * from table where columns::text like '%text%';
 * postgres connection string
 ** DATABASE_URL=postgres://{user}:{password}@{hostname}:{port}/{database-name}
+* connecting to remote postgres instance
+** psql --host=hostname --port=5432   --dbname=dbname --username=username
