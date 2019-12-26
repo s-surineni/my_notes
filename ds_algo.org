@@ -9,3 +9,5 @@
 *** Hierarchy
 **** findout methods introduced at different hierarchy level
 **** findout methods for addition, deletion and arguments taken by their methods
+** priority queue
+*** 

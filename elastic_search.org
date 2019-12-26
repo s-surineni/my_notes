@@ -1,4 +1,4 @@
-* add a document 
+* add a document
 ** PUT /customer/_doc/1
 {
   "name": "John Doe"
@@ -8,7 +8,7 @@
 {
   "name": "John Doe"
 }
-* get mapping 
+* get mapping
 ** localhost:9200/localhost_talend_lc.com/_mapping
 * liest all indices
 ** GET /_cat/indices?v
@@ -19,23 +19,42 @@
   }
   #+END_SRC
 * use source filter to fetch only certain fields
-** 
-* use multiple filters in es 2.3
+**
+* use multiple filters in es 2.3 and specify type
   #+BEGIN_SRC json
   {
-  "query":{ 
+  "query":{
         "filtered": {
             "query": {
                 "bool": {
-                    "filter": 
+                    "filter":
                         [
-                        { "term": { "OpID": "0061P00000StDOA"}}, 
+                        { "term": { "OpID": "0061P00000StDOA"}},
                         {"term": {"_type": "2019-13-12"}}]
-                       
-        
+
+
 
         },}}
 
 }
 }
   #+END_SRC
+* specify type in body in es 2.3
+#+BEGIN_SRC
+ {
+  "query":{
+        "filtered": {
+            "query": {
+                "bool": {
+                    "filter":
+                        [
+                        { "term": { "OpID": "0061P00000StDOA"}},
+                        {"term": {"_type": "2019-13-12"}}]
+
+
+
+        },}}
+
+}
+}
+#+END_SRC
