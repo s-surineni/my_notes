@@ -20,3 +20,5 @@ WHERE
 ** select current_database();
 * searching for string contains
 ** select * from table where columns::text like '%text%';
+* postgres connection string
+** DATABASE_URL=postgres://{user}:{password}@{hostname}:{port}/{database-name}
