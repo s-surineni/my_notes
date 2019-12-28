@@ -23,3 +23,5 @@
 ** docker run --rm -it --link myredis:redis redis /bin/bash
 * link two containers
 **  docker run --rm -it --link myredis:redis redis /bin/bash
+* docker running example postgres
+** docker run  -v my_dbdata:/var/lib/postgresql/data -p 54320:5432 postgres:12.1
