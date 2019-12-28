@@ -1,0 +1,2 @@
+* redis-cli monitor
+* redis-cli dbsize
