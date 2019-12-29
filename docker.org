@@ -10,6 +10,7 @@
 ** docker logs stupefied_turing
 * An exited container can be restarted by issuing docker start
 * To get rid of the container, use the docker rm command:
+* docker container prune remove all stopped containers
 * docker run exec,
 ** run starts container
 ** exec does something in already started container
