@@ -1,2 +1,3 @@
 * redis-cli monitor
 * redis-cli dbsize
+* redis-cli flushall
