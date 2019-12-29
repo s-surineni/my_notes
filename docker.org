@@ -25,3 +25,8 @@
 **  docker run --rm -it --link myredis:redis redis /bin/bash
 * docker running example postgres
 ** docker run  -v my_dbdata:/var/lib/postgresql/data -p 54320:5432 postgres:12.1
+** docker exec -it d7 psql -U thebadservice
+* volumes
+** docker volume create
+** docker volume ls
+** docker volume rm <volume-name> : delete a volume
