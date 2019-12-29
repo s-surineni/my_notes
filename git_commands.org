@@ -2,3 +2,7 @@
 ** git remote rename origin destination
 * stash specific file
 ** git stash push -m log_levels avenger/settings.py
+* delete untracked files
+** git clean -d -i
+** git clean -d -f
+** git clean -d -n -x # delete ignored and untracked files

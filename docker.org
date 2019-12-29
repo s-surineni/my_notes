@@ -31,3 +31,5 @@
 ** docker volume create
 ** docker volume ls
 ** docker volume rm <volume-name> : delete a volume
+* stop all running containers
+** docker container stop $(docker container ls -aq)
