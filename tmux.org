@@ -1,2 +1,3 @@
 * if copy to clipboard doesn't work with mouse you can use prefix a
 * swap-window -s 3 -t 1
+* start new session tmux new -s work
