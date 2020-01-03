@@ -1,0 +1,1 @@
+* In that regard, how would you handle deploying a Django-based webapp to production that handles concurrent requests without blocking, where the requests may be CPU intensive, IO intensive, or both on the backend. How would you optimise this and what would be the pros/cons of your approach.

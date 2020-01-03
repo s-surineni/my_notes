@@ -1,0 +1,1 @@
+* This technique is an example of the factory method design pattern, as we provide a subclass the means to control the type of node that is created within methods of the parent class.
