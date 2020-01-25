@@ -18,3 +18,10 @@
 **** findout methods for addition, deletion and arguments taken by their methods
 ** priority queue
 ***
+* recursion
+** in factorial program we update the result upstream
+** in even_grand we were updating the value downstream
+*** instead of doing some extra calculations to the result returned by unfloding of recursion we were just reassiigning the result
+*** can I do it the other way around such that I calculate result upstream instead of downstream?
+** unique paths
+*** by passing the changed value directly in function call I need not set it to old value when recursion unfolds

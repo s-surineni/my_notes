@@ -58,3 +58,6 @@
 }
 }
 #+END_SRC
+* index maps to database
+* type maps to table
+* document maps to row
