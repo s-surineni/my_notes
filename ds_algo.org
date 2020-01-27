@@ -25,3 +25,8 @@
 *** can I do it the other way around such that I calculate result upstream instead of downstream?
 ** unique paths
 *** by passing the changed value directly in function call I need not set it to old value when recursion unfolds
+*** understand how answer is being calculated as ans is being set to 0 in every recursion call
+* comment convention
+** need time to thnink more !t
+** something is not clear !?
+** this is good and you need to remember and follow this !!
