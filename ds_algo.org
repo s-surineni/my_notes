@@ -30,3 +30,5 @@
 ** need time to thnink more !t
 ** something is not clear !?
 ** this is good and you need to remember and follow this !!
+* maximum score words
+** trace how two lines of code could consider all possible combination of words!?
