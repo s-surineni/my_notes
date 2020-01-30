@@ -3,4 +3,4 @@
 * redis-cli flushall
 * publish collab_video_uploaded hello
 * lpush "video_uploaded" "{\"eventname\": \"video_uploaded\", \"params\": {\"file_location\": \"https://meetings.s3.amazonaws.com/localhost/collab3.com/forecast/meeting : 16 Jan 2020.mp4\", \"meeting_id\": \"BfTU4TYZLdtyJImp8BCH\", \"tenant\": \"collab3.com\", \"stack\": \"localhost\", \"event_trace\": \"5e77-4c1b-a65d-4a845d0cd923\", \"pool_name\": \"primary-pool\"}}"
-
+* redis-cli -h redis.avisoaws.com -p 6561 -a tada
