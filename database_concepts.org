@@ -1,0 +1,1 @@
+* we handle composite attributes by creating separate attribute for each of the component attributes

@@ -28,3 +28,8 @@ WHERE
 ** DATABASE_URL=postgres://{user}:{password}@{hostname}:{port}/{database-name}
 * connecting to remote postgres instance
 ** psql --host=hostname --port=5432   --dbname=dbname --username=username
+* see if table exists
+** SELECT *
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA = 'dbo'
+AND TABLE_NAME = 'Certifications';
