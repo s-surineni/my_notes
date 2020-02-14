@@ -1,1 +1,9 @@
 * we handle composite attributes by creating separate attribute for each of the component attributes
+* new relation schemas are created for multivalued attributes
+* derived attribues are not explicitly represented in relational data model
+* overall design of the database is called the database schema.
+* data model: a collection of conceptual tools for describing data, data relationships, data semantics, and consistency constraints. A data model provides a way to describe the design of a database at the physical, logical, and view levels.
+** The relational model uses a collection of tables to represent both data and the relationships among those data
+** Tables are also known as relations.
+** The columns of the table correspond to the attributes of the record type.
+** The entity-relationship (E-R) data model uses a collection of basic objects, called entities, andrelationships among these objects.
