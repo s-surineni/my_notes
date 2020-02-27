@@ -19,6 +19,8 @@
 ** priority queue
 ***
 * recursion
+** tip if we have to change value to its previos values before recursion we can just do the calculation in function call so that variable get is older value when recursion comes back to its proper position
+*** problem All Paths From Source to Target
 ** in factorial program we update the result upstream
 ** in even_grand we were updating the value downstream
 *** instead of doing some extra calculations to the result returned by unfloding of recursion we were just reassiigning the result
@@ -32,3 +34,5 @@
 ** this is good and you need to remember and follow this !!
 * maximum score words
 ** trace how two lines of code could consider all possible combination of words!?
+* dynamic programming
+** need to know how to store values so that we can use them to see if that situation occured again.
