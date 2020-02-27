@@ -36,3 +36,4 @@
 ** trace how two lines of code could consider all possible combination of words!?
 * dynamic programming
 ** need to know how to store values so that we can use them to see if that situation occured again.
+** palindrome 3 - need to find out when will the mem variable be used
