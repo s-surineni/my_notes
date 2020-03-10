@@ -1,1 +1,6 @@
 * search for InstanceID Token to get token
+* capabilities
+** send notification or data messages
+** different ways to target
+*** single device, groups, topics
+** get replies from app
