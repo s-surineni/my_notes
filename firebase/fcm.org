@@ -2,5 +2,9 @@
 * capabilities
 ** send notification or data messages
 ** different ways to target
-*** single device, groups, topics
+*** single device, groups, topics, condition
 ** get replies from app
+* components of notification message
+** title, body, data, image
+* TODO find about conditions
+* For apps in the foreground, messages are handled by a callback function. !!imp
