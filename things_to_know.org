@@ -1,2 +1,8 @@
 * design queue
 * sharding
+* how is firebasesdk working
+* saving all sent messages
+* implement LRU
+* sliding window cache policy
+* how to create AMI so that we can store secure files like firebase credentials
+* amortized analysis
