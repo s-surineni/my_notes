@@ -1,0 +1,2 @@
+* log http requests in case of error
+* log raw format and do post processing of logs
