@@ -6,3 +6,5 @@
 ** git clean -d -i
 ** git clean -d -f
 ** git clean -d -n -x # delete ignored and untracked files
+* abort git merge
+** git merge --abort
