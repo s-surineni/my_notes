@@ -1,1 +1,15 @@
 * projectile is now honoring .gitignore
+* fixing issue
+** projectile--globally-ignored-file-suffixes-glob
+** projectile-globally-unignored-directories
+** projectile-index-directory
+** projectile-dir-files-native
+** projectile-filtering-patterns
+** projectile-patterns-to-ensure
+** projectile-parse-dirconfig-file **
+** projectile-dirconfig-file ***
+* testing project is in ironman/projectile/testing
+* projectile-commander-bindings
+* (define-key map (kbd "f") #'projectile-find-file)
+* projectile-project-files
+* (if (eq projectile-indexing-method 'alien)

@@ -1,0 +1,9 @@
+* singleton
+** would not take any arguments while initializing
+** if it takes arguments it would be factory
+** lazily loaded singleton
+*** just create instance in getInstance after checking the instance is null
+** to make singleton thread safe
+*** make instance field volatile
+*** make it protected from reflection by adding RuntimeException inside constructor
+*** inside getInstance we do double check locking mechanism and synchronized check

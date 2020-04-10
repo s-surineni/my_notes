@@ -61,3 +61,13 @@
 * index maps to database
 * type maps to table
 * document maps to row
+* es.indices.get_mapping(index=index) get all types
+* get single document of a type
+#+BEGIN_SRC json
+query = {"query": { "match_all": {} },
+         '_source': ['_id'],
+         'size': 1
+}
+doc_type = ['2020-01-06']
+res = es.search(index=index, body=query, doc_type=doc_type)
+#+END_SRC
