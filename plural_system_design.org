@@ -7,3 +7,16 @@
 *** make instance field volatile
 *** make it protected from reflection by adding RuntimeException inside constructor
 *** inside getInstance we do double check locking mechanism and synchronized check
+* builder pattern
+** Handle complex constructors
+** makes object immutable after is constructed
+** telescoping constructors
+** no contract of what is a valid order <?>
+** object became mutable by having setters
+** Bean doesn't take any parameters for constructor <?>
+** has inner class
+** we can mandate that constructor must have some parameters
+** It will have methods that return instance of builer
+** The builder build method would return outer-class object containing builder instance
+** designed first - may be it can't be modified later?
+** 
