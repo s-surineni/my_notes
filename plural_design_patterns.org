@@ -31,3 +31,5 @@
 ** lighter weight construction
 ** Guarantees unique instance every time
 ** can help with performance issues
+* Factory method pattern
+** Defers instantiation to subclasses
