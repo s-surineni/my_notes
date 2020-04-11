@@ -19,4 +19,15 @@
 ** It will have methods that return instance of builer
 ** The builder build method would return outer-class object containing builder instance
 ** designed first - may be it can't be modified later?
-** 
+* Prototype pattern
+** Avoids costly creation
+** avoids subclassing
+** doesn't use new
+** often uses interface
+** usually implemented with a registry
+** shallow copy
+*** it would only make new objects of primitive datatypes
+*** it would use same references of objects like array etc.,
+** lighter weight construction
+** Guarantees unique instance every time
+** can help with performance issues
