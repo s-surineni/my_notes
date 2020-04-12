@@ -1,0 +1,10 @@
+* use cases
+** replacement for message broker
+*** better throughput
+*** built in partitioning
+*** replication
+*** fault-tolerance
+** web activity tracking
+** metrics
+** log aggregation
+** stream processing
