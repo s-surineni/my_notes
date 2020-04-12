@@ -1,0 +1,35 @@
+* generic
+** pub/sub systems <?>
+** streaming usecase
+** high throughput use cases
+** handling background jobs
+** do we send acknowledgement <?>
+* kafka
+** built for streaming scenarios
+** durable, fast and scalable
+*** TODO can we get some real values on this <do>
+** durable message store
+** dumb broker smart consumer
+** needs apache zookeeper to run
+** uses pull model
+** Allows users to leverage batching
+** much higher performance than rabbitmq
+** use cases
+*** metrics
+*** activity tracking
+*** log aggregation
+*** stream processing
+*** commit logs
+*** event sourcing
+*** if we need stream history
+* rabbitmq
+** communication patterns
+*** uses variations of request/reply, point to point, and pub-sub communication patterns.
+** Smart broker / dumb consumer model
+** can be synchronous too <?>
+** build for high-ingress replay and streams
+** allows persistance and re-process of streamed data
+** uses push model
+*** a prefetch limit is specified on consumer
+** use cases
+***
