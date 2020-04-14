@@ -1,4 +1,8 @@
 * use cases
+** capabilities
+*** publish and subscribe
+*** store streams of records
+*** Process streams of records as they occur.
 ** replacement for message broker
 *** better throughput
 *** built in partitioning
@@ -8,3 +12,20 @@
 ** metrics
 ** log aggregation
 ** stream processing
+* only metadata retained on a per-consumer basis is the offset or position of that consumer in the log
+** This offset is controlled by the consumer
+** Kafka consumers are very cheap—they can come and go without much impact on the cluster or on other consumers.
+* The partitions in the log serve several purposes
+** allow the log to scale beyond a size that will fit on a single server
+** Second they act as the unit of parallelism
+** partition is replicated across a configurable number of servers for fault tolerance.
+** Each partition has one server which acts as the "leader" and zero or more servers which act as "followers".
+* producers
+** The producer is responsible for choosing which record to assign to which partition within the topic.
+* consumers
+** Consumers label themselves with a consumer group name
+** each record published to a topic is delivered to one consumer instance within each subscribing consumer group. 
+** If all the consumer instances have the same consumer group, then the records will effectively be load balanced over the consumer instances.
+** If all the consumer instances have different consumer groups, then each record will be broadcast to all the consumer processes
+** The way consumption is implemented in Kafka is by dividing up the partitions in the log over the consumer instances so that each instance is the exclusive consumer of a "fair share" of partitions at any point in time
+** Kafka only provides a total order over records within a partition, not between different partitions in a topic
