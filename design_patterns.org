@@ -4,3 +4,11 @@
 ** acts as a local representation of remote system
 ** control access to specific objects
 ** same interface for real and proxy classes
+* decoratory pattern
+** notion of a class and relationships like inheritance are static.
+** That is, happen at compile time. 
+** This means that we cannot make changes to classes while our program is running
+** uses aggregation to comabine behaviors at runtime
+** Aggregation is used to represent a "has a" or "weak containment" relationship between two objects.
+** The aggregation relationship is always one-to-one in the decorator design pattern in order to build up the stack so that one object is on top of another.
+** the basic component class must be the first one in the stack
