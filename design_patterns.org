@@ -1,1 +1,6 @@
 * This technique is an example of the factory method design pattern, as we provide a subclass the means to control the type of node that is created within methods of the parent class.
+* proxy 
+** helps defering create resource intensive objects
+** acts as a local representation of remote system
+** control access to specific objects
+** same interface for real and proxy classes
