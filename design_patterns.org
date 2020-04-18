@@ -4,7 +4,26 @@
 ** acts as a local representation of remote system
 ** control access to specific objects
 ** same interface for real and proxy classes
-* decoratory pattern
+* facade pattern
+**  The facade design pattern provides a single simplified interface for client classes to interact with the subsystem.
+** Keep in mind that a facade does not actually add more functionality, a facade simply acts as a point of entry into your subsystem. 
+** A facade is a wrapper class that encapsulate the subsystem in order to hide the subsystem's complexity.
+**  This wrapper class will allow a client class to interact with the subsystem through a facade.
+** example
+*** Without a facade class, the customer class would contain instances of the checking, saving and investment classes. 
+*** This means that the customer is responsible for properly instantiating each of these constituent classes and knows about all their different attributes and methods
+*** Instead, we introduce the bank service class to act as a facade for the checking, saving, and investment classes
+*** Since the three different accounts all implement the IAccount interface, 
+*** the bank's service class is effectively wrapping the account interfacing classes, and presenting a simpler front to them for the customer client class to use.
+** It combines interface implementation by one or more classes which then gets wrapped by the facade class
+** in practice, a facade class can be used to wrap all the interfaces and classes for a subsystem.
+** note is that we set the access modifiers for each account to be private.
+** The facade design pattern is a means to hide the complexity of a subsystem by encapsulating it behind a unifying wrapper called a facade class; 
+** removes the need for client classes to manage a subsystem on their own, resulting in less coupling between the subsystem and the client classes; 
+** handles instantiation and redirection of tasks to the appropriate class within the subsystem; 
+** provides client classes with a simplified interface for the subsystem; 
+** acts simply as a point of entry to a subsystem and does not add more functionality to the subsystem. 
+* decorator pattern
 ** notion of a class and relationships like inheritance are static.
 ** That is, happen at compile time. 
 ** This means that we cannot make changes to classes while our program is running
