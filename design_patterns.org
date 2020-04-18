@@ -12,3 +12,15 @@
 ** Aggregation is used to represent a "has a" or "weak containment" relationship between two objects.
 ** The aggregation relationship is always one-to-one in the decorator design pattern in order to build up the stack so that one object is on top of another.
 ** the basic component class must be the first one in the stack
+* beahavioral design pattern
+** ways that individual objects collaborate to achieve a common goal.
+* template method pattern
+** The template method defines an algorithm's steps generally, deferring the implementation of some steps to subclasses. 
+** concerned with the assignment of responsibilities.
+** Think of it like another technique to use when you notice you have two separate classes with very similar functionality in order of operations. 
+** implementation
+*** need abstract super class
+*** methods specific to subclass are abstract
+*** there will be one template method that will be calling these abstract methods
+** When you notice two classes with a very similar order of operations, you can choose to use a template method.
+**  The template method pattern is a practical application of generalization and inheritance.
