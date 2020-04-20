@@ -1,0 +1,35 @@
+* relational databases
+** database is collection of data
+** features of database
+*** persistence
+*** shared source of truth (accessible by many users)
+*** Ability to store many types of data(efficiently)
+*** concurrency control (multiple people can read and write at once)
+*** rules for enforcing data integrity
+** primary keys and foreign keys
+*** every row must have a primary key to identify it uniquely
+*** primary key could be compose of more than one column which is called composite key
+*** foreign keys are responsible for joining tables
+** SQL
+** execution plan
+** client-server model
+** TCP/IP
+*** postgres supports tcp/ip
+*** uses ip addresses and ports to send communication back and forth between clients and servers on tcp/ip networks
+*** for computer a port is tied to some physical location that exists on computers motherboard
+*** port 80 is typically used for http requests
+** connection and sessions in tcp/ip
+*** tcp/ip is a connection based protocol
+*** that means to start to have communication a connection must be arranged first and must close connection too
+*** if more connections are opened and not closed there may be performance issues
+*** session marks start and end of connection
+*** session can also be thought as period between the start and end of connection
+*** within a session we encapsulate interaction between a client and a server in units called as transaction
+** Transactions
+*** transaction are atomic units of work for the database to perform as a whole
+*** all changes to data are made through units of work called transactions
+*** an operation either succeeds or fails altogether as a unit
+*** queue up work by using transaction.add and commit at once by using transaction.commit
+*** a transaction can be cleared using command called transaction.rollback
+** psql
+*** interactive terminal that comes with postgres
