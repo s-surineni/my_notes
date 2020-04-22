@@ -39,4 +39,4 @@ delete from <table>
 #+END_SRC
 * login as a particular user
 ** sudo -u sampath -i
-** sudo su - postgres - this was in tutorial to create 
+** psql postgres - in mac
