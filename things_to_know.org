@@ -13,3 +13,5 @@
 * internet protocols
 * requests features
 * probability theory
+* jwt token authentication
+* graphql

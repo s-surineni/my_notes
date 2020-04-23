@@ -1,0 +1,6 @@
+* python
+** thefuck
+*** https://github.com/nvbn/thefuck
+* linux
+** mail clients
+*** geary
