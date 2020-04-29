@@ -1,0 +1,2 @@
+* replication to speed up read
+* sharding to speed up write

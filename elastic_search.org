@@ -71,3 +71,17 @@ query = {"query": { "match_all": {} },
 doc_type = ['2020-01-06']
 res = es.search(index=index, body=query, doc_type=doc_type)
 #+END_SRC
+* get all unique values of a field
+#+BEGIN_SRC json
+{
+  "size": 0,
+  "aggs": {
+    "pipeline_values": {
+      "terms": {
+        "field": "pipeline",
+        "size": 500
+      }
+    }
+  }
+}
+#+END_SRC

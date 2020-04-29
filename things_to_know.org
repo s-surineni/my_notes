@@ -10,8 +10,20 @@
 * http responses
 * http
 * session
+** how is user session maintained
 * internet protocols
 * requests features
 * probability theory
 * jwt token authentication
 * graphql
+* docker
+* rpc rabbitmq
+** celery
+** redis
+*** task queue
+*** caching
+** graphql
+** replication
+** persitence
+** sharding
+** threading

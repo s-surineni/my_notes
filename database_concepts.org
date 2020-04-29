@@ -8,3 +8,6 @@
 ** The columns of the table correspond to the attributes of the record type.
 ** The entity-relationship (E-R) data model uses a collection of basic objects, called entities, andrelationships among these objects.
 * how do we represent non binary relation in er in relational <?>
+* entity - relational mapping
+** entity set = schema
+** tuple = single entity

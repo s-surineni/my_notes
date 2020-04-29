@@ -1,6 +1,30 @@
 * python
 ** thefuck
 *** https://github.com/nvbn/thefuck
+** forks
+*** redash
+** source explore
+*** elasticsearch-py
+*** google python clients
+*** boto3
+**** how it manages
+***** retries
+***** multi-part
 * linux
 ** mail clients
 *** geary
+* shell
+** stars
+*** crouton
+** projects
+*** https://github.com/alebcay/awesome-shell
+* Contributing
+** https://github.com/nvbn/thefuck
+* Source explore
+** lru-expiring-cache
+** thefuck
+** spaceship-prompt
+** helm
+** projectile
+** Boostnote
+** cachetools

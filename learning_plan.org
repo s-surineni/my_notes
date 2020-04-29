@@ -1,0 +1,18 @@
+* cormen 1 algo
+* try a tutorial
+* leet 4 easy
+* online course
+* leet 2 medium
+* open source contribution
+* leet 1 hard
+* new things like memcached
+* currently asked question
+* tutorials
+** celery
+** redis
+*** task queue
+*** caching
+** graphql
+** replication
+** persitence
+** sharding
