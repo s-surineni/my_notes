@@ -27,3 +27,16 @@
 ** persitence
 ** sharding
 ** threading
+*** barrier
+*** lock
+*** event
+*** semaphore
+*** condition
+* how web servers handle multiple requests at once
+* how to cause an exception by writing to file at once
+* asyncio
+* what does thread safety mean
+* uml
+* api gateway
+* central authentication service
+* combinatorial mathematics

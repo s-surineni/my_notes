@@ -3,10 +3,14 @@
 *** https://github.com/nvbn/thefuck
 ** forks
 *** redash
+** start
+*** reddit
 ** source explore
 *** elasticsearch-py
 *** google python clients
 *** boto3
+*** httpie
+*** requests
 **** how it manages
 ***** retries
 ***** multi-part
@@ -28,3 +32,4 @@
 ** projectile
 ** Boostnote
 ** cachetools
+* pgcli

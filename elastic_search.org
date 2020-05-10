@@ -84,4 +84,20 @@ res = es.search(index=index, body=query, doc_type=doc_type)
     }
   }
 }
+
+// This worked
+query = {
+    "size": 0,
+# "_source": ["id"],
+    "_source": ["as_of"],
+    "aggs": {
+        "uniq_id": {
+            "terms": {
+# "field": "_id",
+                "field":"as_of",
+                "size": "1000"
+            }
+        }
+    }
+}
 #+END_SRC

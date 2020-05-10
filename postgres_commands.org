@@ -40,3 +40,24 @@ delete from <table>
 * login as a particular user
 ** sudo -u sampath -i
 ** psql postgres - in mac
+* search for table names
+#+BEGIN_SRC sql
+select table_schema,
+table_name
+from information_schema.tables
+where table_name like '%github_reps%'
+and table_schema not in ('information_schema', 'pg_catalog')
+and table_type = 'BASE TABLE'
+order by table_name,
+table_schema;
+#+END_SRC
+* get one row
+** LIMIT 1
+* use doubles quotes for columns
+* all distinct values of a column in postgres
+#+BEGIN_SRC sql
+SELECT
+DISTINCT column_1
+FROM
+table_name;
+#+END_SRC

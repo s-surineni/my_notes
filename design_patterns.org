@@ -1,31 +1,31 @@
 * This technique is an example of the factory method design pattern, as we provide a subclass the means to control the type of node that is created within methods of the parent class.
-* proxy 
+* proxy
 ** helps defering create resource intensive objects
 ** acts as a local representation of remote system
 ** control access to specific objects
 ** same interface for real and proxy classes
 * facade pattern
 **  The facade design pattern provides a single simplified interface for client classes to interact with the subsystem.
-** Keep in mind that a facade does not actually add more functionality, a facade simply acts as a point of entry into your subsystem. 
+** Keep in mind that a facade does not actually add more functionality, a facade simply acts as a point of entry into your subsystem.
 ** A facade is a wrapper class that encapsulate the subsystem in order to hide the subsystem's complexity.
 **  This wrapper class will allow a client class to interact with the subsystem through a facade.
 ** example
-*** Without a facade class, the customer class would contain instances of the checking, saving and investment classes. 
+*** Without a facade class, the customer class would contain instances of the checking, saving and investment classes.
 *** This means that the customer is responsible for properly instantiating each of these constituent classes and knows about all their different attributes and methods
 *** Instead, we introduce the bank service class to act as a facade for the checking, saving, and investment classes
-*** Since the three different accounts all implement the IAccount interface, 
+*** Since the three different accounts all implement the IAccount interface,
 *** the bank's service class is effectively wrapping the account interfacing classes, and presenting a simpler front to them for the customer client class to use.
 ** It combines interface implementation by one or more classes which then gets wrapped by the facade class
 ** in practice, a facade class can be used to wrap all the interfaces and classes for a subsystem.
 ** note is that we set the access modifiers for each account to be private.
-** The facade design pattern is a means to hide the complexity of a subsystem by encapsulating it behind a unifying wrapper called a facade class; 
-** removes the need for client classes to manage a subsystem on their own, resulting in less coupling between the subsystem and the client classes; 
-** handles instantiation and redirection of tasks to the appropriate class within the subsystem; 
-** provides client classes with a simplified interface for the subsystem; 
-** acts simply as a point of entry to a subsystem and does not add more functionality to the subsystem. 
+** The facade design pattern is a means to hide the complexity of a subsystem by encapsulating it behind a unifying wrapper called a facade class;
+** removes the need for client classes to manage a subsystem on their own, resulting in less coupling between the subsystem and the client classes;
+** handles instantiation and redirection of tasks to the appropriate class within the subsystem;
+** provides client classes with a simplified interface for the subsystem;
+** acts simply as a point of entry to a subsystem and does not add more functionality to the subsystem.
 * decorator pattern
 ** notion of a class and relationships like inheritance are static.
-** That is, happen at compile time. 
+** That is, happen at compile time.
 ** This means that we cannot make changes to classes while our program is running
 ** uses aggregation to comabine behaviors at runtime
 ** Aggregation is used to represent a "has a" or "weak containment" relationship between two objects.
@@ -34,9 +34,9 @@
 * beahavioral design pattern
 ** ways that individual objects collaborate to achieve a common goal.
 * template method pattern
-** The template method defines an algorithm's steps generally, deferring the implementation of some steps to subclasses. 
+** The template method defines an algorithm's steps generally, deferring the implementation of some steps to subclasses.
 ** concerned with the assignment of responsibilities.
-** Think of it like another technique to use when you notice you have two separate classes with very similar functionality in order of operations. 
+** Think of it like another technique to use when you notice you have two separate classes with very similar functionality in order of operations.
 ** implementation
 *** need abstract super class
 *** methods specific to subclass are abstract
@@ -48,11 +48,11 @@
 ** similar to exception handling in java
 ** All the objects on the chain are handlers that implement a common method handle request declared in an abstract superclass handler.
 ** we want to make sure that each filter goes through the following steps.
-***  First, check if a rule matches. 
+***  First, check if a rule matches.
 *** If it does match, do something specific.
-*** If it doesn't match, call the next filter in the list. 
+*** If it doesn't match, call the next filter in the list.
 ** To achieve this, you can use the Template Pattern that you learned from an earlier lesson to ensure that each class will handle the request in a similar way following the required steps
-** The intent of this design pattern is to avoid coupling the sender to the receiver by giving more than one object the chance to handle the request. 
+** The intent of this design pattern is to avoid coupling the sender to the receiver by giving more than one object the chance to handle the request.
 * state pattern
 ** The state pattern is primarily used when you need to change the behavior of an object based upon the state that it's in at run-time.
 ** Implementation
@@ -60,10 +60,66 @@
 *** And we'll have state classes that implement the state interface.
 *** State classes must implement the methods in this interface to respond to each trigger.
 *** The vendingmachine class constructor will instantiate each of the state classes
-*** The vendingmachine class would also have methods to handle the triggers as before, but now delegates handling to the current state object. 
+*** The vendingmachine class would also have methods to handle the triggers as before, but now delegates handling to the current state object.
 *** Notice now, how much cleaner the code is, without having long conditionals in these methods.
-***  In our example,the vending machine is the context class. 
+***  In our example,the vending machine is the context class.
 *** It keeps track of it's current state.
 ***  When a trigger occurs and a request is asked of a context object, it delegates to a state object to actually handle the request.
 ***  The state pattern is useful when you need to change the behavior of an object based upon changes to its internal state.
 ***  You can also use the pattern to simplify methods with long conditionals that depend on the object state.
+* command pattern
+** Instead of having these objects directly communicating with each other, the command pattern creates a command object in between the sender and receiver
+** the sender doesn't need to know about the receiver and the methods to call.
+** The boss is encapsulating his commands into memos, the way requests could be encapsulated into command objects in software.
+** The command pattern has another object that invokes the command objects to complete whatever task it is supposed to do, called the invoker.
+** A command manager can also be used which basically keeps track of the commands, manipulates them and invokes them.
+**  One purpose of using the command pattern is to store and schedule different requests.
+** When an object calls a method of another object, you can't really do anything to the method calls.
+** Turning the different requests in your software into command objects can allow you to treat them as the way you would treat other objects.
+*** You can store these command objects into lists
+*** you can manipulate them before they are completed
+*** or you can put them onto a queue so that you can schedule different commands to be completed at different times.
+*** Another important purpose of the command pattern is allowing commands to be undone or redone.
+**** To achieve redo and undo functionality, your software will need two lists,
+**** a history list which holds all the commands that have been executed,
+**** and a redo list which would be used to put commands that have been undone.
+** implementation
+*** You have a command super-class and all commands will be instances of sub-classes of this command super-class.
+*** Super-class defines the common behaviors of your commands.
+*** Each command will have the methods execute, unexecute and isReversible.
+*** These concrete command classes will call on specific receiver classes to deal with the actual work of completing the command.
+*** This is a very important aspect of command objects.
+*** They must keep track of a lot of details on the current state of the document in order for commands to be reversible.
+*** When the execute and unexecute methods are called,
+**** this is where the command object actually calls on the receiver, which in this case is the document to actually complete the work.
+*** invoker
+**** First, it will need a reference to the command manager, which is the object that manages the history and redo lists.
+**** The invoker then creates the command object with the information needed to complete the command,
+**** then calls the command manager to execute the command.
+** Another main benefit of the command pattern is that it decouples the objects of your software program
+** The command pattern also allows you to pull out logic from your user interfaces.
+** Usually, code-to-handle requests is put into the event handlers of user interfaces.
+* mediator pattern
+** you will add an object that will talk to all of these other objects
+** coordinate their activities
+** instead of objects being engaged in various pairwise interactions, they all interact through the Mediator:
+** The mediator can perform logic on these events
+** the mediator can request information or behaviour from an object
+** The objects associated with your mediator are called colleagues
+** communication could be implemented as an Observer pattern.
+** The communication could also occur through an event infrastructure.
+** A common usage for the mediator pattern,  is for dialog boxes with many components.
+** the mediator can quickly become very large.
+** Large classes are generally discouraged because they make code more difficult to debug
+* observer pattern
+** First, we'll have a Subject superclass that defines three methods,
+*** allow a new observer to subscribe,
+*** allow a current observer to unsubscribe,
+*** and notify all observers about a new blog post.
+*** This superclass would also have an attribute to keep track of all the observers,
+*** and will make an observer interface with methods that an observer can be notified to update itself
+*** the Subscriber Class will implement the observer interface.
+*** implementation
+**** the subject superclass has three methods, register observer, unregister observer, and notify.
+**** The observer interface only has the update method
+**** If you know that you have many objects that rely on the state of one, the value of the observer pattern becomes more pronounced.

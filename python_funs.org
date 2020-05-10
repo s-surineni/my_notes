@@ -1,1 +1,18 @@
 * time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))
+* Parallelism consists of performing multiple operations at the same time.
+** Multiprocessing is a means to effect parallelism
+** Multiprocessing is well-suited for CPU-bound tasks
+* Concurrency is a slightly broader term than parallelism
+** suggests that multiple tasks have the ability to run in an overlapping manner
+** Threading is a concurrent execution model whereby multiple threads take turns executing tasks.
+** One process can contain multiple threads.
+** it’s better for IO-bound tasks
+** concurrency encompasses both multiprocessing (ideal for CPU-bound tasks) and threading (suited for IO-bound tasks).
+** async IO is a single-threaded, single-process design:
+** uses cooperative multitasking,
+** So, cooperative multitasking is a fancy way of saying that a program’s event loop (more on that later) communicates with multiple tasks to let each take turns running at the optimal time.
+** Async IO avoids some of the potential speedbumps that you might otherwise encounter with a threaded design.
+** Python’s async model is built around concepts such as callbacks, events, transports, protocols, and futures
+* asyncio
+** At the heart of async IO are coroutines.
+** A coroutine is a specialized version of a Python generator function

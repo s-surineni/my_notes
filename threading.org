@@ -1,0 +1,19 @@
+* helps program run concurrently
+* A thread is a separate flow of execution.
+* Tasks that spend much of their time waiting for external events are generally good candidates for threading.
+* Architecting your program to use threading can also provide gains in design clarity
+* race conditions
+** Race conditions can occur when two or more threads access a shared piece of data or resource
+* all variables that are scoped (or local) to a function are thread-safe.
+* lock or mutex
+** A Lock is an object that acts like a hall pass
+** Only one thread at a time can have the Lock.
+** Any other thread that wants the Lock must wait until the owner of the Lock gives it up.
+* python
+** threads may be running on different processors, but they will only be running one at a time.
+** The entire Python program exits when no alive non-daemon threads are left.
+** Daemon threads are abruptly stopped at shutdown.
+** Their resources (such as open files, database transactions, etc.) may not be released properly.
+** When your Python program ends, part of the shutdown process is to clean up the threading routine.
+** event
+*** threads that are waiting for the event do not necessarily need to stop what they are doing, they can just check the status of the Event every once in a while.
