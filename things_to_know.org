@@ -40,3 +40,5 @@
 * api gateway
 * central authentication service
 * combinatorial mathematics
+* connection pooling
+* all features of redis
