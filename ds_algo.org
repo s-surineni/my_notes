@@ -38,3 +38,5 @@
 ** need to know how to store values so that we can use them to see if that situation occured again.
 ** palindrome 3 - need to find out when will the mem variable be used
 * for finding mid (start+end)/2 can cause Integer overflow...instead you can make it mid=start+(end-start)/2
+* sometime you try to handle more cases then necessary
+* if you don't understand a code try changing variables and understand

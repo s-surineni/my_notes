@@ -33,6 +33,7 @@
 *** semaphore
 *** condition
 * how web servers handle multiple requests at once
+** try looking into them by loggind process id, and other details
 * how to cause an exception by writing to file at once
 * asyncio
 * what does thread safety mean
@@ -42,3 +43,4 @@
 * combinatorial mathematics
 * connection pooling
 * all features of redis
+* bijection maths

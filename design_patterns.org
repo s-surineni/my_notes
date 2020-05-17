@@ -1,3 +1,44 @@
+* singleton pattern
+** The Singleton pattern refers to having only one object of a class
+** Another goal of the Singleton design pattern is that the single object is globally accessible within the program.
+** have a private constructor
+** use a private class variable which holds single instance of the class
+** use a public method to create single instance if it doesn't exist already
+**  If there are multiple computing threads running, there could be issues caused by the threads trying to access the shared single object. 
+* facade pattern
+** A facade is a wrapper class that encapsulate the subsystem in order to hide the subsystem's complexity.
+** This wrapper class will allow a client class to interact with the subsystem through a facade
+** You need a class to act as an interface between your subsystem and a client class.
+** You need to simplify the interaction with your subsystem for client classes.
+** The facade design pattern provides a single simplified interface for client classes to interact with the subsystem.
+** facade does not actually add more functionality, 
+** a facade simply acts as a point of entry into your subsystem.
+** Since the entire point of the facade design pattern is to hide complexity, we use the information hiding design principle to prevent all client classes from seeing the account objects and how these accounts behave.
+** handles instantiation and redirection of tasks to the appropriate class within the subsystem
+* factory method pattern
+** move the code for deciding which type of knife to create, and the code for deciding which subclass of knife to instantiate into the class for this factory.
+** a factory object is an instance of such a class, which has a method to create product objects. 
+** the knifeStore and its orderKnife method may not be the only client of your knifeFactory.
+**  If there are multiple clients that want to instantiate the same set of classes, then by using a factory object, you have cut out redundant code and made the software easier to modify. 
+** If you change the way that sub-classes are instantiated, you only need to change your factory, rather than every client.
+** Using factories, makes your software easier to maintain and change because object creation happens in the factories.
+** You will soon see that concrete instantiation will be the primary purpose for our factories
+** Instead of using a separate object, a factory object to create the objects, the factory method uses a separate method in the same class to create the objects. 
+** To create specialized product objects, a factory object approach would subclass the factory class.
+**  For example, a subclass of our knife factory called budget knife factory could create budget chefs knife and budget steak knife product objects. 
+** A factory method approach instead, has a budget knife store subclass of knife store. The budget knife store has a method, the factory method, that is responsible for creating budget chefs knife and budget steak knife product objects instead
+** The factory method design intent is to define an interface for creating objects, but let the sub-classes decide which class to instantiate.
+** We have an abstract creator class.
+** This class contains methods that only operate on generalizations.
+** In other words, as long as we give these methods the products they want to operate on, the're happy.
+**  Factories allow client code to operate on generalizations. This is called coding to an interface, not an implementation.
+* adapter pattern
+** Software systems also face the same compatibility issue. Instead of having physical connectors, systems will have incompatible software interfaces. 
+** The adapter design pattern will help facilitate communication between two existing systems by providing a compatible interface. 
+** The client class will be part of your system that wants to use a third-party library or external system.
+**  The adaptee is a class in the third-party library or external system to be used.
+**  The adapter class sits in between the client and the adaptee
+** It will implement a target interface which is the interface that the client will use. The adapter conforms to what the client is expecting to see. 
 * This technique is an example of the factory method design pattern, as we provide a subclass the means to control the type of node that is created within methods of the parent class.
 * proxy
 ** helps defering create resource intensive objects
@@ -123,3 +164,29 @@
 **** the subject superclass has three methods, register observer, unregister observer, and notify.
 **** The observer interface only has the update method
 **** If you know that you have many objects that rely on the state of one, the value of the observer pattern becomes more pronounced.
+* MVC pattern
+** model - view - controller
+** The model contains the underlined data and logic users want to see and manipulate
+**  A key part of the MVC pattern is that the model is self-contained. It has all of the state, methods and other data that it needs to exist on its own.
+** view gives the user a way to see the model or at least parts of it
+** When some value changes in the back end or the model
+** it has to tell the view to update itself accordingly. This is done by using the Observer Design Pattern.
+** In this case, any view is also an observer
+** information about the user interaction is passed to a controller which is responsible for interpreting these requests and changing the model. 
+** MVC pattern basically uses the separation of concerns design principle
+** Since our view is going to be an observer, we have to make the model unobservable.
+** the controller does not make changes to the state of the model directly. It calls methods of the model to make changes
+** The controller ensures that the views and the model are loosely coupled 
+* design principles underlying design patterns
+** Liskov Substitution Principle
+*** If a class, S, is a subtype of a class, B, then S can be used to replace all instances of B without changing the behaviors of a program.
+*** There are a number of constraints that the Liskov Substitution Principle places on subclasses in order to enforce proper use of inheritance
+*** The Liskov Substitution Principle helps us determine if inheritance has been used correctly.
+** As a software developer, you should strive to create systems that are flexible and reusable.
+*** Flexible code bases allow for easier extension of the system. 
+** Open/Closed Principle
+*** classes should be open for extension, but closed to change
+*** During the lifetime of your software, certain classes should be closed, to avoid introducing undesirable side effects. 
+*** The Open/Closed Principle is used to keep the stable parts of your system separate from the varying parts.
+*** By using extension over change, you can work on the varying parts without introducing unwanted side effects into the stable parts.
+*** Varying parts of a system should be kept isolated from each other. Since these extensions will eventually become stable and become integrated into your production, there's no guarantee that they'll all be completed at the same time.
