@@ -44,3 +44,11 @@
 * connection pooling
 * all features of redis
 * bijection maths
+* consistend sharding
+* log aggregation
+* load balancing
+* request headers
+* web workers
+* local storage
+* backend for frontend
+* How a shopping cart is maintained
