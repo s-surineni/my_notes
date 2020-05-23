@@ -54,3 +54,5 @@
 * How a shopping cart is maintained
 * concurrency
 * consistent hashing
+* nginx, wsgi, gunicorn
+* circuit breakers
