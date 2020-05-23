@@ -52,3 +52,5 @@
 * local storage
 * backend for frontend
 * How a shopping cart is maintained
+* concurrency
+* consistent hashing
