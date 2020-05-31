@@ -1,0 +1,7 @@
+* web server multiprocessing
+** realpython cache tutorial use testing utils
+** use loadtest to see how it is handling mulitple requests
+* kafka
+** check messages in different partitions
+** see messages being delivered to different consumers in a group
+** have mulitple servers in different docker images

@@ -28,3 +28,28 @@ db.fm_data.find({'node': "revenue#00Eb0000000HYcE",
                 {"field": 1,
                  "val": 1})
 #+END_SRC
+* mongo sort and limit
+** db.foo.find().sort({$natural:1}).limit(50);
+* aggregate
+#+BEGIN_SRC json
+aggr = [
+    {
+        '$match': {
+            'node': node,
+            "field": field,
+            "timestamp": {'$lte': timestamp}
+        }
+    },
+    {
+        '$sort': {
+            'timestamp': 1
+        }
+    },
+    {
+        '$limit': 1
+    }
+]
+
+results = collection.aggregate(aggr)
+
+#+END_SRC

@@ -17,6 +17,7 @@
 * jwt token authentication
 * graphql
 * docker
+* k8s
 * rpc rabbitmq
 ** celery
 ** redis
@@ -56,3 +57,12 @@
 * consistent hashing
 * nginx, wsgi, gunicorn
 * circuit breakers
+* webpack
+* event store
+** cqrs
+** immutable history for free
+* inter process communication
+* db
+** how do we keep history in database
+*** history of password
+*** history of who had the book

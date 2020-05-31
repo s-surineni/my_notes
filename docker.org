@@ -17,6 +17,8 @@
 * To commit, we need to give the command the name of the container (“cowsay”) a name for the image (“cowsayimage”) and the name of the repository to store it in (“test”):
 ** docker commit cowsay test/cowsayimage
 * docker build -t test/cowsay-dockerfile .
+* docker rm -v $(docker ps -aq -f status=exited)
+* run with --rm flag to delete container and file system after exit
 * docker run test/cowsay-dockerfile /usr/games/cowsay "Moo"
 ** starts a container, runs command and exits
 * The ENTRYPOINT instruction lets us specify an executable that is used to handle any arguments passed to docker run.
@@ -33,3 +35,5 @@
 ** docker volume rm <volume-name> : delete a volume
 * stop all running containers
 ** docker container stop $(docker container ls -aq)
+* remove all containers
+** docker rm $(docker ps -aq)

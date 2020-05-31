@@ -20,6 +20,8 @@
 ** Second they act as the unit of parallelism
 ** partition is replicated across a configurable number of servers for fault tolerance.
 ** Each partition has one server which acts as the "leader" and zero or more servers which act as "followers".
+** I think partitions have different data
+** but if there are more than one kafka server the partitions get copied to those servers
 * producers
 ** The producer is responsible for choosing which record to assign to which partition within the topic.
 * consumers

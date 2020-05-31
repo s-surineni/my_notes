@@ -8,3 +8,5 @@
 ** git clean -d -n -x # delete ignored and untracked files
 * abort git merge
 ** git merge --abort
+* pull with preference
+** git pull -s recursive -X theirs
