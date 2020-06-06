@@ -60,3 +60,4 @@ brew install pyenv
 #+END_SRC
 * install copyq
 ** add shortcut show hide main window alt + `
+* brew install ripgrep
