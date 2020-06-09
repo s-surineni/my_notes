@@ -1,7 +1,7 @@
 * delete row
 ** db.collection.remove({'object.username': "peter_parker@test.com"})
 ** db.users.remove({}) removes everyone
-* insert one row
+* insert one row, create
 ** db.collection.insertOne({'object': {'username': 'google.admin', 'uuid': 'google.admin'}})
 * update row
 ** db.user.updateOne({'object.username': 'username'}, {$set: {'_kind': "domainmodel"}})
