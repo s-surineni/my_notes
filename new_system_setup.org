@@ -1,6 +1,50 @@
 * clone my_notes
+#+BEGIN_SRC bash
+git clone git@github.com:s-surineni/my_notes.git
+#+END_SRC
+* close settings
+#+BEGIN_SRC bash
+git clone git@gitlab.com:high-on-code/settings.git
+#+END_SRC
+* install emacs
+#+BEGIN_SRC bash
+brew cask install emacs
+#+END_SRC
+** setup python env
+#+BEGIN_SRC shell
+
+#+END_SRC
 * install tmux
-* install ohmyzsh
+#+BEGIN_SRC bash
+brew install tmux
+#+END_SRC
+* add this in .tmux.conf
+#+BEGIN_SRC bash
+source-file ~/ironman/settings/tmuxconfig.sh
+#+END_SRC
+* set this in ~/.zshrc
+#+BEGIN_SRC bash
+if [ -f ~/ironman/settings/terminalconfig.sh ]; then
+	. ~/ironman/settings/terminalconfig.sh
+fi
+#+END_SRC
+* clone sample-inits repo
+#+BEGIN_SRC bash
+git clone git@gitlab.com:high-on-code/sample-inits.git
+#+END_SRC
+* install mac apps
+** karabiner
+** spectacle
+** snap
+** brew
+** vs code
+#+BEGIN_SRC bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#+END_SRC
+** install ohmyzsh
+#+BEGIN_SRC bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#+END_SRC
 * download code
 * download settings repo from gitlab
 ** git@gitlab.com:high-on-code/settings.git
@@ -10,4 +54,10 @@
 ** git@github.com:s-surineni/myemacs.git
 ** setup virtualenv for emacs
 * install oh-my-zsh
-* 
+* install pyenv
+#+BEGIN_SRC shell
+brew install pyenv
+#+END_SRC
+* install copyq
+** add shortcut show hide main window alt + `
+* brew install ripgrep
