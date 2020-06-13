@@ -51,7 +51,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ** paste load command in .zshrc
 * emacs
 ** download myemacs from github
-** git@github.com:s-surineni/myemacs.git
+** git@gitlab.com:high-on-code/myemacs.git
 ** setup virtualenv for emacs
 * install oh-my-zsh
 * install pyenv

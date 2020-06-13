@@ -1,7 +1,22 @@
+* session
+** how is user session maintained
+* redis
+*** task queue
+*** caching
+** replication
+** persitence
+** sharding
+* threading
+*** barrier
+*** lock
+*** event
+*** semaphore
+*** condition
+* graphql
 * design queue
 * sharding
 * how is firebasesdk working
-* saving all sent messages
+* saving all sent messages in a queue
 * implement LRU
 * sliding window cache policy
 * how to create AMI so that we can store secure files like firebase credentials
@@ -9,30 +24,15 @@
 * logging best practises
 * http responses
 * http
-* session
-** how is user session maintained
-* internet protocols
-* requests features
+* internet protocols tcp
+* python requests library features
 * probability theory
 * jwt token authentication
 * graphql
 * docker
 * k8s
 * rpc rabbitmq
-** celery
-** redis
-*** task queue
-*** caching
-** graphql
-** replication
-** persitence
-** sharding
-** threading
-*** barrier
-*** lock
-*** event
-*** semaphore
-*** condition
+* celery
 * how web servers handle multiple requests at once
 ** try looking into them by loggind process id, and other details
 * how to cause an exception by writing to file at once
@@ -66,3 +66,9 @@
 ** how do we keep history in database
 *** history of password
 *** history of who had the book
+* deploying a web server
+* ethical hacking
+* django
+** prefetch
+** signals
+** sendign confirmation emails
