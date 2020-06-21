@@ -73,3 +73,4 @@
 ** signals
 ** sendign confirmation emails
 * amortized
+* sharding

@@ -19,4 +19,6 @@
 ** persitence
 ** sharding
 ** docker
+* check the database design of a project
 * deploying the project
+* erichto dynamic programming playlist

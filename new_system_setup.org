@@ -61,3 +61,4 @@ brew install pyenv
 * install copyq
 ** add shortcut show hide main window alt + `
 * brew install ripgrep
+* clone wallpaper repo

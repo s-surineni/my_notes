@@ -45,6 +45,7 @@
 ** acts as a local representation of remote system
 ** control access to specific objects
 ** same interface for real and proxy classes
+** You need to support resource-hungry objects, and you do not want to instantiate such objects unless and until they are actually requested by the client.
 * facade pattern
 **  The facade design pattern provides a single simplified interface for client classes to interact with the subsystem.
 ** Keep in mind that a facade does not actually add more functionality, a facade simply acts as a point of entry into your subsystem.

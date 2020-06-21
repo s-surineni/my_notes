@@ -1,0 +1,1 @@
+* <!better> for a better way of writing code
