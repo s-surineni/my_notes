@@ -12,14 +12,15 @@
 *** event
 *** semaphore
 *** condition
-* graphql
+* how to create AMI so that we can store secure files like firebase credentials
+* celery
 * design queue
+* graphql
 * sharding
 * how is firebasesdk working
 * saving all sent messages in a queue
 * implement LRU
 * sliding window cache policy
-* how to create AMI so that we can store secure files like firebase credentials
 * amortized analysis
 * logging best practises
 * http responses
@@ -32,10 +33,11 @@
 * docker
 * k8s
 * rpc rabbitmq
-* celery
 * how web servers handle multiple requests at once
 ** try looking into them by loggind process id, and other details
 * how to cause an exception by writing to file at once
+** open file in two python interpreters at once
+** check how many open connections can you have to a file
 * asyncio
 * what does thread safety mean
 * uml
@@ -43,6 +45,7 @@
 * central authentication service
 * combinatorial mathematics
 * connection pooling
+** see the performance difference with pooling and without pooling
 * all features of redis
 * bijection maths
 * consistend sharding
