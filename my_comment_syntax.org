@@ -1,1 +1,2 @@
 * <!better> for a better way of writing code
+* <!note> things to notice

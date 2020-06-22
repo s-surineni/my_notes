@@ -37,3 +37,7 @@
 ** docker container stop $(docker container ls -aq)
 * remove all containers
 ** docker rm $(docker ps -aq)
+* docker run command overrides CMD instruction of dockerfile
+* docker port port-test gives ports used by container
+* docker stop $(docker ps -q) stop all docker containers
+* docker rm $(docker ps -aq) remove all docker containers

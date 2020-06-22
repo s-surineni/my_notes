@@ -1,0 +1,8 @@
+* recon
+** find out number of ways we can attach the target
+** methods to do recon
+*** NIST - SP 800-115
+*** PTES
+*** OSSTMM
+* tools
+** maltego

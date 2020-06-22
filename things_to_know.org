@@ -59,6 +59,10 @@
 * concurrency
 * consistent hashing
 * nginx, wsgi, gunicorn
+* nginx
+** load balancing
+* reverse proxy
+* application server, web server
 * circuit breakers
 * webpack
 * event store
@@ -77,3 +81,4 @@
 ** sendign confirmation emails
 * amortized
 * sharding
+* service discorvery
