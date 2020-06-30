@@ -1,0 +1,2 @@
+* service gunicorn stop
+* find . -iname <fname>

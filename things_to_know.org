@@ -12,6 +12,7 @@
 *** event
 *** semaphore
 *** condition
+*** queue
 * how to create AMI so that we can store secure files like firebase credentials
 * celery
 * design queue
@@ -82,3 +83,6 @@
 * amortized
 * sharding
 * service discorvery
+* mongo commands syntax
+* requests module
+** session in requests module
