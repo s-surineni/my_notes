@@ -26,7 +26,7 @@
 * logging best practises
 * http responses
 * http
-* internet protocols tcp
+* internet protocols tcp, udp, http
 * python requests library features
 * probability theory
 * jwt token authentication
@@ -86,3 +86,4 @@
 * mongo commands syntax
 * requests module
 ** session in requests module
+* socket

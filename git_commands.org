@@ -10,3 +10,7 @@
 ** git merge --abort
 * pull with preference
 ** git pull -s recursive -X theirs
+* rebase merge commits into one
+** git rebase -i HEAD~4
+** git rebase --edit-todo
+** git rebase --abort

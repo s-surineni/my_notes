@@ -1,1 +1,60 @@
 * to authenticate to aws you need to install aws cli
+* networking
+** VPC
+** Internet gateway
+** route tables
+** Network Access Control List(NACL)
+*** Its like a firewall
+** Availability zone
+*** Any resource we create must be in one of subnets
+*** A resource must be created in multiple availability zones, to have redundancy
+*** A VPC spans all availability zones
+*** Each availability zone will have a subnet
+*** Subnets don't span multiple availability zones
+* EC2
+** Elastic Compute Cloud
+** is like a desktop computer
+** instance type
+*** instance type determines hardware of host compter
+**** compute, memory, storage
+*** family, type
+* AMI
+** AMI is operating system + software + settings
+** AMI parts are root volume template, launch permissions, block device mapping
+* EBS
+** Elastic Block Store
+** volumes are attached to any EC2 instance
+** persist independently from life of instance
+** IOPS
+*** I/O operations per second
+*** larger the size more IOPS it has
+** root volume, additional EBS volume
+** ebs can be connected to ec2 in same availability zone only
+** ebs volumes can be swapped between ec2 instances
+** Snapshot
+*** Image of ebs that can be used as backup
+* Security groups
+** Similar to NACL
+** present at instance level
+** Allow/deny rules work different from NACL
+** virtual firewall for one or more instances
+** cannot create deny rules
+** contains separate rules for inbound and outbound traffic
+** these are stateful. Any traffic allowed inside is allowed to exit the security group
+** we can control the ips which connect to ec2 instance through ssh using security group
+* NACL (Network Access Control List)
+** Apply at subnet level
+* ELB (Elastic Load Balancer)
+** takes traffic coming from internet gateway and load balances between multiple ec2 instances
+* IP addressing
+** provides ec2 with public ip address
+** ec2 has both public and private addresses
+** private address allows instance to communicate within same VPC
+** if we use non default VPC and subnet any new ec2 won't have a public IP address
+** traffic flow
+*** ec2 -> ip address -> security group -> NACL -> route table -> internet gateway -> internet
+* Launching and ec2 instance
+** generate key pair
+** eth0 is private ip address
+** if there is traffic issue check in NACL
+** if it is allowing the right traffic or not
