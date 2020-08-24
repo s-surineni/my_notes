@@ -1,16 +1,33 @@
 * to authenticate to aws you need to install aws cli
 * networking
 ** VPC
+*** Logically isolated section of AWS
 ** Internet gateway
+*** Like a modem on home network
+*** provides vpc, connection to internet
+*** Internet gateway can be detached for AWS
 ** route tables
+*** contains set of rules that determine where network traffic is directed
+*** rules look at destination and determine where the traffic is directed
 ** Network Access Control List(NACL)
 *** Its like a firewall
+*** optional layer of security
+*** controls traffic in and out of one or more subnets
+*** these are stateless
+**** must specify different rules for inbound and outbound traffic
+*** rules are processed in an order
+** subnet
+*** subsection of a network
+*** subnet resides in on availability zone
+*** you can create one or more subnets in an availability zone
 ** Availability zone
 *** Any resource we create must be in one of subnets
 *** A resource must be created in multiple availability zones, to have redundancy
 *** A VPC spans all availability zones
 *** Each availability zone will have a subnet
 *** Subnets don't span multiple availability zones
+*** we create our resources inside subnets
+*** private subnets won't have connection to internet gateway
 * EC2
 ** Elastic Compute Cloud
 ** is like a desktop computer
@@ -58,3 +75,30 @@
 ** eth0 is private ip address
 ** if there is traffic issue check in NACL
 ** if it is allowing the right traffic or not
+* s3
+** simple storage service
+** root level folders are called buckets
+** All bucket names must be unique
+** storage class
+*** storage cost
+*** object availability
+*** object durability
+*** frequency of access
+** object lifecycle
+*** rules that govern moving of objects between different storage classes or deletion
+** object versioning
+* Databases
+** RDS will be in private subnets
+** RDS is relational database
+*** Amazon Aurora
+*** MySql
+*** Maria
+*** Postgres
+*** Oracle
+*** Microsoft SQL server
+** AWS manager underlying database
+** Dynamo is non relational database
+** RDS database will be present in private subnet
+*** this will be connected to route tables that cannot connect to public network
+** SSH tunneling
+***
