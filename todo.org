@@ -1,5 +1,2 @@
-* check source code
-** company mode
-* contribute
-** linux
-*** geary
+* upload it return
+* interview on wednesday

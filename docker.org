@@ -41,3 +41,5 @@
 * docker port port-test gives ports used by container
 * docker stop $(docker ps -q) stop all docker containers
 * docker rm $(docker ps -aq) remove all docker containers
+*  docker exec -it mesql mysql -p
+** connecting to mysql continer by name mesql

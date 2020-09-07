@@ -1,0 +1,17 @@
+* distinct values
+** Select distinct DEPARTMENT from Worker;
+* order values by column
+** Select * from Worker order by FIRST_NAME asc;
+* order by multiple columns
+** Select * from Worker order by FIRST_NAME asc,DEPARTMENT desc;
+* filter values
+** Select * from Worker where FIRST_NAME in ('Vipul','Satish');
+* select values within ranges
+** Select * from Worker where SALARY between 100000 and 500000;
+** Select * from Worker where year(JOINING_DATE) = 2014 and month(JOINING_DATE) = 2;
+* get count of rows
+** SELECT COUNT(*) FROM worker WHERE DEPARTMENT = 'Admin';
+* get number of employees in each department
+** SELECT DEPARTMENT, count(WORKER_ID) No_Of_Workers FROM Worker GROUP BY DEPARTMENT ORDER BY No_Of_Workers DESC;
+* Join two tables on a column
+** SELECT DISTINCT W.FIRST_NAME, T.WORKER_TITLE FROM Worker W INNER JOIN Title T ON W.WORKER_ID = T.WORKER_REF_ID AND T.WORKER_TITLE in ('Manager');

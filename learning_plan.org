@@ -22,3 +22,7 @@
 * check the database design of a project
 * erichto dynamic programming playlist
 * deploying the project
+* service discovery
+* heart beat maintanance
+* thrift facebook
+* message queues have inbuilt functionality of retrying to send message

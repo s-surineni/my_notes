@@ -102,3 +102,9 @@
 *** this will be connected to route tables that cannot connect to public network
 ** SSH tunneling
 ***
+* elastic load balancer
+** distributes traffic between ec2 instances
+** elasticity means ability to scale up or down
+** can detect unhealthy instances and direct traffic only to healthy instances
+** end user will have the address of ELB
+** instances have to be in different availability zones
