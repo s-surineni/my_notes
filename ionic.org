@@ -1,0 +1,2 @@
+* Run android app on virtual device emulator
+** ionic cordova emulate android
