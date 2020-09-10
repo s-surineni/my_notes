@@ -26,3 +26,4 @@
 * heart beat maintanance
 * thrift facebook
 * message queues have inbuilt functionality of retrying to send message
+* learn sql queries
