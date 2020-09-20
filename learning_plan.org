@@ -27,3 +27,4 @@
 * thrift facebook
 * message queues have inbuilt functionality of retrying to send message
 * learn sql queries
+* see how is search is implemented in django admin

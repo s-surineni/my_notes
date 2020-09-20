@@ -86,4 +86,5 @@
 * mongo commands syntax
 * requests module
 ** session in requests module
+** service discorvery
 * socket
