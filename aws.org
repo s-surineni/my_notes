@@ -108,3 +108,31 @@
 ** can detect unhealthy instances and direct traffic only to healthy instances
 ** end user will have the address of ELB
 ** instances have to be in different availability zones
+* autoscaling
+** audioscaling scales in and out not up and down.
+** in and out is adding more instances up and down is increasing resources in single device
+** launch configuration
+*** you need to specify
+*** AMI
+** Auto scaling group
+* Route 53
+** where you configure and manage web domains for applications you develop on aws
+** domain registration
+** DNS service
+** health checks
+** record set
+* cloudfront
+* aws service that replicates data, video and applications across globe to reduce latency
+* IAM
+** identity and access management
+** control access to AWS resources
+** users, groups, access policies, roles
+** except root account any new account created will have 0 access
+** do not use root account for day to day activities in aws
+** there are tow access types
+*** programmatic access through secret key and password
+*** ui through management console
+** there will be existing access policies we can assign while creating a user
+** iam users get different login link to sign in
+** iam roles
+** roles give aws permissions to other aws resources like s3 access to aws
