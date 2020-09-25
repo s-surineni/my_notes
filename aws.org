@@ -1,33 +1,52 @@
 * to authenticate to aws you need to install aws cli
-* networking
+* global infrastructure
+** regions
+*** geographical locations where aws resources are deployed
+*** ex, america, australia, india etc.,
+** availability zones
+*** a region contains multiple availability zones
+*** they are geographically separated from each other
+*** provide redundancy in case of fire, flood etc.,
+** data center
+*** physical machinery that run aws services
 ** VPC
 *** Logically isolated section of AWS
+*** you have full control who have access to this VPC
+*** logically isolated section of aws
+** AWS traffic path
+*** ec2 -> NACL -> route table -> internet gateway
 ** Internet gateway
 *** Like a modem on home network
 *** provides vpc, connection to internet
 *** Internet gateway can be detached for AWS
+*** vpc can be attached to only one internet gateway at a time
 ** route tables
 *** contains set of rules that determine where network traffic is directed
 *** rules look at destination and determine where the traffic is directed
+*** sampales
+**** 173.0.0.0/16 local
+**** 0.0.0.0/0 IGW
 ** Network Access Control List(NACL)
 *** Its like a firewall
 *** optional layer of security
 *** controls traffic in and out of one or more subnets
 *** these are stateless
 **** must specify different rules for inbound and outbound traffic
-*** rules are processed in an order
+*** rules are processed in an order based on rule number
 ** subnet
 *** subsection of a network
-*** subnet resides in on availability zone
+*** a subnet is created for each availability zone
+*** subnet resides in one availability zone
 *** you can create one or more subnets in an availability zone
 ** Availability zone
+*** A VPC spans all availability zones in a region
 *** Any resource we create must be in one of subnets
 *** A resource must be created in multiple availability zones, to have redundancy
-*** A VPC spans all availability zones
-*** Each availability zone will have a subnet
+*** Each availability zone will have a different subnet
 *** Subnets don't span multiple availability zones
 *** we create our resources inside subnets
 *** private subnets won't have connection to internet gateway
+* networking
 * EC2
 ** Elastic Compute Cloud
 ** is like a desktop computer
