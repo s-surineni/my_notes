@@ -161,3 +161,7 @@
 ** iam users get different login link to sign in
 ** iam roles
 ** roles give aws permissions to other aws resources like s3 access to aws
+* Lambda
+** serverless computing
+** run code without provisioning or managing servers
+** executes code only when needed and scales automaticallly
