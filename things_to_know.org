@@ -92,3 +92,4 @@
 * how do you avoid eager loading in django
 * find employees that doesnt belong to any project
 * database joins
+* find all comments which do not have replies

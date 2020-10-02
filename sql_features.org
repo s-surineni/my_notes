@@ -54,3 +54,7 @@ ORDER BY salary
 * correlated subquery
 * LIMIT
 ** Limit returns specified number of rows from an offset
+* inner join
+#+begin_src sql
+select title , name from film inner join language on film.language_id = language.language_id;
+#+end_src
