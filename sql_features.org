@@ -22,6 +22,27 @@
 ** SELECT * FROM Worker ORDER BY Salary DESC LIMIT 10;
 * get 5 th largest salary
 ** SELECT Salary FROM Worker ORDER BY Salary DESC LIMIT 4,1;
+#+begin_src sql
+SELECT TOP 1 salary FROM ( SELECT DISTINCT TOP N salary FROM #Employee ORDER BY salary DESC ) AS temp ORDER BY salary
+#+end_src
+#+begin_src sql
+SELECT *
+FROM Employee Emp1
+WHERE (N-1) = (
+               SELECT COUNT(DISTINCT(Emp2.Salary))
+               FROM Employee Emp2
+               WHERE Emp2.Salary > Emp1.Salary
+               )
+#+end_src
+#+begin_src sql
+SELECT TOP 1 salary
+FROM (
+      SELECT DISTINCT TOP n salary
+      FROM employee
+      ORDER BY salary DESC
+      ) a
+ORDER BY salary
+#+end_src
 * Get name and max salary of employee using subquery
 ** select FIRST_NAME from Worker where SALARY = (select MAX(SALARY) from Worker);
 * Get name and second max salary using subquery
@@ -31,3 +52,5 @@
 * get data from two tables with subquery, print workers who are managers
 ** select FIRST_NAME from Worker where WORKER_ID in (select WORKER_REF_ID from Title where WORKER_TITLE = 'Manager');
 * correlated subquery
+* LIMIT
+** Limit returns specified number of rows from an offset
