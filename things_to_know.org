@@ -88,3 +88,7 @@
 ** session in requests module
 ** service discorvery
 * socket
+* desgin message queue
+* how do you avoid eager loading in django
+* find employees that doesnt belong to any project
+* database joins
