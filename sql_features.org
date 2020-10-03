@@ -58,3 +58,12 @@ ORDER BY salary
 #+begin_src sql
 select title , name from film inner join language on film.language_id = language.language_id;
 #+end_src
+* right outer join
+#+begin_src sql
+select e.name, d.name from employee e right join department d on e.dept_id = d.dept_id;
+#+end_src
+* select departments which doesnt have employees
+#+begin_src sql
+select d.name from department d where not exists (select * from employee e where d.dept_id = e.dept_id);
+select e.name, d.name from employee e right join department d on e.dept_id = d.dept_id where  e.name is NULL;
+#+end_src
