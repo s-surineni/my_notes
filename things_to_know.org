@@ -93,3 +93,14 @@
 * find employees that doesnt belong to any project
 * database joins
 * find all comments which do not have replies
+* push messages
+* kafka
+* signals in django
+* what can we do with manage.py
+* when do you use node, django spring
+* advantages of dependency injection
+* difference between stack and class methods
+* can redis store data on disk
+* distribute tansaction
+* how django signals are implemented
+* how completion works in emacs
