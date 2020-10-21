@@ -22,12 +22,18 @@
 ** Each partition has one server which acts as the "leader" and zero or more servers which act as "followers".
 ** I think partitions have different data
 ** but if there are more than one kafka server the partitions get copied to those servers
+** if you have more consumers than partitions some of the consumers will be “starved” and not receive any messages
+** consumers don’t share partitions (unless they are in different consumer groups).
+** Partitions are spread across the nodes in a Kafka cluster.
+** Message ordering in Kafka is per partition only.
+** If you are using an (optional) message key (required for event ordering within partitions, otherwise events are round-robin load balanced across the partitions – and therefore not ordered), then you need to ensure you have many more distinct keys (> 20 is a good start) than partitions otherwise partitions may get unbalanced, and in some cases may not even have any messages (due to hash collisions).
 * producers
 ** The producer is responsible for choosing which record to assign to which partition within the topic.
 * consumers
 ** Consumers label themselves with a consumer group name
-** each record published to a topic is delivered to one consumer instance within each subscribing consumer group. 
+** each record published to a topic is delivered to one consumer instance within each subscribing consumer group.
 ** If all the consumer instances have the same consumer group, then the records will effectively be load balanced over the consumer instances.
 ** If all the consumer instances have different consumer groups, then each record will be broadcast to all the consumer processes
 ** The way consumption is implemented in Kafka is by dividing up the partitions in the log over the consumer instances so that each instance is the exclusive consumer of a "fair share" of partitions at any point in time
 ** Kafka only provides a total order over records within a partition, not between different partitions in a topic
+** each consumer within the group reads from a unique partition and the group as a whole consumes all messages from the entire topic.

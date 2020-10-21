@@ -95,6 +95,8 @@
 * find all comments which do not have replies
 * push messages
 * kafka
+** how one event is processed only once by consumer group
+** how the order is maintained
 * signals in django
 * what can we do with manage.py
 * when do you use node, django spring
@@ -104,3 +106,5 @@
 * distribute tansaction
 * how django signals are implemented
 * how completion works in emacs
+* what are message brokers?
+** are they just storage for events?
