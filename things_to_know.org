@@ -109,3 +109,9 @@
 * what are message brokers?
 ** are they just storage for events?
 * oauth
+* see how is search is implemented in django admin
+* message queues have inbuilt functionality of retrying to send message
+* thrift facebook
+* heart beat maintanance
+* deploying the project
+* service discovery

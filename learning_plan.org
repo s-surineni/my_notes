@@ -1,12 +1,4 @@
 * cormen 1 algo
-* try a tutorial
-* leet 4 easy
-* online course
-* leet 2 medium
-* open source contribution
-* leet 1 hard
-* new things like memcached
-* currently asked question
 * tutorials
 ** celery
 *** how can we send it to specific queue
@@ -19,12 +11,14 @@
 ** persitence
 ** sharding
 ** docker
+* leet 4 easy
+* online course
+* leet 2 medium
+* open source contribution
+* leet 1 hard
+* new things like memcached
+* currently asked question
 * check the database design of a project
-* erichto dynamic programming playlist
-* deploying the project
-* service discovery
-* heart beat maintanance
-* thrift facebook
-* message queues have inbuilt functionality of retrying to send message
+** erichto dynamic programming playlist
 * learn sql queries
-* see how is search is implemented in django admin
+* check system design video
