@@ -108,3 +108,4 @@
 * how completion works in emacs
 * what are message brokers?
 ** are they just storage for events?
+* oauth
