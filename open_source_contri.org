@@ -33,3 +33,6 @@
 ** Boostnote
 ** cachetools
 * pgcli
+* django
+** django_quiz
+** Stars 936 dj-stripe
