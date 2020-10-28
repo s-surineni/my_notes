@@ -79,7 +79,7 @@
 * django
 ** prefetch
 ** signals
-** sendign confirmation emails
+** sending confirmation emails
 * amortized
 * sharding
 * service discorvery
