@@ -32,6 +32,7 @@
 ** projectile
 ** Boostnote
 ** cachetools
+*** 573b318
 * pgcli
 * django
 ** django_quiz

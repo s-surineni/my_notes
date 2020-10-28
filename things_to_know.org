@@ -22,6 +22,7 @@
 * saving all sent messages in a queue
 * implement LRU
 * sliding window cache policy
+* caching
 * amortized analysis
 * logging best practises
 * http responses
@@ -60,7 +61,6 @@
 * concurrency
 * consistent hashing
 * nginx, wsgi, gunicorn
-* nginx
 ** load balancing
 * reverse proxy
 * application server, web server
@@ -115,3 +115,4 @@
 * heart beat maintanance
 * deploying the project
 * service discovery
+* see how django creates processes threads by looging process id and thread id

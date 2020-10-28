@@ -11,6 +11,7 @@
 ** persitence
 ** sharding
 ** docker
+** nginx, wsgi, gunicorn
 * leet 4 easy
 * online course
 * leet 2 medium
@@ -19,6 +20,6 @@
 * new things like memcached
 * currently asked question
 * check the database design of a project
-** erichto dynamic programming playlist
+* erichto dynamic programming playlist
 * learn sql queries
 * check system design video
