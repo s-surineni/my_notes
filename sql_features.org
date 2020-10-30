@@ -15,13 +15,20 @@
 ** SELECT DEPARTMENT, count(WORKER_ID) No_Of_Workers FROM Worker GROUP BY DEPARTMENT ORDER BY No_Of_Workers DESC;
 * Join two tables on a column, print workers who are managers
 ** SELECT DISTINCT W.FIRST_NAME, T.WORKER_TITLE FROM Worker W INNER JOIN Title T ON W.WORKER_ID = T.WORKER_REF_ID AND T.WORKER_TITLE in ('Manager');
+#+begin_src sql
+select first_name, worker_title from worker w inner join title t on worker_id = worker_ref_id where t.worker_title = 'Manager';
+#+end_src
 ** select * from Worker INNER JOIN Title ON Worker.WORKER_ID = Title.WORKER_REF_ID and Title.WORKER_TITLE in ('Manager');
 * Find all rows having same values across multiple columns
 ** SELECT WORKER_TITLE, AFFECTED_FROM, COUNT(*) FROM Title GROUP BY WORKER_TITLE, AFFECTED_FROM HAVING COUNT(*) > 1;
 * Return n number of rows having largest values
-** SELECT * FROM Worker ORDER BY Salary DESC LIMIT 10;
+#+begin_src sql
+SELECT * FROM Worker ORDER BY Salary DESC LIMIT 10;
+#+end_src
 * get 5 th largest salary
-** SELECT Salary FROM Worker ORDER BY Salary DESC LIMIT 4,1;
+#+begin_src sql
+SELECT Salary FROM Worker ORDER BY Salary DESC LIMIT 4,1;
+#+end_src
 #+begin_src sql
 SELECT TOP 1 salary FROM ( SELECT DISTINCT TOP N salary FROM #Employee ORDER BY salary DESC ) AS temp ORDER BY salary
 #+end_src
@@ -44,13 +51,22 @@ FROM (
 ORDER BY salary
 #+end_src
 * Get name and max salary of employee using subquery
-** select FIRST_NAME from Worker where SALARY = (select MAX(SALARY) from Worker);
+#+begin_src sql
+select FIRST_NAME from Worker where SALARY = (select MAX(SALARY) from Worker);
+#+end_src
 * Get name and second max salary using subquery
-** select FIRST_NAME, SALARY from Worker where SALARY = (select max(SALARY) from Worker where SALARY <> (select max(SALARY) from Worker));
+#+begin_src sql
+select FIRST_NAME, SALARY from Worker where SALARY = (select max(SALARY) from Worker where SALARY <> (select max(SALARY) from Worker));
+#+end_src
 * get max salary of employee in every department
 * Aggregate functions
 * get data from two tables with subquery, print workers who are managers
-** select FIRST_NAME from Worker where WORKER_ID in (select WORKER_REF_ID from Title where WORKER_TITLE = 'Manager');
+#+begin_src
+select FIRST_NAME from Worker where WORKER_ID
+in (select WORKER_REF_ID from Title where WORKER_TITLE = 'Manager');
+select first_name, last_name from employee where id
+ in (select employee_id from department_manager);
+#+end_src
 * correlated subquery
 * LIMIT
 ** Limit returns specified number of rows from an offset
@@ -67,3 +83,4 @@ select e.name, d.name from employee e right join department d on e.dept_id = d.d
 select d.name from department d where not exists (select * from employee e where d.dept_id = e.dept_id);
 select e.name, d.name from employee e right join department d on e.dept_id = d.dept_id where  e.name is NULL;
 #+end_src
+* cant combine distinct with other columns

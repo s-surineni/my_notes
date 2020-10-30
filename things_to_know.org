@@ -116,3 +116,9 @@
 * deploying the project
 * service discovery
 * see how django creates processes threads by looging process id and thread id
+* distributed transaction
+* how to handle multiple transactions by multiple clients at once
+* certificate based authentication
+* inner query
+*  outer join
+*
