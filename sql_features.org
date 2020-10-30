@@ -59,6 +59,19 @@ select FIRST_NAME from Worker where SALARY = (select MAX(SALARY) from Worker);
 select FIRST_NAME, SALARY from Worker where SALARY = (select max(SALARY) from Worker where SALARY <> (select max(SALARY) from Worker));
 #+end_src
 * get max salary of employee in every department
+#+begin_src sql
+SELECT DeptID, MAX(Salary)
+ FROM EmpDetails
+GROUP BY DeptID
+
+SELECT DepatID, a , b, c
+ FROM EmpDetails
+ WHERE Salary IN (
+    SELECT max(Salary)
+      FROM EmpDetails
+     GROUP BY DeptID
+ );
+#+end_src
 * Aggregate functions
 * get data from two tables with subquery, print workers who are managers
 #+begin_src
