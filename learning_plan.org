@@ -23,3 +23,4 @@
 * erichto dynamic programming playlist
 * learn sql queries
 * check system design video
+* ethical hacking
