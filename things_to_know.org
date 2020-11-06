@@ -118,7 +118,28 @@
 * see how django creates processes threads by looging process id and thread id
 * distributed transaction
 * how to handle multiple transactions by multiple clients at once
+** mutex lock
 * certificate based authentication
 * inner query
 *  outer join
-*
+* point to point, request / reply, and publish/subscribe messaging, messaging and SOA systems, streaming
+* scalability
+* reliability
+* stack memory
+* heap memory
+* how do you shard based on location
+* how do you implement timer in the server
+* how does dependency injection work in spring boot
+* geo hashing
+* side car
+* blocking queue
+* race condition
+* table structure
+** will you using id in same table
+** will you use another table to store related ids
+* how do you manage multiple parallel transactions
+* temportal database for paginitaion
+* how can you send 1000000 messages at once
+* database indexing
+* how can we stop workers/messages queues from duplicate work
+* design and implment a queue

@@ -20,7 +20,7 @@
 * new things like memcached
 * currently asked question
 * check the database design of a project
-* erichto dynamic programming playlist
+* solve a dynamic programming problem
 * learn sql queries
 * check system design video
 * ethical hacking
