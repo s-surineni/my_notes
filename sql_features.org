@@ -14,11 +14,21 @@
 * get number of employees in each department
 ** SELECT DEPARTMENT, count(WORKER_ID) No_Of_Workers FROM Worker GROUP BY DEPARTMENT ORDER BY No_Of_Workers DESC;
 * Join two tables on a column, print workers who are managers
-** SELECT DISTINCT W.FIRST_NAME, T.WORKER_TITLE FROM Worker W INNER JOIN Title T ON W.WORKER_ID = T.WORKER_REF_ID AND T.WORKER_TITLE in ('Manager');
 #+begin_src sql
-select first_name, worker_title from worker w inner join title t on worker_id = worker_ref_id where t.worker_title = 'Manager';
+SELECT DISTINCT W.FIRST_NAME, T.WORKER_TITLE FROM Worker W INNER JOIN Title T ON
+ W.WORKER_ID = T.WORKER_REF_ID AND T.WORKER_TITLE in ('Manager');
+
 #+end_src
-** select * from Worker INNER JOIN Title ON Worker.WORKER_ID = Title.WORKER_REF_ID and Title.WORKER_TITLE in ('Manager');
+#+begin_src sql
+select first_name, worker_title from worker w inner join
+ title t on worker_id = worker_ref_id where t.worker_title = 'Manager';
+#+end_src
+* Write a query to find those customers with their name and those salesmen with their name and city who lives in the same city.
+#+begin_src sql
+select c.cust_name, s.name, c.city from customer c inner join salesman s
+ on c.salesman_id = s.salesman_id where c.city = s.city;
+
+#+end_src
 * Find all rows having same values across multiple columns
 ** SELECT WORKER_TITLE, AFFECTED_FROM, COUNT(*) FROM Title GROUP BY WORKER_TITLE, AFFECTED_FROM HAVING COUNT(*) > 1;
 * Return n number of rows having largest values
@@ -64,13 +74,9 @@ SELECT DeptID, MAX(Salary)
  FROM EmpDetails
 GROUP BY DeptID
 
-SELECT DepatID, a , b, c
- FROM EmpDetails
- WHERE Salary IN (
-    SELECT max(Salary)
-      FROM EmpDetails
-     GROUP BY DeptID
- );
+select emp_name, job_name, dep_id, salary
+ from employees where (dep_id, salary)
+ in (select dep_id, max(salary) from employees group by dep_id);
 #+end_src
 * Aggregate functions
 * get data from two tables with subquery, print workers who are managers
