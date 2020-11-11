@@ -1,17 +1,5 @@
 * cormen 1 algo
 * tutorials
-** celery
-*** how can we send it to specific queue
-*** Applying the task directly will execute the task in the current process
-** redis
-*** task queue
-*** caching
-** graphql
-** replication
-** persitence
-** sharding
-** docker
-** nginx, wsgi, gunicorn
 * leet 4 easy
 * online course
 * leet 2 medium
@@ -24,3 +12,5 @@
 * learn sql queries
 * check system design video
 * ethical hacking
+* build some components
+** think how will you implment things better

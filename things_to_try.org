@@ -1,0 +1,15 @@
+** celery
+*** how can we send it to specific queue
+*** Applying the task directly will execute the task in the current process
+** redis
+*** task queue
+*** caching
+** graphql
+** replication
+** persitence
+** sharding
+** docker
+** nginx, wsgi, gunicorn
+** jwt authentication
+** security
+** play with internals of redis queue

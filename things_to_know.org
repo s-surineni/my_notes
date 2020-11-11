@@ -143,3 +143,6 @@
 * database indexing
 * how can we stop workers/messages queues from duplicate work
 * design and implment a queue
+* cdn
+* zookeeper
+* hash functions
