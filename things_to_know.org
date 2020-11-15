@@ -125,6 +125,7 @@
 * point to point, request / reply, and publish/subscribe messaging, messaging and SOA systems, streaming
 * scalability
 * reliability
+* security
 * stack memory
 * heap memory
 * how do you shard based on location

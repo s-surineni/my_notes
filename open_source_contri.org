@@ -11,6 +11,7 @@
 *** google python clients
 *** boto3
 *** httpie
+*** https://github.com/SimpleJWT
 *** requests
 **** how it manages
 ***** retries

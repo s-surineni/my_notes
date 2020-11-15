@@ -1,4 +1,4 @@
-** celery
+** celery beat
 *** how can we send it to specific queue
 *** Applying the task directly will execute the task in the current process
 ** redis
@@ -13,3 +13,6 @@
 ** jwt authentication
 ** security
 ** play with internals of redis queue
+* inactive logout
+* session timeout
+* blocking tickets until purchased
