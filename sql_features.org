@@ -80,7 +80,7 @@ select emp_name, job_name, dep_id, salary
 #+end_src
 * Aggregate functions
 * get data from two tables with subquery, print workers who are managers
-#+begin_src
+#+begin_src sql
 select FIRST_NAME from Worker where WORKER_ID
 in (select WORKER_REF_ID from Title where WORKER_TITLE = 'Manager');
 select first_name, last_name from employee where id

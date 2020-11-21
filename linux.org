@@ -1,2 +1,7 @@
 * service gunicorn stop
 * find . -iname <fname>
+* directories occupying space
+#+begin_src bash
+du -a /home | sort -n -r | head -n 5
+du -h --max-depth=1
+#+end_src

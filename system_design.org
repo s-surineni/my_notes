@@ -1,0 +1,5 @@
+* how will you make a task after certain time
+** like blocking ticket, giving time to undo within 60 sec
+** schedule a job to be run after specified amount of time
+** adding key in redis with TTl about blocked ticket
+** a daemon running in specified intervals which checks tasks to be completed
