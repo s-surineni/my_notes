@@ -15,3 +15,5 @@
 * build some components
 ** think how will you implment things better
 ** sign up
+** shopping cart
+** backend timer to lock seats

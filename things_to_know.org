@@ -1,7 +1,9 @@
+* how to write singleton which is thread safe
 * session
 ** how is user session maintained
 * how are multiple requests handled by spring django
 ** build loggers to see if new api is being handled by new process or thread and make video about it
+* session persitence
 * redis
 *** task queue
 *** caching
