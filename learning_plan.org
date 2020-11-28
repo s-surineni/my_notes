@@ -17,3 +17,4 @@
 ** sign up
 ** shopping cart
 ** backend timer to lock seats
+* read tech mail
