@@ -103,3 +103,10 @@ select d.name from department d where not exists (select * from employee e where
 select e.name, d.name from employee e right join department d on e.dept_id = d.dept_id where  e.name is NULL;
 #+end_src
 * cant combine distinct with other columns
+* get last completed class, name, teacher name of list of students
+#+begin_src sql
+select s.name, c.end_time, c.status, c.name from student s
+inner join attended a on s.id = a.student_id
+inner join classs c on a.classs_id = c.id
+where c.end_time = (select max(c.end_time) from classs c where c.status = 'Completed');
+#+end_src

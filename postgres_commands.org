@@ -61,3 +61,7 @@ DISTINCT column_1
 FROM
 table_name;
 #+END_SRC
+* delete table
+#+begin_src sql
+drop table <table_name>
+#+end_src
