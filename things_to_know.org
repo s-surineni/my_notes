@@ -152,3 +152,4 @@
 * zookeeper
 * hash functions
 * fast api
+* worker queue with kafka or rabbitmq

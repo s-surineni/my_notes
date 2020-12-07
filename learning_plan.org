@@ -11,7 +11,7 @@
 * solve a dynamic programming problem
 * learn sql queries
 * check system design video
-* ethical hacking
+* make projects
 * build some components
 ** think how will you implment things better
 ** sign up
