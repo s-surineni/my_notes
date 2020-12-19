@@ -1,3 +1,10 @@
+* aggregation and compensation
+* difference between soap and rest
+* up sert in mongo
+* composite index
+* where all session data can be stored
+* cookies
+* in dp when are the stored suproblems are being used. Especially in path finding ones
 * how to write singleton which is thread safe
 * session
 ** how is user session maintained

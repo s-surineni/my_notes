@@ -29,6 +29,10 @@
 * Source explore
 ** lru-expiring-cache
 ** thefuck
+*** 71f1f42
+#+begin_src bash
+docker run -it --rm --name thefuck -v "$PWD":/usr/src/myapp -w /usr/src/myapp tempenv bash
+#+end_src
 ** spaceship-prompt
 ** helm
 ** projectile
