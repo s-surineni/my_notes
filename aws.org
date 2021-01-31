@@ -165,3 +165,6 @@
 ** serverless computing
 ** run code without provisioning or managing servers
 ** executes code only when needed and scales automaticallly
+* reliability is the ability of an application to avoid and recover from failures
+* elb - elastic load balancer
+* hard dependency

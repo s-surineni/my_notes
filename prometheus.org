@@ -1,0 +1,17 @@
+* monitoring tool
+* will run one instance in each environment
+* Components
+** scheduler
+** time series database
+** alerting system
+* uses pull model
+* metrics
+** cpu
+** memory
+** disk
+** http requests
+* why prometheus
+** the way it fetches metrics
+** we run exporter
+** its a server with many exporters and it is lightweight
+* system needs to run exporter

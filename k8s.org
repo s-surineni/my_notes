@@ -1,0 +1,26 @@
+* opensource system for automating deployment, scaling and management of containerized applications
+* k8s features
+** service discovery/ load balancing
+** storage orchestration
+** automate rollout/rollback
+** self healing
+** secret and configuration management
+** horizontal scaling
+* k8s provides a declarative way to define cluster state
+* k8s have master node and worker nodes forming a cluster
+* container benefits
+** faster on boarding of new developers
+** can run multiple versions of same app in containers
+** environment consistency between prod and dev
+* k8s benefits
+** orchestrate containers
+** zero downtime deployment
+** scaling containers
+** createing end to end testing
+** ensure application scales properly(if it is truly stateless)
+* kubectl talks to api in master node
+* that would cause control manager and scheduler to perform some actions
+* kubectl commands
+** kubectl cluster-info
+** kubectl get all
+* buy default pods have cluster ip

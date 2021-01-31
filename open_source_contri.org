@@ -39,6 +39,7 @@ docker run -it --rm --name thefuck -v "$PWD":/usr/src/myapp -w /usr/src/myapp te
 ** Boostnote
 ** cachetools
 *** 4953b0be1
+** selectrum
 * pgcli
 * django
 ** django_quiz

@@ -1,0 +1,37 @@
+* infrastructure as code
+* declarative
+* helps manage configuration of servers
+* why configuration management
+** deploying server with consistent configuration
+** remediating configuration drift
+** deploying application to clients in predictable and reliable manner
+** everything should be automated
+* scripts for infrastructure automation is not advisable
+** because they are procedural and we have to manage everything ourselves
+** not portable(bash, package manager)
+* puppet has clent server architecture
+* idempotency
+* tools used
+** ip
+** ip addr show
+** nmcli
+** sudo nmcli connection modify example ipv4.gateway "192.0.2.1"
+** ip r s shows default gateway
+** hostnamectl changes hostname
+** puppet agent -t # to see error with puppet agent
+** firewall-cmd --add-port=8140/tcp --perm
+** signed certificate with
+#+begin_src shell
+puppetserver ca sign --certname agent.globmantics.loc
+#+end_src
+** hostnamectl set-hostname puppet.globmantics.loc
+** postgresql-setup initdb
+** sudo -iu postgres
+** createuser -P pasture
+** createdb -E utf8 -O pasture pasturedb
+** echo "listen_addresses = '*'" >> /var/lib/pgsql/data/postgresql.conf
+** echo "host  pasturedb  pasture  192.168.240.128/24  md5" >> /var/lib/pgsql/data/pg_hba.conf
+** firewall-cmd --add-port=5432/tcp
+** firewall-cmd --add-port=5432/tcp --perm
+* resource
+** resource are fundamental building blocks in puppet

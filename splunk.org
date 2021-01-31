@@ -1,0 +1,33 @@
+* operational intelligence
+* alerts
+* functions of splunk
+** indexing data
+*** inspectors
+**** label data with source type
+**** break data into single events
+**** timestamps are identified and normalized
+*** user can add knowledge objects
+** monitor infrastructure
+** create alerts
+** collect reports and visualizations
+* Components
+** indexer
+** serach head
+*** users splunk serach language
+** forwarder
+*** reside on machines where data originates
+* apps are preconfigured environments, extending prebuilt knowledge and capabilities
+* index are the directories where data will be stored
+** you can limit data splunk searches by using index type
+* searching and reporting
+** you can create knowledge objects
+** you can create reports
+** dashboards
+** contains 7 main components
+** what to search gives summary of data
+** source type is classification of data
+** save as saves results to knowledge objects
+** logical operators are AND, OR, NOT
+*** no boolean means AND
+*** priority is NOT, OR AND
+** quotes means exact phrase
