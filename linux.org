@@ -5,3 +5,20 @@
 du -a /home | sort -n -r | head -n 5
 du -h --max-depth=1
 #+end_src
+* grep all files only in current directory
+#+begin_src bash
+grep "string" * .*
+#+end_src
+* might help with config
+#+begin_src bash
+export P4CLIENT=ssurineni-ltm-blt-2
+bootstrap bundle:core-app
+above two should be done together
+corecli core:config
+
+#+end_src
+**  I just did "bootstrap bundle:core-app" and open a new window. it resolved my issue.
+** bootstrap bundle:perforce -f
+It should prompt for your p4 settings and save them where they need to go.
+bootstrap bundle:core-app
+*** this worked

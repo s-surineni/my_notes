@@ -35,3 +35,14 @@ puppetserver ca sign --certname agent.globmantics.loc
 ** firewall-cmd --add-port=5432/tcp --perm
 * resource
 ** resource are fundamental building blocks in puppet
+* puppet config print modulepath
+* systemctl enable --now ntpd puppet
+* bolt command run 'puppet agent -t' --targets 10.10.10.112
+* puppetserver ca sign --certname pasture.globomantics.loc
+* ssh-copy-id
+*  bold command run 'curl localhost/api/v1/cowsay' -- targets
+* puppet module list
+* puppet module install name
+* troubleshooting
+** if puppet apply -t fails from master try it on agent
+* bolt command run "curl -X POST 'localhost/api/v1/cowsay/sayings?message=Welcome_To_Automation'" --targets 192.168.240.138

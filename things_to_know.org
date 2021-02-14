@@ -160,3 +160,4 @@
 * hash functions
 * fast api
 * worker queue with kafka or rabbitmq
+* how does ip change everytime computer starts

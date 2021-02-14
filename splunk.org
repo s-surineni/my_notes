@@ -27,7 +27,103 @@
 ** what to search gives summary of data
 ** source type is classification of data
 ** save as saves results to knowledge objects
+* operator
+** IN (for array)
 ** logical operators are AND, OR, NOT
 *** no boolean means AND
 *** priority is NOT, OR AND
 ** quotes means exact phrase
+* can limit results by fields
+* = and != can be used for numerical and string values
+* comparisons operators can be used for fields with numerical values
+* best practices
+** to get faster results limit search by
+*** time, index, source, host and source type
+*** be more specific
+*** inclusion is better than exclusion
+* splunk search language
+* components
+** search terms
+** commands
+*** charts
+*** starts
+** functions
+** arguments
+** clauses
+** search components are separated by pipe
+* pipe symbol| works like in terminal
+* fields command limits fields to make search faster
+* limit fields extraction make search faster significantly
+* table command
+* rename command
+* dedup removes duplicates
+* sort command
+* for events containing fields
+#+begin_src log
+index=web sourcetype=access_combined action=* productId=*
+#+end_src
+* table and sort
+#+begin_src log
+index=web sourcetype=access_combined action=* productId=*
+| fields clientip, productId, action
+| table productId, clientip,  action
+| sort productId, - clientip
+#+end_src
+* renaming
+#+begin_src log
+index=web sourcetype=access_combined action=* productId=*
+| fields clientip, productId, action
+| table productId, clientip,  action
+| sort productId, - clientip
+| rename productId as "Product #", clientip as "Client IP Address", action as "Action Taken"
+#+end_src
+* remove duplicate values
+#+begin_src log
+index=web sourcetype=access_combined action=* productId=*
+| fields clientip, productId, action
+| table productId, clientip,  action
+| dedup productId
+#+end_src
+* using top
+#+begin_src log
+index=web sourcetype=access_combined referer_domain!="http://www.buttercupgames.com"
+| top referer_domain limit=2
+
+index=web sourcetype=access_combined referer_domain!="http://www.buttercupgames.com"
+| top referer_domain limit=2 showperc=f
+
+index=web sourcetype=access_combined
+| top limit=2 status
+| fields - count
+
+index=web sourcetype=access_combined
+| top limit=2 status by host
+| fields - count
+
+index=web sourcetype=access_combined
+| top limit=2 status by host
+| fields - count
+| sort host, -percent
+
+index=network sourcetype=cisco_wsa_squid
+| rare limit=3 cs_mime_type
+
+index=security sourcetype=history_access
+| stats dc(Username) by Address_Description
+
+index=security sourcetype=history_access
+| stats dc(Username) as "Badged in Users" by Address_Description
+
+index=security sourcetype=winauthentication_security
+| stats values(User) as User
+
+index=web sourcetype=access_combined action=*
+| stats count as "Total Events", avg(price) as "Average Price", sum(price) as "Total Amount"  by action
+
+index=web sourcetype=access_combined action=*
+| stats count, avg(price), sum(price) by action
+| rename count as "Total Events",
+avg(price) as "Average Price",
+sum(price) as "Total Amount",
+action as Action
+#+end_src
