@@ -1,0 +1,12 @@
+* p4 sync
+* p4 submit
+* p4 add filename
+* p4 edit
+* reverting changes
+#+begin_src shell
+p4 revert
+#+end_src
+* p4 diff -se
+** lists files changed without opening them
+* p4 diff
+* p4 help diff

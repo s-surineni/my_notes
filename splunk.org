@@ -56,7 +56,7 @@
 * limit fields extraction make search faster significantly
 * table command
 * rename command
-* dedup removes duplicates
+* dedup removes duplicates, unique
 * sort command
 * for events containing fields
 #+begin_src log
@@ -126,4 +126,8 @@ index=web sourcetype=access_combined action=*
 avg(price) as "Average Price",
 sum(price) as "Total Amount",
 action as Action
+#+end_src
+* get all values of field
+#+begin_src
+ stats values(logRecordType)
 #+end_src

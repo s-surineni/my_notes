@@ -22,3 +22,4 @@ corecli core:config
 It should prompt for your p4 settings and save them where they need to go.
 bootstrap bundle:core-app
 *** this worked
+* echo "10.195.162.132 ssurineni-ltm ssurineni-ltm.internal.salesforce.com" | sudo tee -a /etc/hosts

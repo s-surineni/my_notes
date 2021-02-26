@@ -1,0 +1,9 @@
+* devops
+** collaborative working relation between the development and it operation team
+** these teams used to be independent now they work together to make application and infrastructure updates at a fast pase
+** helps roll out features faster
+** increases reliability and stability of production environment
+** infrastructure as code
+* Infrastructure as code
+** easy to bring up new infrastructure and even for disaster recovery
+** gives advantage of easily rolling back forward and backward
