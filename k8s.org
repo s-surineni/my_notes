@@ -24,3 +24,20 @@
 ** kubectl cluster-info
 ** kubectl get all
 * buy default pods have cluster ip
+* pod is basic exeution unit and simplest unit in k8s object model
+* pods ip, memory, volumes can be shared across containers
+* each pod has unique ip address
+* pod containers share same network name sapce
+* have same loopbakc network interface
+* each container in a pod gets diffrent port
+* is is rare to have multiple containers in a pod
+* a pod is present in only one node
+* pod related commands
+** kubectl run
+** kubectl get gods
+** kubectl get all
+** pods and containers are only accessible within k8s cluster by default
+** to expose container do kubectl port-forward
+** kubectl delete pod
+** kubectl delete deployment
+** kubectl run my-nginx --image=nginx:alpine
