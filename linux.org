@@ -23,3 +23,7 @@ It should prompt for your p4 settings and save them where they need to go.
 bootstrap bundle:core-app
 *** this worked
 * echo "10.195.162.132 ssurineni-ltm ssurineni-ltm.internal.salesforce.com" | sudo tee -a /etc/hosts
+* gpg issue
+#+begin_src shell
+git config --global user.signingkey <short Key ID>
+#+end_src
