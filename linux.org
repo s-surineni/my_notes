@@ -27,3 +27,8 @@ bootstrap bundle:core-app
 #+begin_src shell
 git config --global user.signingkey <short Key ID>
 #+end_src
+* temp config
+** my default gateway is 10.2.2.2
+** ip addr is 10.0.2.15/24
+** dns server 192.168.29.1
+* echo $P4_PASSWD | p4 -u $P4_USER login

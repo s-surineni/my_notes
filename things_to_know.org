@@ -161,3 +161,8 @@
 * fast api
 * worker queue with kafka or rabbitmq
 * how does ip change everytime computer starts
+* linux
+** what is default gateway
+** dhcp
+* finance
+** find how interest in calculated on mutual funds and when it is credited
