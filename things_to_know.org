@@ -166,3 +166,6 @@
 ** dhcp
 * finance
 ** find how interest in calculated on mutual funds and when it is credited
+* open stack
+* terraform
+* grpc

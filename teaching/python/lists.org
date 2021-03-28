@@ -1,0 +1,7 @@
+* How to declare a list
+* Details about list
+** it can store multiple values
+** List is a heterogenous ds
+** it would be hard to think of variable names for 50 students
+** It can store different types of values
+** it can be arbitarily nested

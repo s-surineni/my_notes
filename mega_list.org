@@ -1,0 +1,9 @@
+* todo
+** read
+** exercise
+** cook
+** finance
+** work
+* to read
+** yaml
+** sed

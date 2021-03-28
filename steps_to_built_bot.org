@@ -1,0 +1,3 @@
+* create an app first
+* write code using bolt framework
+* follow steps here [[https://api.slack.com/start/building/bolt-python#local][bolt tutorial]]
