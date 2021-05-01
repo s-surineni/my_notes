@@ -1,0 +1,4 @@
+* spool
+* [-d ] ||
+* echo -n | tee
+* sed -i /^$/d

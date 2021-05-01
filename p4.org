@@ -8,5 +8,12 @@ p4 revert
 #+end_src
 * p4 diff -se
 ** lists files changed without opening them
+* p4 diff -sa
+** Opened files that differ from the revision in the depot or are missing.
 * p4 diff
 * p4 help diff
+* When you open a file, it is placed in the default changelist unless you specify an existing changelist number on the command line using the -c option.
+* You can also shelve changelists in order to temporarily preserve work in progress for your own use,
+* To create a numbered changelist, issue the p4 change command. This command displays the changelist form. Enter a description and make any desired changes;
+** All files open in the default changelist are moved to the new changelist.
+** If you delete files from this changelist, the files are moved back to the default changelist.
