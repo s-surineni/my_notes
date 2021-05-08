@@ -46,3 +46,5 @@ docker run -it --rm --name thefuck -v "$PWD":/usr/src/myapp -w /usr/src/myapp te
 ** Stars 936 dj-stripe
 * tamssia
 ** tree traversals
+* emacs
+** prelude

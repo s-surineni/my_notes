@@ -1,0 +1,5 @@
+* Real application cluster
+* Oracle RAC allows multiple computers to run Oracle RDBMS software simultaneously while accessing a single database, thus providing clustering.
+* In a non-RAC Oracle database, a single instance accesses a single database.
+* This allows an application or user to connect to either computer and have access to a single coordinated set of data.
+* The main aim of Oracle RAC is to implement a clustered database to provide performance, scalability and resilience & high availability of data at instance level.
