@@ -8,3 +8,6 @@
 ** see messages being delivered to different consumers in a group
 ** have mulitple servers in different docker images
 * tools
+** check git issues to understand what issues they faced, improvements added
+* write a similar tool in python to understand
+* see if there are simple alternatives

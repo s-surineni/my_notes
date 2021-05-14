@@ -1,5 +1,6 @@
 * python
 ** redis-py
+** pyenv
 ** thefuck
 *** https://github.com/nvbn/thefuck
 ** forks
