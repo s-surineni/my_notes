@@ -1,3 +1,4 @@
+* Use tools to check out internals during testing
 * web server multiprocessing
 ** realpython cache tutorial use testing utils
 ** use loadtest to see how it is handling mulitple requests

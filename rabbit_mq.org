@@ -1,0 +1,6 @@
+* questions
+** what is the message store
+** how does it decide which message goes to which consumer if there are multiple consumers of same type
+** how failed messages are reprocessed
+* ways to know internals
+** build an example and see the internals through webui
