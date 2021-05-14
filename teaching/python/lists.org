@@ -1,4 +1,6 @@
 * How to declare a list
+* let first declare a list
+* nums = [3, 6, 2, 9]
 * Details about list
 ** it can store multiple values
 ** List is a heterogenous ds
