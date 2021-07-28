@@ -33,8 +33,6 @@
 ** docker volume create
 ** docker volume ls
 ** docker volume rm <volume-name> : delete a volume
-* stop all running containers
-** docker container stop $(docker container ls -aq)
 * remove all containers
 ** docker rm $(docker ps -aq)
 * docker run command overrides CMD instruction of dockerfile
@@ -57,4 +55,20 @@ docker network ls
 * mount current directory in docker
 #+begin_src shell
 docker run --rm --network rabbit-nw -v ${PWD}:/usr/src/app py3 python send.py
+#+end_src
+* docker system prune
+* delete all stopped containers
+#+begin_src shell
+docker rm $(docker ps -a -q)
+#+end_src
+* delete all images with
+#+begin_src shell
+docker rmi $(docker images -q)
+#+end_src
+* update and stop a container that is in a crash-loop with docker update --restart=no && docker stop
+* bash shell into container docker exec -i -t /bin/bash - if bash is not available use /bin/sh
+* bash shell with root if container is running in a different user context docker exec -i -t -u root /bin/bash
+* To override the default echo message in our example and run the container interactively, we use the command:
+#+begin_src shell
+sudo docker run -it --entrypoint /bin/bash [docker_image]
 #+end_src

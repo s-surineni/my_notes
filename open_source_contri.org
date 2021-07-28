@@ -20,6 +20,8 @@
 * linux
 ** mail clients
 *** geary
+** pomodoro
+*** pomotroid single click open
 * shell
 ** stars
 *** crouton

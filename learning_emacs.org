@@ -1,0 +1,9 @@
+* setting variable name
+#+begin_src lisp
+(setq name "tony")
+(set 'name "tony")
+
+(setq name "tony"
+      work "ironman")
+(setq-local me "you")
+#+end_src
