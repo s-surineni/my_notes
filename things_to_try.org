@@ -16,3 +16,5 @@
 * inactive logout
 * session timeout
 * blocking tickets until purchased
+* watch different background jobs like cron threads and see their advantages
+* try an experiment to find size of arrays with nones and 0's in python

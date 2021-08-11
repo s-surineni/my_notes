@@ -1,0 +1,5 @@
+* qs? - stands for question, doubt
+* legend
+** TODO
+** (Better)
+** (Notice)

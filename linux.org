@@ -37,3 +37,5 @@ git config --global user.signingkey <short Key ID>
 * p4 client -o $P4CLIENT  | sed -e '1,/^View:/!d' | sed 's/^Host:.*\$//p' | sed -e '/^View:/a "$workspace"' | p4 client -i
 ** this can include new lines
 * ~/bin/sqldeveloper.sh > /dev/null 2>&1 &
+* systemctl list-units
+* journalctl -u service2

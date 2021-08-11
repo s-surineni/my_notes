@@ -1,0 +1,6 @@
+* to solve node-sass issue
+** or downgrade node to the supported version of node-sass
+** install correct version for node npm install --saveDev node-sass@6 --force
+* ERESOLVE overriding peer dependency
+** use --force flag or --legacy-peer-deps
+**

@@ -2,6 +2,9 @@
 ** tamassia
 *** preorder_label
 * tutorials
+** threading
+** caching
+** messages
 * leet 4 easy
 * online course
 * leet 2 medium

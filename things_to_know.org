@@ -169,3 +169,8 @@
 * open stack
 * terraform
 * grpc
+* data sampling
+* final class and static method, where they are set with values, like dbcontext
+* how to implement auto suggestions like done by google
+* distributed commit
+* vpn

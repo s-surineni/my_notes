@@ -131,3 +131,13 @@ action as Action
 #+begin_src
  stats values(logRecordType)
 #+end_src
+* different commands
+** stats
+** timechart
+** eventstats
+* sample queries
+** chart
+#+begin_src
+earliest=-1d index=iidd field=value | timechart  avg(field1) by field2
+#+end_src
+* use _raw to display log in table
