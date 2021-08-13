@@ -33,8 +33,6 @@
 ** docker volume create
 ** docker volume ls
 ** docker volume rm <volume-name> : delete a volume
-* stop all running containers
-** docker container stop $(docker container ls -aq)
 * remove all containers
 ** docker rm $(docker ps -aq)
 * docker run command overrides CMD instruction of dockerfile
@@ -45,3 +43,32 @@
 ** connecting to mysql continer by name mesql
 * docker sets limits on how much system resources it can use
 * namespace and control group and unified file system
+* docker network
+** list existing networks
+#+begin_src shell
+docker network ls
+#+end_src
+* The -dit flags mean to start the container detached (in the background), interactive (with the ability to type into it), and with a TTY (so you can see the input and output).
+* docker attach command
+* detach sequence, CTRL + p CTRL + q
+* docker network inspect rabbit-nw
+* mount current directory in docker
+#+begin_src shell
+docker run --rm --network rabbit-nw -v ${PWD}:/usr/src/app py3 python send.py
+#+end_src
+* docker system prune
+* delete all stopped containers
+#+begin_src shell
+docker rm $(docker ps -a -q)
+#+end_src
+* delete all images with
+#+begin_src shell
+docker rmi $(docker images -q)
+#+end_src
+* update and stop a container that is in a crash-loop with docker update --restart=no && docker stop
+* bash shell into container docker exec -i -t /bin/bash - if bash is not available use /bin/sh
+* bash shell with root if container is running in a different user context docker exec -i -t -u root /bin/bash
+* To override the default echo message in our example and run the container interactively, we use the command:
+#+begin_src shell
+sudo docker run -it --entrypoint /bin/bash [docker_image]
+#+end_src

@@ -174,3 +174,4 @@
 * how to implement auto suggestions like done by google
 * distributed commit
 * vpn
+* vault hashicorp

@@ -1,7 +1,7 @@
 * p4 sync
 * p4 submit
 * p4 add filename
-* p4 edit
+* p4 edit <file path>
 * reverting changes
 #+begin_src shell
 p4 revert
