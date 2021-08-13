@@ -1,0 +1,4 @@
+* search for word in specific type of files
+#+begin_src shell
+rg something -g '*.xml'
+#+end_src
