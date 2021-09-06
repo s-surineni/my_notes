@@ -1,2 +1,3 @@
 * go through mq code and figure all implementations
 * execute tests on the classes
+* simple message queue in python

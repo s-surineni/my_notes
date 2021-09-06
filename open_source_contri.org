@@ -1,3 +1,7 @@
+* priority list
+** [[https://github.com/tkem/cachetools][cachetools]]
+** pomotroid
+** youtube-dl
 * python
 ** redis-py
 ** pyenv
