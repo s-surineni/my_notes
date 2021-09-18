@@ -1,3 +1,8 @@
 * go through mq code and figure all implementations
 * execute tests on the classes
 * simple message queue in python
+* word match in flycheck
+* java script
+** event bus in vue
+** how .vue and js are managed in memory
+* adblokcer
