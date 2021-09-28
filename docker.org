@@ -38,7 +38,7 @@
 * docker run command overrides CMD instruction of dockerfile
 * docker port port-test gives ports used by container
 * docker stop $(docker ps -q) stop all docker containers
-* docker rm $(docker ps -aq) remove all docker containers
+* docker rm $(docker ps -aq) remove/delete all docker containers
 *  docker exec -it mesql mysql -p
 ** connecting to mysql continer by name mesql
 * docker sets limits on how much system resources it can use
@@ -57,7 +57,7 @@ docker network ls
 docker run --rm --network rabbit-nw -v ${PWD}:/usr/src/app py3 python send.py
 #+end_src
 * docker system prune
-* delete all stopped containers
+* delete remove all stopped containers
 #+begin_src shell
 docker rm $(docker ps -a -q)
 #+end_src
@@ -71,4 +71,8 @@ docker rmi $(docker images -q)
 * To override the default echo message in our example and run the container interactively, we use the command:
 #+begin_src shell
 sudo docker run -it --entrypoint /bin/bash [docker_image]
+#+end_src
+* run docker command
+#+begin_src shell
+docker run -it --volume "$(PWD)":/code lol python manage.py makemigrations lists
 #+end_src

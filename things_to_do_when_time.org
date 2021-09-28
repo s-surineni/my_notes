@@ -6,3 +6,4 @@
 ** event bus in vue
 ** how .vue and js are managed in memory
 * adblokcer
+* how secret management in django is designed
