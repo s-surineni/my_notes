@@ -57,3 +57,4 @@ docker run -it --rm --name thefuck -v "$PWD":/usr/src/myapp -w /usr/src/myapp te
 ** prelude
 * ideas
 ** clipboard manager
+** simple rest client plugin

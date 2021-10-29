@@ -9,6 +9,14 @@ du -h --max-depth=1
 #+begin_src bash
 grep "string" * .*
 #+end_src
+* grep recursively in directory
+#+begin_src shell
+grep -r "INSIGHTS_ELT_SCHEDULER_ACTION" .
+#+end_src
+* grep only in certain file types
+#+begin_src shell
+grep -r --include \*.java --include \*.cpp "INSIGHTS_ELT_SCHEDULER_ACTION" .
+#+end_src
 * might help with config
 #+begin_src bash
 export P4CLIENT=ssurineni-ltm-blt-2
