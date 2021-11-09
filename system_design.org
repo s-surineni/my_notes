@@ -3,3 +3,10 @@
 ** schedule a job to be run after specified amount of time
 ** adding key in redis with TTl about blocked ticket
 ** a daemon running in specified intervals which checks tasks to be completed
+* issues
+** database is the bottleneck
+** can only support certain number of connections at a time
+** rac corresponds to shard?
+** issue because of hard consistency?
+*** it will be able to scale with eventual consistency?
+**
