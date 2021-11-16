@@ -1,2 +1,7 @@
 * go through mq code and figure all implementations
 * execute tests on the classes
+* implement re entrant lock
+* check flycheck code
+* implement simple db
+* implement simple message queue
+* implement simple redis queue
