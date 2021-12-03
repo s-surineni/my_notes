@@ -37,3 +37,63 @@
 ** The way consumption is implemented in Kafka is by dividing up the partitions in the log over the consumer instances so that each instance is the exclusive consumer of a "fair share" of partitions at any point in time
 ** Kafka only provides a total order over records within a partition, not between different partitions in a topic
 ** each consumer within the group reads from a unique partition and the group as a whole consumes all messages from the entire topic.
+* advantages
+** scalability
+** reliability
+** performance
+** fault tolerance
+*** because message is not gone after consumer consumes it
+* most messaging system are implemented with single host
+** chance of broker getting full and unable to take any more messages
+* message broker is bottleneck?
+* messaging systems are considered middleware
+* things messaging system manage
+** distributed co-ordination logic
+** multi face commits
+** error handling
+** data consistency handling
+* multi write pattern
+* kafka goals
+** high throughput
+** horizontally scalable
+** reliable and durable
+** loosely coupled producers and consumers
+* kafka architecture
+** messaging system
+** pub-sub
+** producers consumers topic
+*** broker houses all these
+* larger messages put strain on brokers
+* broker is a process that runs on a machine
+* achieving high throughput is largely a function of how well a system can distribute its load and efficiently process it on multiple nodes in parallel
+* we can add as many brokers as possible
+** adding more brokers wont affect existing producer and consumer
+* kafka cluster is grouping of multiple brokers
+* proper coordination is required to distribute work properly
+* How brokers are managed
+** There will be one controller which is also a broker
+** Responsibilities of a controller
+*** maintaining list of brokers
+*** maintains list of work items to be distributed among workers
+*** maintaining status of workers and progress on tasks assigned to them
+** steps in assigning new work to brokers
+*** check which brokers are available
+*** the risk policy it should use
+**** redundancy level
+*** distributed system may offer redundancy options
+**** it needs to make sure the work assigned or work already done is not lost
+**** because of this same work is usually given to multiple workers
+*** How is the replication achieved?
+**** Controller will select leaders
+**** leader will ask if peers will take part in replication
+**** if leader gets quorum, then those peers will participate in replication
+* in distributed systems every system has to communicate with each other
+** formal name is consensus or gossip protocol
+** example when new broker want to join the cluster
+** configuration management
+** leader election
+** health status
+* zookeeper maintains metadata about cluster of distributed nodes
+** configuration information
+** health status
+** group membership
