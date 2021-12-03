@@ -1,0 +1,19 @@
+* runnable pattern
+** used for launching threads
+** we create an instance of runnable interface
+** we pass this instance to thread class constructor
+** then start thread by calling start method of thread object
+* stopping a thread
+** should not call stop method on the thread
+** use interrupt method
+#+begin_src java
+Runnable task = () -> {
+    while(! Thread.currentThread().isInterrupted()) {
+        // do something
+    }
+}
+#+end_src
+* producer consumer pattern
+** most simple way is to use wait and notify
+** a way to park thread while waiting for data to be produced, without blocking all other threads
+** key held by this thread should be release why the thread is parked
