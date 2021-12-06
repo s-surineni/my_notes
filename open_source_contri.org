@@ -1,10 +1,10 @@
 * priority list
 ** django
 ** zsh
-** angular
 ** [[https://github.com/tkem/cachetools][cachetools]]
 ** pomotroid
 ** youtube-dl
+** angular
 * python
 ** django
 ** redis-py
@@ -61,6 +61,7 @@ docker run -it --rm --name thefuck -v "$PWD":/usr/src/myapp -w /usr/src/myapp te
 ** tree traversals
 * emacs
 ** prelude
+** projectile
 * ideas
 ** clipboard manager
 ** simple rest client plugin
