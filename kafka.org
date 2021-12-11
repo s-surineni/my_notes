@@ -112,3 +112,23 @@
 * importance of key
 ** information in message that can be used to take processing decisions later
 ** can determine what partitions a message will go to
+* sending process
+** producer reaches to cluster using bootstrap server list to discover cluster membership
+*** uses buffer for partitions before sending to broker
+*** can specify custom partitioner class
+*** producer sends producer record to in memory queue datastructure called RecordAccumulator
+*** micro batching
+**** page cache
+**** linux sendfile
+** producer can specify the level of acknowledgement
+* if a topic contains multiple partitions
+** order is only maintained per partition
+** no global ordering accross the partitions
+** there could be issue with per partitioning order when there are retries enabled
+* consumer
+** single consumer can subscribe any number of topics
+** consumer pulling from all the topic partitions?
+** to get from a specific partition you need to use assign method
+** if consumer subscribes to a topic it pulls from all the partitions
+** polling loop
+*** important piece of kafka consumer
