@@ -97,3 +97,18 @@
 ** configuration information
 ** health status
 ** group membership
+* chances of failure
+** broker failure
+** network issue
+** disk failure
+* each broker is leader for one or more partitions
+* when zookeeper notices that one broker is down it selects another broker to take its place
+** metadata used for work distribution gets updated
+** replication guarantees reliable work distribution
+** replication factor should be  2 to 3
+** with replication factor of 3 leaders establish quorum with peers and copy the partition messages to peers
+** if quorum cannot be established or number of in sync replicas are below replication factor intervantions are required
+* 2 different ways of specifying timestamp
+* importance of key
+** information in message that can be used to take processing decisions later
+** can determine what partitions a message will go to

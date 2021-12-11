@@ -17,3 +17,36 @@ Runnable task = () -> {
 ** most simple way is to use wait and notify
 ** a way to park thread while waiting for data to be produced, without blocking all other threads
 ** key held by this thread should be release why the thread is parked
+* wait notify
+** methods are available from the Object class
+** the thread executing invocation should hold key of that object
+** only way for a thread to hold key of an object is to be in synchronized block, synchronized on this object
+** wait and notify cannot be invoked outside synchronized block
+** calling wait
+***  on lock object releases the key held by the thread, this key becomes available to other thread
+*** it puts the thread in a wait state, different than when it is waiting at the beginning of synchronized block
+*** only way to release a thread in wait state is to call notify on the object this thread is waiting on
+** calling notify
+*** releases a thread from wait and puts it in runnable state
+*** if more than one thread is in wait state, the released thread is chosen randomly
+*** notifyAll call releases all threads in wait state
+* Thread state
+** if the thread is in wait state then thread scheduler should not give it time
+** new, runnable, terminated, blocked, waiting, timed_waiting
+** blocked thread can only run again when the key is released
+*** at the entrance of synchronized block
+*** guarded by a monitor that has a key
+* cpu reads value from cache but not from main memory
+* cpu and main memory are connected by bus
+* each cpu core has l1, l2 and a common l3
+* visibility means telling other cores not to be value from main memory but from one of the cache
+* all synchronized writes are visible
+* happens before link helps to order reads are writes in multi core cpu
+* java memory model
+* visibility means a read operation should return the values set by last write
+* we need a timeline to put read and write operations on
+* happens before link exists between all synchronized or volatile write operations and all synchronized or volatile read operations that follow
+* synchronization guarantees the exclusive execution of a block of code
+* all shared variables should be accessed in a synchronized way or volatile way
+* false sharing
+* when a visible variable is modified in an l1 cache all the lines are markes dirty for other caches
