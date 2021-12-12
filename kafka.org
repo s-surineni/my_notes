@@ -146,3 +146,7 @@
 ** if the failed consumer fails to commit processed messages new consumer will re-process those messages
 ** group co-ordinator
 ** if number of consumers in the group are more than the number of partitions, extra consumers will be idle
+* kafka ecosystem
+** schema registry for maintaining contracts between producer and consumer
+** connect hub to connect common producer and consumers
+** kafka streams,stream based processing
