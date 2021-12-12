@@ -132,3 +132,17 @@
 ** if consumer subscribes to a topic it pulls from all the partitions
 ** polling loop
 *** important piece of kafka consumer
+*** kafka consumers are single threaded
+* offset of consumers is stored on broker in a topic
+* commit sync should be called after batch of messages are processed to avoid much overhead
+** the reason being because this is a synchronous call, it will block consumer until it receives response from cluster
+** commitAsync may not exactly know when commit succeeded or not
+* for consistency control we can take care of commit using commit api
+* consumer groups
+** independent consumers working together as a team
+** consumer can join consumer group by setting group.id property
+** the task of processing messages from topic are distributed as evenly as possible among consumers
+** increases parallelism and throughput
+** if the failed consumer fails to commit processed messages new consumer will re-process those messages
+** group co-ordinator
+** if number of consumers in the group are more than the number of partitions, extra consumers will be idle
