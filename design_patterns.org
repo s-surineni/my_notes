@@ -1,3 +1,13 @@
+* types of patterns
+** creational
+** structural
+** behavioral
+* creational
+** singleton
+** builder
+** prototype
+** factory
+** abstract factory
 * singleton pattern
 ** The Singleton pattern refers to having only one object of a class
 ** Another goal of the Singleton design pattern is that the single object is globally accessible within the program.

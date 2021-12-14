@@ -49,4 +49,8 @@ Runnable task = () -> {
 * synchronization guarantees the exclusive execution of a block of code
 * all shared variables should be accessed in a synchronized way or volatile way
 * false sharing
-* when a visible variable is modified in an l1 cache all the lines are markes dirty for other caches
+** happens because of the way caches work
+** when a visible variable is modified in an l1 cache all the lines are markes dirty for other caches
+** visibility problem came from multi core cpu not there in single core cpu
+* synchronization is about atomicity
+* volatility is about visibility
