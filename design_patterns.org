@@ -9,6 +9,26 @@
 ** factory
 ** abstract factory
 * singleton pattern
+** guarantees only one instance is going to be created
+** guarantees control of the resource
+** usually lazily loaded
+** examples
+*** runtime
+*** logger
+*** spring beans
+*** graphics managers
+** responsible for creating itself
+** static in nature
+** not a static class because it needs to be thread safe
+** private instance
+** private constructor
+** no parameters - parameters violates rule of singleton
+** pitfalls
+*** over used
+*** difficult to test
+*** not thread safe if not careful
+*** may be confused with factory, if constructor takes arguments, it should be considered factory
+** no interface unlike factory which is interface driven
 ** The Singleton pattern refers to having only one object of a class
 ** Another goal of the Singleton design pattern is that the single object is globally accessible within the program.
 ** have a private constructor
