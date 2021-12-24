@@ -35,6 +35,28 @@
 ** use a private class variable which holds single instance of the class
 ** use a public method to create single instance if it doesn't exist already
 **  If there are multiple computing threads running, there could be issues caused by the threads trying to access the shared single object.
+* builder pattern
+** for constructing objects that have lots of parameters
+** make object immutable once it is constructed
+** Examples
+*** string builder
+*** document builder
+*** Locale.builder
+** creating multiple constructors with parameter variation is called telescoping constructor
+** typically written with static inner class
+** negates the need for exposed setters
+** is it bad if object is mutable?
+** with builder pattern we can skip writing multiple constructors with different combination of parameters
+** we can also write builder in such a way that we can force certain parameters must be passed
+* prototype
+** avoids costly creation
+** avoids subclassing
+** typically dont use new
+** often utilizes interface
+** usually implemented with registry
+** object is expensive to create?
+** can utilize parameters for clone
+** shallow vs deep copy
 * facade pattern
 ** A facade is a wrapper class that encapsulate the subsystem in order to hide the subsystem's complexity.
 ** This wrapper class will allow a client class to interact with the subsystem through a facade

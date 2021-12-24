@@ -27,20 +27,29 @@ Runnable task = () -> {
 *** it puts the thread in a wait state, different than when it is waiting at the beginning of synchronized block
 *** only way to release a thread in wait state is to call notify on the object this thread is waiting on
 ** calling notify
-*** releases a thread from wait and puts it in runnable state
+*** releases a thread from wait and puts it in RUNNABLE state
 *** if more than one thread is in wait state, the released thread is chosen randomly
 *** notifyAll call releases all threads in wait state
 * Thread state
-** if the thread is in wait state then thread scheduler should not give it time
+** if the thread is in wait state(WAIT list) then thread scheduler should not give it time
 ** new, runnable, terminated, blocked, waiting, timed_waiting
 ** blocked thread can only run again when the key is released
+** blocked -> state when thread is waiting at the entrance of synchronized block
+** waiting -> state when wait method is called, no need to call notify method on lock object
 *** at the entrance of synchronized block
 *** guarded by a monitor that has a key
+* block of code is guarded by a monitor that has a key
 * cpu reads value from cache but not from main memory
-* cpu and main memory are connected by bus
-* each cpu core has l1, l2 and a common l3
-* visibility means telling other cores not to be value from main memory but from one of the cache
-* all synchronized writes are visible
+* cpu architecture
+** cpu
+** main memory
+** connected by bus
+** each cpu core has l1, l2 and a common l3
+** access to cache is much faster than access to main memory
+* visibility
+** visibility is second fundamental notion in java concurrent programming
+** visibility means telling other cores not to read value from main memory but from one of the cache
+** all synchronized writes are visible
 * happens before link helps to order reads are writes in multi core cpu
 * java memory model
 * visibility means a read operation should return the values set by last write
@@ -54,3 +63,30 @@ Runnable task = () -> {
 ** visibility problem came from multi core cpu not there in single core cpu
 * synchronization is about atomicity
 * volatility is about visibility
+* using synchronized on singleton makes thread in another core wait if one thread already has the key
+** this causes performance hit
+** because of synchronized block parallel reads can also not happen
+** double check locking singleton
+*** because read doesn't happen in a synchronized or volatile way, there is no guarantee that read will get the value set by write
+*** one can observe an object that is not fully built
+**** create is a two step process
+***** memory allocation
+***** a - copy of pointer to singleton field
+***** b - construction process
+***** a and b can happen in any order
+** declaring it volatile will cause the performance issues again
+* best solution to singleton is to use ENUM
+** used in comparator
+* volatile is not alternative to synchronization
+* synchronization provides atomicity while volatile doesn't
+* for the code to be fully correct not only does the writes should be synchronized but reads too
+* always try to synchronize your block of code with private object
+* step by step producer to check if concurrent code is correct
+** check for race conditions on fields of class
+*** race conditions does not occur on local variables and parameters
+*** if more than one thread is trying to read / write a field it means you have a race condition
+*** check for happens before link
+**** if the read/write volatile
+**** are they synchronized
+**** if you need atomicity you need to use synchronized
+**** else volatility is enough
