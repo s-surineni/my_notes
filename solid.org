@@ -1,0 +1,20 @@
+* issues when solid principles are not used
+** code fragility
+*** tendency of software to break in many places every time it is changed
+** code rigidity
+*** difficult to change. each change causes a cascade of subsequent changes in dependent modules
+* technical debt
+** cost of prioritizing fast delivery over code quality for long periods of time
+* benefits of solid code
+** easy to understand
+** changes are faster and have minimal risk
+** highly maintainable
+** cost effective
+* single responsibility principle
+** every function, class or module should have one and only one reason to change
+** single reason to change = single responsibility
+** always identify the reasons to change that your components have and reduce them to a single one
+** benefits
+*** it makes code easier to understand, fix and maintain
+*** classes are less coupled and more resilient to change
+*** more testable design

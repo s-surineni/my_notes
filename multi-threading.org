@@ -52,14 +52,41 @@ Runnable task = () -> {
 ** all synchronized writes are visible
 * happens before link helps to order reads are writes in multi core cpu
 * java memory model
-* visibility means a read operation should return the values set by last write
-* we need a timeline to put read and write operations on
-* happens before link exists between all synchronized or volatile write operations and all synchronized or volatile read operations that follow
+** visibility means a read operation should return the values set by last write
+** we need a timeline to put read and write operations on
+* how to setup happens before link
+** happens before link exists between all synchronized or volatile write operations and all synchronized or volatile read operations that follow
+** HB link can be setup by synchronization block or volatile variable
+* sample of buggy code
+#+begin_src java
+int x, y, r1, r2;
+Object lock = new Object();
+
+void firstMethod() {
+    x=1;
+    synchronized(lock) {
+        y=1;
+    }
+}
+
+void secondMethod() {
+    synchronized(lock) {
+        r1=y;
+    }
+    r2 = x;
+}
+#+end_src
 * synchronization guarantees the exclusive execution of a block of code
+* visibility guarantees consistency of the variables
+** visibility is weaker constraint than synchronization
 * all shared variables should be accessed in a synchronized way or volatile way
 * false sharing
 ** happens because of the way caches work
+** it can have tremendous effect on performance
+** cache is organized in lines of data
+** each line can hold 8 longs
 ** when a visible variable is modified in an l1 cache all the lines are markes dirty for other caches
+** read on a dirty line triggers refresh on this line
 ** visibility problem came from multi core cpu not there in single core cpu
 * synchronization is about atomicity
 * volatility is about visibility
