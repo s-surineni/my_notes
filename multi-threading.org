@@ -117,3 +117,38 @@ void secondMethod() {
 **** are they synchronized
 **** if you need atomicity you need to use synchronized
 **** else volatility is enough
+* executors
+** issue with runnable pattern
+*** thread is created by developer so they may not manage threads properly
+*** new thread for each new task and then killed, which is expensive to create and kill
+** executor pattern is created to solve this issue
+*** create pools of threads and keep using them
+*** we give a task to pool of threads, they choose an available thread, execute this task
+** pool of threads is an instance of executor interface
+** to create instances of Executor of ExecutorService we have a factory class called Executors
+** most used methods of ExecutorService are
+*** newSingleThreadExecutor
+**** useful for reactive programming
+*** newFixedThreadPoolExecutor
+** executor has a waiting queue
+** we dont have a way to know when a task is done
+** a tasks execution can be cancelled if the task has not started yet
+*** we remove the task from the waiting queue
+** not incompatible with runnable pattern
+** runnable caveats
+*** method cannot return anything, no exception can be raised
+*** no way to know if a task is done or not
+** callable interface
+*** single method call
+*** executor interface does not handle callables directly
+*** ExecutorService interface has a submit method that takes callables
+*** submit returns future object
+** future object work
+*** create callable in main
+*** call submit and pass callable
+*** executor returns a future object that will hold the result once it is available
+*** get method is blocking it will block until result is available
+** 2 exceptions can be thrown from thread
+*** InterrupedException
+*** ExecutionException
+** get method throws Interrupedexception if we pass a timeout to it
