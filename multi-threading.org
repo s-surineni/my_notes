@@ -130,6 +130,14 @@ void secondMethod() {
 *** newSingleThreadExecutor
 **** useful for reactive programming
 *** newFixedThreadPoolExecutor
+*** newCachedThreadPool
+**** create threads on demand
+**** if threads are unused the are killed in 60s
+*** newScheduledThreadPool
+**** can schedule a task in future
+**** scheduleAtFixedRate
+*** scheduleWithFixedDelay
+**** delay is calculated from the end of the execution of the task
 ** executor has a waiting queue
 ** we dont have a way to know when a task is done
 ** a tasks execution can be cancelled if the task has not started yet
@@ -152,3 +160,17 @@ void secondMethod() {
 *** InterrupedException
 *** ExecutionException
 ** get method throws Interrupedexception if we pass a timeout to it
+** shutting down ExecutorService
+*** shutdown
+**** continues to execute submitted tasks
+**** executes waiting tasks
+**** do not accepts new tasks
+*** shutdownNow
+**** halt running tasks
+**** do not execute waiting tasks
+*** awaitTermination
+**** issues shutdown
+**** after timeout it halts every thing
+* Locks and semaphores
+** intrinsic locking
+*** if thread becomes
