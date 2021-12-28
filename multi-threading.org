@@ -173,4 +173,10 @@ void secondMethod() {
 **** after timeout it halts every thing
 * Locks and semaphores
 ** intrinsic locking
-*** if thread becomes
+*** if thread gets blocked in synchronized block
+**** all the threads blocked on the synchronized block will also be blocked
+**** there is no way to get out of this blocking
+** Lock pattern
+*** it solves the issue of intrinsic locking
+*** implemented by ReentrantLock
+*** offers same guarantees (exclusion, read and write ordering)
