@@ -180,3 +180,50 @@ void secondMethod() {
 *** it solves the issue of intrinsic locking
 *** implemented by ReentrantLock
 *** offers same guarantees (exclusion, read and write ordering)
+*** advantages
+**** interruptible lock acquisition
+*** has lock.lockInterruptibly
+*** we can call interrupt method to interrupt the other thread and release lock
+**** this is costly
+*** timed lock acquisition
+*** lock.tryLock
+**** if another thread is already executing guarded block of code it returns false instead of blocking
+**** timeout can also be passed to this method
+*** fair lock acquisition
+**** the first thread to enter the wait line will be given the access first
+*** make thread wait by calling lock.newCondition
+**** lock.await()
+**** lock.signal()
+*** Condition object is used to park and awake threads
+**** built from lock object
+**** one lock object can have any number of conditions
+**** await call is blocking but it can be interrupted
+**** fair lock generates fair condition
+*** read write locks
+*** ReadWriteLock
+**** instances of Lock
+**** one one thread can hold the write lock
+**** when write lock is held, no one can hold the read lock
+**** As many threads as needed can hold the read lock
+*** Semaphore
+**** like a lock object but allows several threads in the same block of code
+**** semaphore has a number of permits
+**** acquire, release methods
+**** we can request multiple permits at once
+**** we can reduce number of permits after a semaphore is created
+** Examples
+*** We need to make sure to allocate enough number of threads in ExecutorService else we may end up with deadlock
+*** an exception may also cause a deadlock, we can using await with a timeout in such a case
+* Barriers and Latches
+** callable has to wait for other callables launched in parallel when task is done
+** CyclicBarrier
+** barrier.await() waits until all the threads complete
+** await blocks until the number of calls match
+** we can setup callback task that will be triggered once the barrier is opened
+** once opened barrier is normally reset
+** calling reset on barrier causes exception, waiting tasks will throw BrokenBarrierException
+** CyclicBarrier is used to synchronize several threads among themselves, and let them continue when they reach a common point
+** if the number of the threads in ExecutorService is less than the barrier count, the barrier will never open
+* Latches
+** Like a barrier but once opened it cannot be closed again
+** countdown latchj
