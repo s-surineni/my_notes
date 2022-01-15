@@ -228,6 +228,11 @@ void secondMethod() {
 ** Like a barrier but once opened it cannot be closed again
 ** countdown latchj
 * casing and atomic variables
+** under the hood
+*** java api tries to apply incrementation
+*** casing tells if incrementation failed
+*** fails if another thread modifies counter in meantime
+*** api keeps trying until incrementation succeeds
 ** compare and swap
 ** set of assembly instructions
 ** low level instructions given by cpu
@@ -278,9 +283,37 @@ void secondMethod() {
 *** works well when we have many reads and few writes
 *** Example usage is application initialization
 ** Queue and Stack
+*** Queue, Deque interfaces
 *** ArrayBlockingQueue
 **** Bounded blocking queue built on an array
 *** ConcurrentLinkedQueue
 **** unbounded blocking queue
+*** in JDK there is no specific interface for stack, it implemented using deque
+*** we should not query for size of concurrent structure as it changes between the call and we use
 *** put method blocks until memory becomes available
 *** take will block until an element becomes available
+** ConcurrentMap
+*** ConcurrentHashMap
+*** ConcurrentSkipListMap
+*** defines atomic operations
+**** putIfAbsent
+**** remove
+**** replace
+*** Internals of hashmap
+**** build on array
+**** each cell in array can hold several key value pairs
+**** compute hash code of key
+**** check if bucket is there or not
+**** check if key is there or not
+**** if key exists in bucket use linked list upto certain number
+**** use red black trees past that number
+*** the only way to make an array thread safe is by locking the entire array
+*** can't lock portions of array
+**** locking the array blocks read operations too
+**** segment array into several sub arrays and synchronize each segment
+*** ConcurrentHashMap in java8
+*** skip lists
+**** relies on atomic reference operations, no synchronization
+**** used to implement map and list
+*** ConcurrentSkipListMap
+**** All the references are implemented with AtomicReference
