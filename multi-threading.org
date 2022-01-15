@@ -227,3 +227,60 @@ void secondMethod() {
 * Latches
 ** Like a barrier but once opened it cannot be closed again
 ** countdown latchj
+* casing and atomic variables
+** compare and swap
+** set of assembly instructions
+** low level instructions given by cpu
+** exposed at API level so we can use in our applications
+** we need to consider is synchronization is really essential
+** synchronization has cost
+** if threads are not using shared memory at exactly same time, we can use casing
+** CASing works with 3 parameters
+*** location in memory
+*** existing value at that location
+*** new value to replace
+*** if the current value at the address is same as the one we read earlier we replace new value, else we return false
+*** all the comparison and modification are done in single, atomic assembly instruction
+*** with casing we can modify variables without interruption without synchronization
+** classes and apis
+*** AtomicBoolean
+*** AtomicInteger
+*** AtomicLong
+*** AtomicReference
+** casing works when concurrency is not too high
+*** if the concurrency is too high the update operation will be tried again and again until it is accepted
+*** if not used in correct scenario casing may create load on memory and cpu
+** Atomic variables are based on casing
+** casing is another tool to handle concurrent reads and writes
+** adders and accumulator
+*** started by java 8
+*** sometime we dont need get at each modification of atomic variables
+*** LongAdder, LongAccumulator dont expose get part
+**** It can distribute update on different cells?
+**** merges results on get call
+**** tailored for high concurrency
+**** LongAccumulator built on binary operator
+* concurrent collections
+** implement concurrency at API level
+** two branches Collection and Map
+** concurrent interfaces are not concurrent but indicate that implementations should be concurrent
+** vector and stack are thread safe
+*** very poorly implemented
+** copy on write
+*** exist for list and set
+*** no locking for read
+*** write creates new structure and replaces the previous one
+*** when the new structure is ready we move pointer from old one to new on in synchronized way
+*** threads having old reference will not see modification
+*** new threads will see the modification
+*** CopyOnWriteArrayList
+*** CopyOnWriteArraySet
+*** works well when we have many reads and few writes
+*** Example usage is application initialization
+** Queue and Stack
+*** ArrayBlockingQueue
+**** Bounded blocking queue built on an array
+*** ConcurrentLinkedQueue
+**** unbounded blocking queue
+*** put method blocks until memory becomes available
+*** take will block until an element becomes available
