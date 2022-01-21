@@ -54,9 +54,13 @@
 ** typically dont use new
 ** often utilizes interface
 ** usually implemented with registry
-** object is expensive to create?
+** example java.lang.Object#clone()
+** object is expensive to create?(may be hard to get its field values)
+** we copy member variables instead of creating it
 ** can utilize parameters for clone
+** implements clone and clonable
 ** shallow vs deep copy
+** builder is opposite of prototype
 * facade pattern
 ** A facade is a wrapper class that encapsulate the subsystem in order to hide the subsystem's complexity.
 ** This wrapper class will allow a client class to interact with the subsystem through a facade

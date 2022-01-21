@@ -317,3 +317,10 @@ void secondMethod() {
 **** used to implement map and list
 *** ConcurrentSkipListMap
 **** All the references are implemented with AtomicReference
+** which structure to use
+*** low concurrency - any solution can be used, synchronization too
+*** few write - copy on write structure
+*** high concurrency, with many objects - skip lists , ConcurrentHashMap
+*** high concurrency few objects - bad
+**** synchronization - blocks threads
+**** atomic  - high cpu load and high memory load

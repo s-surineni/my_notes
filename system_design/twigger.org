@@ -1,0 +1,49 @@
+* Functional requirements
+** tweet
+** re-tweet
+** follow
+** search
+* Non functional requirements
+** read heavy
+** fast rendering of timeline
+** fast tweet
+** lag ok in terms of finding new tweets in search
+** scale
+* categorizing users
+** famous
+*** actors, politician, ceo
+** active
+*** who have used twitter in 2 days
+** live
+*** people who have app opened now
+** passive
+*** who have not accessed app in long time and not famous
+** inactive
+* when designing read heavy system either precompute information or cache as much as possible
+* user onboarding
+** user service is the source of truth for all user related information
+** powers login, registration, profile screen etc
+** exposes apis to get info regarding users (individual and bulk apis)
+** uses clustered mysql database
+*** relational data
+*** doesn't change frequently
+** uses cache to store user information too
+* user follow
+** powered by a service called graph service
+** has apis like follow a user, get my followers, get who I follow etc
+** uses separate mysql cluster
+** consider sharing
+** structure would be like userid, follower id, datetime
+** cache this data too
+*** user id
+*** followers of this user
+*** who this user follows
+* analytics
+** track the tweet user is spending time on
+** tweets user is liking
+* live user service
+** keeps web socket open with live users
+** whenever someone tags live user
+** or tweet send by user this person follows
+** if user disconnects this service puts that info into kafka and is collected by user service
+*** the live user is then switched to active user

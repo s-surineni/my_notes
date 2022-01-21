@@ -18,3 +18,21 @@
 *** it makes code easier to understand, fix and maintain
 *** classes are less coupled and more resilient to change
 *** more testable design
+** method
+*** identify reasons to change
+*** extracting them to different components which are specialized
+*** recompiling code so it compiles and works as expected
+* Open closed principle
+** helps us to write code that is easy to chagne and evolve over time
+** classes, functions and modules should be closed for modification and open for extension
+** closed for modification
+*** each new feature should not modify source code. Source code becomes immutable
+** open for extension
+*** if it allows us to behave in new ways by writing new code
+** if we modify super class subclasses will also break
+** so for new feature create a new subclass
+** this minimizes risk for regression bugs
+** enforces decoupling by isolating changes in specific components
+** inheritance produces coupling between derived class and base class(bad). Especially for concrete class
+** better approach is strategy pattern. Here we use interfaces
+*** and factory class to provide instance of appropriate subclass
