@@ -45,5 +45,48 @@
 ** keeps web socket open with live users
 ** whenever someone tags live user
 ** or tweet send by user this person follows
+** we are also capturing how long the user is live
 ** if user disconnects this service puts that info into kafka and is collected by user service
 *** the live user is then switched to active user
+* post tweet flow
+** if tweet contains image or video asset service takes care of them
+*** it uploads them to cloud/anywhere and displays them(similar to netflix and youtube)
+** if tweet contains url we use url shortner service
+** tweet injestion service stores and retrieves tweets
+*** uses cassandra to store tweets
+*** just stores tweet doesn't provide apis( doesn't even retrieve?)
+*** publishes event to kafka
+** tweet service
+*** has apis to retrieve/display tweets
+*** uses same cassandra as tweet injestion service
+*** powers timeline
+** timeline
+*** series of tweets
+** 2 views for a user to see tweets
+*** user timeline
+*** home timeline
+**** it could select * where userid == users I follow
+**** this would be a costly operation at runtime
+**** precalculate active users timelines
+**** whenever there is a tweet get their followers and precalculates their timeline and cache it
+**** tweet service uses graph service to get users followers
+**** if we calculate all followers timelines it takes lot of data
+**** so only calculate active users timeline and put it in redis
+*** Passive user timeline
+**** when user logs in it goes to timeline service
+**** timeline service queries user service to find out if the user is active or passive
+**** if user is passive it creates timeline from scratch as it is not available in redis
+**** procedure
+***** queries graph service for the users this user is following
+***** queries tweet service to get tweets of all these users
+***** once tweets are retrieved it stores them back into redis and returns the result
+*** Live users
+**** tweet processor know whose timeline to be updated
+**** if user is live, it puts back event back into kafka
+**** web socket service listens to this event and sends notification to user
+*** for famous users we won't update their followers timelines automatically as they will have millions of users
+**** the timeline service merges timeline with normal users tweets(from redis) and famous users tweets
+**** before showing to user it gets famous users tweets this user follows using graph service and tweet service
+**** updates redis cache, and sends to UI
+**** it also stores timestamp at which it did this merge
+**** so if more time is elapsed (>5 min ) it will do re-merge else sends the same cached data
