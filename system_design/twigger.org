@@ -90,3 +90,14 @@
 **** updates redis cache, and sends to UI
 **** it also stores timestamp at which it did this merge
 **** so if more time is elapsed (>5 min ) it will do re-merge else sends the same cached data
+*** when a famous user tweets don't update cache of all users but only of other famous users
+** search and analytics
+*** during tweet ingestion only search consumer listens to event and stores it in elastic search
+*** on the other end user search via search ui, which will be handled by search service
+*** when returning results search service caches them also as many people for search for samething at a time
+*** At the same ingestion time we can have a spark streaming consumer running and check most common words
+**** this data can be sent to trend service
+**** we can use redis for storage as this data is temporary
+*** add hadoop cluster for more analytics.
+**** newsletter
+**** weekly cron job to send newsletter to passive users

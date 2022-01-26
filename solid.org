@@ -36,3 +36,24 @@
 ** inheritance produces coupling between derived class and base class(bad). Especially for concrete class
 ** better approach is strategy pattern. Here we use interfaces
 *** and factory class to provide instance of appropriate subclass
+** open close principle works well with single responsibility principle
+** we used factory pattern in combination with open close principle
+** API is a contract between different software components on how they should work together
+*** good way to implement an API is to create an interface and provide default implementations for it
+*** this way if client needs more functionality they can add their custom classes
+*** these kind of frameworks are called extensible
+*** an api shouldn't change the exposed class or method
+* start small and abstract later when needed
+* Liskov substitution principle
+** if s is subtype of t, then objects of t can be replaced by s without affecting the functionality of the program
+** all about relations between types
+** humans think of relations as (is a)
+** we should ask ourselves if a particular type is substitutable by other type
+** incorrect relationships between types cause unexpected bugs or side effects
+** Its hard to find bugs if application breaks Liskov substitution principle
+** Example
+*** Bird, subtype Ostritch, but ostritch cannot fly. So this will create a bug
+** each time we harden preconditions we break liskov substitution principle
+** we can violate liskov substitution principle when we implement interfaces
+** each time a method throws not implemented exception we are breaking liskov substitution principle
+** type check is also another symptom of breaking liskov substitution principle
