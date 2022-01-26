@@ -1,0 +1,65 @@
+* Functional requirements
+** Should be able to suggest route between two locations
+*** should tell distance
+*** should tell ETA
+** pluggable design
+*** shoudl be able to add things like traffic data, road closures, weather etc., later
+** should be adding new routes
+*** ask government
+*** organically when people are going in new road that is not there in system
+* non functional requirements
+** high availability
+** good accuracy
+*** the road may not be best, but it should not be too far from the best route
+*** can take some seconds lag to show roads but not minutes
+* Building navigation system is hard to solve
+** number of roads is huge
+** quantify attributes for eta example traffic, weather etc.,
+* segment
+** we break up the whole earth into multiple segments
+** 4 broder co ordinates gives the broder of the segment
+** each segment will have an identifier
+** its easy to find out if a point falls into a segment
+** as segments are represented by lat, long its easier to find approximate distance between two segments
+** we'll model road network as graph
+** each road is an edge
+** each road will have multiple weights
+*** length, traffic, time
+** road is a directional edge
+*** because the time taken if different directions could be differentj
+* finding distance between two points in a segment
+** take all the edges and junctions in a segment
+** to find out shortest path between any two junctions we can use dijkstra or bellman ford
+*** we can cache the distances calculated
+** run floyd warshall to find shortest path between any two junctions in segment and store it so we need not re-calculate
+** we store these calculated paths as logical paths (calculated edge)
+** what if we want to calculate distance from a certain point and not a junction
+*** find nearest distance of point to nearest junctions and calculate distance from those edges
+** while calculating all the shortest path using floyd warshall store all exit points too
+*** we calculate shortest distances from these exit points also
+** calculating distance across junctions
+*** we have two points in two junctions
+*** get aerial distance between these two points
+*** add a buffer of some segments in each direction of the two points
+**** we look for path in these buffered segments only
+*** we start looking for exit points from these origin points
+*** we keep connecting these exit points to exit points of other segments
+*** we'll get some roads which connect A and B
+*** once we come up with the paths, we can run dijkstra to calculate shortest path
+*** this strategy works ok between two segments. What about two cities
+*** we can extend the segment abstraction to mega segment
+*** 3 levels of such abstraction would be enough
+* how to come up with weights and what all weights to consider
+** distance
+** ETA
+** average speed
+** instead of adding extra weights like traffic, weather make these as attributes(functions) that impact avg speed
+** we don't need distance calculation normally. Because lot of people are moving between the points. we have their data. avg speed data is normal distribution
+** these calculation is only necessary if there are not enough data points or getting date from users in restricted
+** how to quantify traffic
+*** its impossible to get accurate values based on number of cars
+*** instead we use tiers
+*** if the traffic is bad eta increase by 20% etc
+** the weights on the graph are changing dynamically
+** whenever the weight changes on real road, we infer what all cached roads are impacted
+** then update the weight on cached roads also
