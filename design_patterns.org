@@ -61,6 +61,12 @@
 ** implements clone and clonable
 ** shallow vs deep copy
 ** builder is opposite of prototype
+** pitfalls
+*** not clear when to use
+*** used with another pattern
+*** shallow vs deep copy
+** helps with performance issues
+** think of using prototype before going to factory
 * facade pattern
 ** A facade is a wrapper class that encapsulate the subsystem in order to hide the subsystem's complexity.
 ** This wrapper class will allow a client class to interact with the subsystem through a facade
@@ -72,6 +78,16 @@
 ** Since the entire point of the facade design pattern is to hide complexity, we use the information hiding design principle to prevent all client classes from seeing the account objects and how these accounts behave.
 ** handles instantiation and redirection of tasks to the appropriate class within the subsystem
 * factory method pattern
+** doesn't expose instantiation logic
+** defers instantiation logic to subclass
+** client only knows common interface
+** examples
+*** calendar
+*** resource bundle
+*** number format
+** objects created are referenced through a common interface
+** the create method is parameterized
+** the create method is static?
 ** move the code for deciding which type of knife to create, and the code for deciding which subclass of knife to instantiate into the class for this factory.
 ** a factory object is an instance of such a class, which has a method to create product objects.
 ** the knifeStore and its orderKnife method may not be the only client of your knifeFactory.

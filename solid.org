@@ -57,3 +57,15 @@
 ** we can violate liskov substitution principle when we implement interfaces
 ** each time a method throws not implemented exception we are breaking liskov substitution principle
 ** type check is also another symptom of breaking liskov substitution principle
+** two ways to refactor code to make it honor lsp
+*** eliminate incorrect relations between objects
+**** break inheritance into separate classes (ostritch and bird)
+**** fix partially implemented interface by breaking interfaces into smaller pieces
+*** tell dont ask to eliminate type checking and type casting
+**** override methods to have custom logic in the subclass only instead of doing it at single place
+*** make sure derived type can substitute its base type completely
+**** dont ask is a question
+*** keep base classes small and focused
+**** large base classes have high probability of breaking lsp
+*** keep interface lean
+** empty methods, type checking,hardened preconditions, not-implemented exceptions are signs of violating lsp
