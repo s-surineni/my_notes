@@ -1,3 +1,7 @@
+* lab
+** virtualbox
+** hyper-v
+** vmware
 * recon
 ** find out number of ways we can attach the target
 ** methods to do recon
