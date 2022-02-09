@@ -1,0 +1,99 @@
+* Functional requirements
+** Should be able to suggest route between two locations
+*** should tell distance
+*** should tell ETA
+** pluggable design
+*** shoudl be able to add things like traffic data, road closures, weather etc., later
+** should be adding new routes
+*** ask government
+*** organically when people are going in new road that is not there in system
+* non functional requirements
+** high availability
+** good accuracy
+*** the road may not be best, but it should not be too far from the best route
+*** can take some seconds lag to show roads but not minutes
+* Building navigation system is hard to solve
+** number of roads is huge
+** quantify attributes for eta example traffic, weather etc.,
+* segment
+** we break up the whole earth into multiple segments
+** 4 broder co ordinates gives the broder of the segment
+** each segment will have an identifier
+** its easy to find out if a point falls into a segment
+** as segments are represented by lat, long its easier to find approximate distance between two segments
+** we'll model road network as graph
+** each road is an edge
+** each road will have multiple weights
+*** length, traffic, time
+** road is a directional edge
+*** because the time taken if different directions could be differentj
+* finding distance between two points in a segment
+** take all the edges and junctions in a segment
+** to find out shortest path between any two junctions we can use dijkstra or bellman ford
+*** we can cache the distances calculated
+** run floyd warshall to find shortest path between any two junctions in segment and store it so we need not re-calculate
+** we store these calculated paths as logical paths (calculated edge)
+** what if we want to calculate distance from a certain point and not a junction
+*** find nearest distance of point to nearest junctions and calculate distance from those edges
+** while calculating all the shortest path using floyd warshall store all exit points too
+*** we calculate shortest distances from these exit points also
+** calculating distance across junctions
+*** we have two points in two junctions
+*** get aerial distance between these two points
+*** add a buffer of some segments in each direction of the two points
+**** we look for path in these buffered segments only
+*** we start looking for exit points from these origin points
+*** we keep connecting these exit points to exit points of other segments
+*** we'll get some roads which connect A and B
+*** once we come up with the paths, we can run dijkstra to calculate shortest path
+*** this strategy works ok between two segments. What about two cities
+*** we can extend the segment abstraction to mega segment
+*** 3 levels of such abstraction would be enough
+* how to come up with weights and what all weights to consider
+** distance
+** ETA
+** average speed
+** instead of adding extra weights like traffic, weather make these as attributes(functions) that impact avg speed
+** we don't need distance calculation normally. Because lot of people are moving between the points. we have their data. avg speed data is normal distribution
+** these calculation is only necessary if there are not enough data points or getting date from users in restricted
+** how to quantify traffic
+*** its impossible to get accurate values based on number of cars
+*** instead we use tiers
+*** if the traffic is bad eta increase by 20% etc
+** the weights on the graph are changing dynamically
+** whenever the weight changes on real road, we infer what all cached roads are impacted
+** then update the weight on cached roads also
+** how to update routes when weather or traffic changes
+*** we get a signal saying that traffic has increased
+*** for a theoretial road we are also storing what real roads are part of it
+*** after doing this change in one segment we need to bubble it across all segments
+*** we'll stop bubbling up when road stops being part of cached roads?
+** we can store ETA and use that ETA to predict the time taken
+* what to if ETA on road increased a lot
+** if ETA on road increases some threshold
+** recalculate everything within the segment
+** if we get new shortest path from entry and exit bubble up that new path
+** if mega segment includes this path as part of it, than mega segment path should also change
+* architecture when user is not usign app
+** app is installed on mobile
+** location is turned on
+** we get pings from devices every few seconds
+** if user is stationary the location pings are not often
+** we'll have persistent websocket connection to users device
+** separate box called websocket handlers talk to user devices
+** there will be thousands of websocket handlers
+** web socket manager keeps track of which handler is connected to which user
+*** manager stores information in redis
+** the location information of user comes to location service
+*** repo of all location related info
+*** userid, timestamp, latlong
+*** stores information in cassandra
+*** holds info of which user is at what location at what point of time
+** location pings are also sent to kafka from location service
+** from kafka spark reads location pings
+*** it checks past 10  min data and if users are in unidentified location, enters new roads into system
+*** as new road is added all the roads in the segment are recalculated
+*** avg speed job checks avg speed of users in past 10 minutes and uses it as proxy for real time information
+*** bubble up process is triggered by spark jobs, they write back to kafka
+*** map update service listens to new road topic and tells graph processing service to store this new road and stores it in graph cassandra
+*** when traffic update job finds some change happened it writes back to kafka

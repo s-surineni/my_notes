@@ -1,0 +1,4 @@
+* running python from other paths
+#+begin_src shell
+python makealerts.py -p /Users/ssurineni/salesforce/freedom
+#+end_src

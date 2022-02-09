@@ -1,13 +1,31 @@
 * service gunicorn stop
-* find . -iname <fname>
+* find
+** find . -iname <fname>
+** check only in current directory
+#+begin_src shell
+find . -maxdepth 1 -name *.sh
+#+end_src
 * directories occupying space
 #+begin_src bash
 du -a /home | sort -n -r | head -n 5
 du -h --max-depth=1
 #+end_src
-* grep all files only in current directory
-#+begin_src bash
-grep "string" * .*
+* grep
+** grep all files only in current directory
+ #+begin_src bash
+ grep "string" * .*
+ #+end_src
+** grep recursively in directory
+ #+begin_src shell
+ grep -r "INSIGHTS_ELT_SCHEDULER_ACTION" .
+ #+end_src
+** grep only in certain file types
+ #+begin_src shell
+ grep -r --include="*.java" --include \*.cpp "INSIGHTS_ELT_SCHEDULER_ACTION" .
+ #+end_src
+** grep exclude directories
+#+begin_src shell
+grep -r --include="*Handler.java" --exclude-dir="*test*" INSIGHTS_ELT_SCHEDULER_ACTION
 #+end_src
 * might help with config
 #+begin_src bash

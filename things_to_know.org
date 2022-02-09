@@ -1,3 +1,6 @@
+* hadoop
+* spark streaming
+* cassandra
 * aggregation and compensation
 * difference between soap and rest
 * up sert in mongo

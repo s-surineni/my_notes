@@ -1,4 +1,12 @@
+* priority list
+** django
+** zsh
+** [[https://github.com/tkem/cachetools][cachetools]]
+** pomotroid
+** youtube-dl
+** angular
 * python
+** django
 ** redis-py
 ** pyenv
 ** thefuck
@@ -18,6 +26,8 @@
 ***** retries
 ***** multi-part
 * linux
+** copyq
+** zsh
 ** mail clients
 *** geary
 ** pomodoro
@@ -51,3 +61,11 @@ docker run -it --rm --name thefuck -v "$PWD":/usr/src/myapp -w /usr/src/myapp te
 ** tree traversals
 * emacs
 ** prelude
+** projectile
+* ideas
+** clipboard manager
+** simple rest client plugin
+* javascript
+** angular
+* The ones I love
+** emacs

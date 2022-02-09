@@ -37,3 +37,116 @@
 ** The way consumption is implemented in Kafka is by dividing up the partitions in the log over the consumer instances so that each instance is the exclusive consumer of a "fair share" of partitions at any point in time
 ** Kafka only provides a total order over records within a partition, not between different partitions in a topic
 ** each consumer within the group reads from a unique partition and the group as a whole consumes all messages from the entire topic.
+* advantages
+** scalability
+** reliability
+** performance
+** fault tolerance
+*** because message is not gone after consumer consumes it
+* most messaging system are implemented with single host
+** chance of broker getting full and unable to take any more messages
+* message broker is bottleneck?
+* messaging systems are considered middleware
+* things messaging system manage
+** distributed co-ordination logic
+** multi face commits
+** error handling
+** data consistency handling
+* multi write pattern
+* kafka goals
+** high throughput
+** horizontally scalable
+** reliable and durable
+** loosely coupled producers and consumers
+* kafka architecture
+** messaging system
+** pub-sub
+** producers consumers topic
+*** broker houses all these
+* larger messages put strain on brokers
+* broker is a process that runs on a machine
+* achieving high throughput is largely a function of how well a system can distribute its load and efficiently process it on multiple nodes in parallel
+* we can add as many brokers as possible
+** adding more brokers wont affect existing producer and consumer
+* kafka cluster is grouping of multiple brokers
+* proper coordination is required to distribute work properly
+* How brokers are managed
+** There will be one controller which is also a broker
+** Responsibilities of a controller
+*** maintaining list of brokers
+*** maintains list of work items to be distributed among workers
+*** maintaining status of workers and progress on tasks assigned to them
+** steps in assigning new work to brokers
+*** check which brokers are available
+*** the risk policy it should use
+**** redundancy level
+*** distributed system may offer redundancy options
+**** it needs to make sure the work assigned or work already done is not lost
+**** because of this same work is usually given to multiple workers
+*** How is the replication achieved?
+**** Controller will select leaders
+**** leader will ask if peers will take part in replication
+**** if leader gets quorum, then those peers will participate in replication
+* in distributed systems every system has to communicate with each other
+** formal name is consensus or gossip protocol
+** example when new broker want to join the cluster
+** configuration management
+** leader election
+** health status
+* zookeeper maintains metadata about cluster of distributed nodes
+** configuration information
+** health status
+** group membership
+* chances of failure
+** broker failure
+** network issue
+** disk failure
+* each broker is leader for one or more partitions
+* when zookeeper notices that one broker is down it selects another broker to take its place
+** metadata used for work distribution gets updated
+** replication guarantees reliable work distribution
+** replication factor should be  2 to 3
+** with replication factor of 3 leaders establish quorum with peers and copy the partition messages to peers
+** if quorum cannot be established or number of in sync replicas are below replication factor intervantions are required
+* 2 different ways of specifying timestamp
+* importance of key
+** information in message that can be used to take processing decisions later
+** can determine what partitions a message will go to
+* sending process
+** producer reaches to cluster using bootstrap server list to discover cluster membership
+*** uses buffer for partitions before sending to broker
+*** can specify custom partitioner class
+*** producer sends producer record to in memory queue datastructure called RecordAccumulator
+*** micro batching
+**** page cache
+**** linux sendfile
+** producer can specify the level of acknowledgement
+* if a topic contains multiple partitions
+** order is only maintained per partition
+** no global ordering accross the partitions
+** there could be issue with per partitioning order when there are retries enabled
+* consumer
+** single consumer can subscribe any number of topics
+** consumer pulling from all the topic partitions?
+** to get from a specific partition you need to use assign method
+** if consumer subscribes to a topic it pulls from all the partitions
+** polling loop
+*** important piece of kafka consumer
+*** kafka consumers are single threaded
+* offset of consumers is stored on broker in a topic
+* commit sync should be called after batch of messages are processed to avoid much overhead
+** the reason being because this is a synchronous call, it will block consumer until it receives response from cluster
+** commitAsync may not exactly know when commit succeeded or not
+* for consistency control we can take care of commit using commit api
+* consumer groups
+** independent consumers working together as a team
+** consumer can join consumer group by setting group.id property
+** the task of processing messages from topic are distributed as evenly as possible among consumers
+** increases parallelism and throughput
+** if the failed consumer fails to commit processed messages new consumer will re-process those messages
+** group co-ordinator
+** if number of consumers in the group are more than the number of partitions, extra consumers will be idle
+* kafka ecosystem
+** schema registry for maintaining contracts between producer and consumer
+** connect hub to connect common producer and consumers
+** kafka streams,stream based processing

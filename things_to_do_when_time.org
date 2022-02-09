@@ -1,5 +1,17 @@
 * go through mq code and figure all implementations
 * execute tests on the classes
+* simple message queue in python
+* word match in flycheck
+* java script
+** event bus in vue
+** how .vue and js are managed in memory
+* adblokcer
+* how secret management in django is designed
+* url management in angular 1 and 2 push state and hash
+#+begin_src
+Angular 2 uses HTML5 pushstate within its router, to provide clean URLs without the hash style commonly seen in Angular 1.
+#+end_src
+* why django moved to path from url
 * implement re entrant lock
 * check flycheck code
 * implement simple db

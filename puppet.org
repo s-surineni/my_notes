@@ -1,4 +1,16 @@
+* Puppet is a tool that helps you manage and automate the configuration of servers.
+* When you use Puppet, you define the desired state of the systems in your infrastructure that you want to manage
+* When you use Puppet, you define the desired state of the systems in your infrastructure that you want to manage
+* Puppet code is declarative, which means that you describe the desired state of your systems, not the steps needed to get there.
+* The Puppet primary server is the server that stores the code that defines your desired state. The Puppet agent translates your code into commands and then executes it on the systems you specify, in what is called a Puppet run.
+* puppet platform - parts of puppet
+** puppetserver
+** puppetdb
+** puppet-agent
+** Facter
+** Hiera.
 * infrastructure as code
+*
 * declarative
 * helps manage configuration of servers
 * why configuration management

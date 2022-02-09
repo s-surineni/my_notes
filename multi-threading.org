@@ -1,0 +1,326 @@
+* runnable pattern
+** used for launching threads
+** we create an instance of runnable interface
+** we pass this instance to thread class constructor
+** then start thread by calling start method of thread object
+* stopping a thread
+** should not call stop method on the thread
+** use interrupt method
+#+begin_src java
+Runnable task = () -> {
+    while(! Thread.currentThread().isInterrupted()) {
+        // do something
+    }
+}
+#+end_src
+* producer consumer pattern
+** most simple way is to use wait and notify
+** a way to park thread while waiting for data to be produced, without blocking all other threads
+** key held by this thread should be release why the thread is parked
+* wait notify
+** methods are available from the Object class
+** the thread executing invocation should hold key of that object
+** only way for a thread to hold key of an object is to be in synchronized block, synchronized on this object
+** wait and notify cannot be invoked outside synchronized block
+** calling wait
+***  on lock object releases the key held by the thread, this key becomes available to other thread
+*** it puts the thread in a wait state, different than when it is waiting at the beginning of synchronized block
+*** only way to release a thread in wait state is to call notify on the object this thread is waiting on
+** calling notify
+*** releases a thread from wait and puts it in RUNNABLE state
+*** if more than one thread is in wait state, the released thread is chosen randomly
+*** notifyAll call releases all threads in wait state
+* Thread state
+** if the thread is in wait state(WAIT list) then thread scheduler should not give it time
+** new, runnable, terminated, blocked, waiting, timed_waiting
+** blocked thread can only run again when the key is released
+** blocked -> state when thread is waiting at the entrance of synchronized block
+** waiting -> state when wait method is called, no need to call notify method on lock object
+*** at the entrance of synchronized block
+*** guarded by a monitor that has a key
+* block of code is guarded by a monitor that has a key
+* cpu reads value from cache but not from main memory
+* cpu architecture
+** cpu
+** main memory
+** connected by bus
+** each cpu core has l1, l2 and a common l3
+** access to cache is much faster than access to main memory
+* visibility
+** visibility is second fundamental notion in java concurrent programming
+** visibility means telling other cores not to read value from main memory but from one of the cache
+** all synchronized writes are visible
+* happens before link helps to order reads are writes in multi core cpu
+* java memory model
+** visibility means a read operation should return the values set by last write
+** we need a timeline to put read and write operations on
+* how to setup happens before link
+** happens before link exists between all synchronized or volatile write operations and all synchronized or volatile read operations that follow
+** HB link can be setup by synchronization block or volatile variable
+* sample of buggy code
+#+begin_src java
+int x, y, r1, r2;
+Object lock = new Object();
+
+void firstMethod() {
+    x=1;
+    synchronized(lock) {
+        y=1;
+    }
+}
+
+void secondMethod() {
+    synchronized(lock) {
+        r1=y;
+    }
+    r2 = x;
+}
+#+end_src
+* synchronization guarantees the exclusive execution of a block of code
+* visibility guarantees consistency of the variables
+** visibility is weaker constraint than synchronization
+* all shared variables should be accessed in a synchronized way or volatile way
+* false sharing
+** happens because of the way caches work
+** it can have tremendous effect on performance
+** cache is organized in lines of data
+** each line can hold 8 longs
+** when a visible variable is modified in an l1 cache all the lines are markes dirty for other caches
+** read on a dirty line triggers refresh on this line
+** visibility problem came from multi core cpu not there in single core cpu
+* synchronization is about atomicity
+* volatility is about visibility
+* using synchronized on singleton makes thread in another core wait if one thread already has the key
+** this causes performance hit
+** because of synchronized block parallel reads can also not happen
+** double check locking singleton
+*** because read doesn't happen in a synchronized or volatile way, there is no guarantee that read will get the value set by write
+*** one can observe an object that is not fully built
+**** create is a two step process
+***** memory allocation
+***** a - copy of pointer to singleton field
+***** b - construction process
+***** a and b can happen in any order
+** declaring it volatile will cause the performance issues again
+* best solution to singleton is to use ENUM
+** used in comparator
+* volatile is not alternative to synchronization
+* synchronization provides atomicity while volatile doesn't
+* for the code to be fully correct not only does the writes should be synchronized but reads too
+* always try to synchronize your block of code with private object
+* step by step producer to check if concurrent code is correct
+** check for race conditions on fields of class
+*** race conditions does not occur on local variables and parameters
+*** if more than one thread is trying to read / write a field it means you have a race condition
+*** check for happens before link
+**** if the read/write volatile
+**** are they synchronized
+**** if you need atomicity you need to use synchronized
+**** else volatility is enough
+* executors
+** issue with runnable pattern
+*** thread is created by developer so they may not manage threads properly
+*** new thread for each new task and then killed, which is expensive to create and kill
+** executor pattern is created to solve this issue
+*** create pools of threads and keep using them
+*** we give a task to pool of threads, they choose an available thread, execute this task
+** pool of threads is an instance of executor interface
+** to create instances of Executor of ExecutorService we have a factory class called Executors
+** most used methods of ExecutorService are
+*** newSingleThreadExecutor
+**** useful for reactive programming
+*** newFixedThreadPoolExecutor
+*** newCachedThreadPool
+**** create threads on demand
+**** if threads are unused the are killed in 60s
+*** newScheduledThreadPool
+**** can schedule a task in future
+**** scheduleAtFixedRate
+*** scheduleWithFixedDelay
+**** delay is calculated from the end of the execution of the task
+** executor has a waiting queue
+** we dont have a way to know when a task is done
+** a tasks execution can be cancelled if the task has not started yet
+*** we remove the task from the waiting queue
+** not incompatible with runnable pattern
+** runnable caveats
+*** method cannot return anything, no exception can be raised
+*** no way to know if a task is done or not
+** callable interface
+*** single method call
+*** executor interface does not handle callables directly
+*** ExecutorService interface has a submit method that takes callables
+*** submit returns future object
+** future object work
+*** create callable in main
+*** call submit and pass callable
+*** executor returns a future object that will hold the result once it is available
+*** get method is blocking it will block until result is available
+** 2 exceptions can be thrown from thread
+*** InterrupedException
+*** ExecutionException
+** get method throws Interrupedexception if we pass a timeout to it
+** shutting down ExecutorService
+*** shutdown
+**** continues to execute submitted tasks
+**** executes waiting tasks
+**** do not accepts new tasks
+*** shutdownNow
+**** halt running tasks
+**** do not execute waiting tasks
+*** awaitTermination
+**** issues shutdown
+**** after timeout it halts every thing
+* Locks and semaphores
+** intrinsic locking
+*** if thread gets blocked in synchronized block
+**** all the threads blocked on the synchronized block will also be blocked
+**** there is no way to get out of this blocking
+** Lock pattern
+*** it solves the issue of intrinsic locking
+*** implemented by ReentrantLock
+*** offers same guarantees (exclusion, read and write ordering)
+*** advantages
+**** interruptible lock acquisition
+*** has lock.lockInterruptibly
+*** we can call interrupt method to interrupt the other thread and release lock
+**** this is costly
+*** timed lock acquisition
+*** lock.tryLock
+**** if another thread is already executing guarded block of code it returns false instead of blocking
+**** timeout can also be passed to this method
+*** fair lock acquisition
+**** the first thread to enter the wait line will be given the access first
+*** make thread wait by calling lock.newCondition
+**** lock.await()
+**** lock.signal()
+*** Condition object is used to park and awake threads
+**** built from lock object
+**** one lock object can have any number of conditions
+**** await call is blocking but it can be interrupted
+**** fair lock generates fair condition
+*** read write locks
+*** ReadWriteLock
+**** instances of Lock
+**** one one thread can hold the write lock
+**** when write lock is held, no one can hold the read lock
+**** As many threads as needed can hold the read lock
+*** Semaphore
+**** like a lock object but allows several threads in the same block of code
+**** semaphore has a number of permits
+**** acquire, release methods
+**** we can request multiple permits at once
+**** we can reduce number of permits after a semaphore is created
+** Examples
+*** We need to make sure to allocate enough number of threads in ExecutorService else we may end up with deadlock
+*** an exception may also cause a deadlock, we can using await with a timeout in such a case
+* Barriers and Latches
+** callable has to wait for other callables launched in parallel when task is done
+** CyclicBarrier
+** barrier.await() waits until all the threads complete
+** await blocks until the number of calls match
+** we can setup callback task that will be triggered once the barrier is opened
+** once opened barrier is normally reset
+** calling reset on barrier causes exception, waiting tasks will throw BrokenBarrierException
+** CyclicBarrier is used to synchronize several threads among themselves, and let them continue when they reach a common point
+** if the number of the threads in ExecutorService is less than the barrier count, the barrier will never open
+* Latches
+** Like a barrier but once opened it cannot be closed again
+** countdown latchj
+* casing and atomic variables
+** under the hood
+*** java api tries to apply incrementation
+*** casing tells if incrementation failed
+*** fails if another thread modifies counter in meantime
+*** api keeps trying until incrementation succeeds
+** compare and swap
+** set of assembly instructions
+** low level instructions given by cpu
+** exposed at API level so we can use in our applications
+** we need to consider is synchronization is really essential
+** synchronization has cost
+** if threads are not using shared memory at exactly same time, we can use casing
+** CASing works with 3 parameters
+*** location in memory
+*** existing value at that location
+*** new value to replace
+*** if the current value at the address is same as the one we read earlier we replace new value, else we return false
+*** all the comparison and modification are done in single, atomic assembly instruction
+*** with casing we can modify variables without interruption without synchronization
+** classes and apis
+*** AtomicBoolean
+*** AtomicInteger
+*** AtomicLong
+*** AtomicReference
+** casing works when concurrency is not too high
+*** if the concurrency is too high the update operation will be tried again and again until it is accepted
+*** if not used in correct scenario casing may create load on memory and cpu
+** Atomic variables are based on casing
+** casing is another tool to handle concurrent reads and writes
+** adders and accumulator
+*** started by java 8
+*** sometime we dont need get at each modification of atomic variables
+*** LongAdder, LongAccumulator dont expose get part
+**** It can distribute update on different cells?
+**** merges results on get call
+**** tailored for high concurrency
+**** LongAccumulator built on binary operator
+* concurrent collections
+** implement concurrency at API level
+** two branches Collection and Map
+** concurrent interfaces are not concurrent but indicate that implementations should be concurrent
+** vector and stack are thread safe
+*** very poorly implemented
+** copy on write
+*** exist for list and set
+*** no locking for read
+*** write creates new structure and replaces the previous one
+*** when the new structure is ready we move pointer from old one to new on in synchronized way
+*** threads having old reference will not see modification
+*** new threads will see the modification
+*** CopyOnWriteArrayList
+*** CopyOnWriteArraySet
+*** works well when we have many reads and few writes
+*** Example usage is application initialization
+** Queue and Stack
+*** Queue, Deque interfaces
+*** ArrayBlockingQueue
+**** Bounded blocking queue built on an array
+*** ConcurrentLinkedQueue
+**** unbounded blocking queue
+*** in JDK there is no specific interface for stack, it implemented using deque
+*** we should not query for size of concurrent structure as it changes between the call and we use
+*** put method blocks until memory becomes available
+*** take will block until an element becomes available
+** ConcurrentMap
+*** ConcurrentHashMap
+*** ConcurrentSkipListMap
+*** defines atomic operations
+**** putIfAbsent
+**** remove
+**** replace
+*** Internals of hashmap
+**** build on array
+**** each cell in array can hold several key value pairs
+**** compute hash code of key
+**** check if bucket is there or not
+**** check if key is there or not
+**** if key exists in bucket use linked list upto certain number
+**** use red black trees past that number
+*** the only way to make an array thread safe is by locking the entire array
+*** can't lock portions of array
+**** locking the array blocks read operations too
+**** segment array into several sub arrays and synchronize each segment
+*** ConcurrentHashMap in java8
+*** skip lists
+**** relies on atomic reference operations, no synchronization
+**** used to implement map and list
+*** ConcurrentSkipListMap
+**** All the references are implemented with AtomicReference
+** which structure to use
+*** low concurrency - any solution can be used, synchronization too
+*** few write - copy on write structure
+*** high concurrency, with many objects - skip lists , ConcurrentHashMap
+*** high concurrency few objects - bad
+**** synchronization - blocks threads
+**** atomic  - high cpu load and high memory load
