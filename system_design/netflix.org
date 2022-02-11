@@ -1,0 +1,49 @@
+* Functional requirements
+** should be able to upload videos
+** home page and search
+** play videos
+** support all devices laptop, mobile, watch
+* non functional requirements
+** no buffering
+*** low latency
+*** high availability
+** increase user session time
+** good recommendation engine
+*** big feature as we need to support (device * dimension * file * quality * frames per second * audio bit rate) type combinations
+** consumers of the platform
+*** clients - devices
+**** have some functionality to do some smart things
+*** users
+*** production houses
+* how client works
+** wont download whole video
+** downloads some chunk and plays it
+** while the chunk is being played it downloads further video
+** client figures out what device it is on and what video formats are supported
+** if client supports multiple formats it selects one
+** if client starts with high quality version of video, while playing if the next part of the video doesn't come, it switches to lower version
+** above is called adaptive bitrate streaming
+* architecture helping production houses
+** starts uploading video from outside from ui
+** for large files upto 40 gb this process doesn't work. so we use sftp
+** ui talks to assest onboarding service
+** asset onboarding service uploads video to s3
+** cassandra contains all the info about all the videos
+*** owner, description, images, thumbnails
+** after file is uploaded it publishes event
+** multiple systems listen to above event
+** content processor = workflow engine
+** first chunks the file
+** uses kafka to send out events
+** next comes to content filter
+*** piracy, nudity, abusive language
+** content tagger
+*** tags, thumbnails
+*** transcoder
+*** quality converter
+*** upload component to CDN
+**** contains info like movie name, format, timerange
+*** all the tags from multiple chunks will be aggregated by spark streaming service, filter top 10 tags
+** asset service
+*** keeps track of how many chunks are there, which chunk is in which state
+*** stores all the info in kafka

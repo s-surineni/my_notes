@@ -96,4 +96,41 @@
 *** avg speed job checks avg speed of users in past 10 minutes and uses it as proxy for real time information
 *** bubble up process is triggered by spark jobs, they write back to kafka
 *** map update service listens to new road topic and tells graph processing service to store this new road and stores it in graph cassandra
+*** avg speed job also puts message into separate topic, traffic update service listens to this event and updates the info in same cassandra used by graph service
 *** when traffic update job finds some change happened it writes back to kafka
+*** hotspot identifier
+*** we have info of avg people per area, if the number of people are increasing in the area we can derive that it as a hotspot
+*** spark streaming also stores data in hadoop cluster
+*** we can run ml jobs on the info in hadoop
+**** road classifier
+**** vehicle identifier
+* architecture for navigation
+** user searches for particular location it gets converted to lat long by area search service
+** data store is elastic search, supports fuzzy search
+** it also gets lat, long for address
+** navigation tracking service
+*** the entire path from start to end is tracked by navigation tracking service
+*** if the user is going in wrong path sends notification to app
+*** pushes all the data into kafka, which can be used for analytics later like how good the suggested route is
+** connecting point A to point B
+*** handled by map service
+*** has multiple interfaces one for user and one for companies
+*** the major work is handled by graph processing service
+*** queries segment service which has cassandra data store, stores corner coordinates of segments
+*** segment service provides the start and end segment
+*** if the two points fall in same segment, graph processing service check if the info is present in cache
+*** if it is not in cache it calculates shortest path and returns it
+*** if the segments are different, it picks up sub-graph from entire world and try to find out shortest path
+*** it requests for all the entry exit points to those segments, live traffic info from cassandra
+*** third party data manager keeps pushing info into graph processing service
+*** if there is no live traffice info, graph processing service queries historical data service
+** lot of events have gone into kafka during this process
+** each time someone searches, area search service puts information into kafka
+** out of all third party, which of them are giving right info and which are giving wrong info
+** using spark streaming we can give audio directions during navigation
+* analytics
+** how accurate are eta predictions
+** road recommendations people are not taking
+** common hotspots
+** home location, work location
+** user profile data

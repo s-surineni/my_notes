@@ -104,7 +104,41 @@
 ** This class contains methods that only operate on generalizations.
 ** In other words, as long as we give these methods the products they want to operate on, the're happy.
 **  Factories allow client code to operate on generalizations. This is called coding to an interface, not an implementation.
+** • first create abstract class
+• default no orgs constructor
+• public create method
+• all the concrete classes will override create method?
+• the concrete classes will override this create method
+• factory is another classnamed with factory at the end
+• will have switch case
+• default case for null
+• we call factory class
+• it calls subclasses which have create method
+• this create method is overridden from base class
+• better to use enum rather than string literals in switch statement
+• What happens if we don't call create method in constructor?
+• pitfalls
+• complexity due to multiple classes and methods
+• creation doesn't ca take place in factory class but in subclass
+• singleton cannot have interface and subclasses?
+• parameter driven
+• Opposite of singleton
+• Patterns stand on their own
+* abstract factory
+** factory of factories
+** it can be implemented without using factory pattern
+** factory of related objects
+** example: DocumentBuilder
+** often implemented in frameworks
+** group collection of factories together
+** it has a common interface that is carried throught the abstract factory, down through the concrete factory and to the implementing class
+** has parameterized create methods
+** built using composition
 * adapter pattern
+** can be used to connect new code to legacy code
+** convert one interface into another
+** examples: collections, streams
+** client centric
 ** Software systems also face the same compatibility issue. Instead of having physical connectors, systems will have incompatible software interfaces.
 ** The adapter design pattern will help facilitate communication between two existing systems by providing a compatible interface.
 ** The client class will be part of your system that wants to use a third-party library or external system.
