@@ -46,4 +46,23 @@
 *** all the tags from multiple chunks will be aggregated by spark streaming service, filter top 10 tags
 ** asset service
 *** keeps track of how many chunks are there, which chunk is in which state
-*** stores all the info in kafka
+*** stores all the info in cassandra
+*** sends notification to user saying video is ready for viewing
+* services powering user facing products
+** login flow
+** handled by user service
+** user service is source of truth for user related information
+** uses mysql database
+*** data is name, email, subscriptions, country
+** also caches data using redis
+** we save device and geography of login and use the data for analytics
+** home screen
+*** powered by homepage service and search service
+*** if more people are going to second page that means results are not good enough
+*** this is tracked by analytics service
+* Playing video
+** host identity service queries asset service to get video from cdn which is closest to user device
+** 2 types of cdn main and local to a place
+** we can capture the info about the legth they have watched and use it as proxy for ratings
+*** this task is done by stream stats logger service
+* once the video processing is done asset service pushes event to kafka
