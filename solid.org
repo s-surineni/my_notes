@@ -69,3 +69,55 @@
 **** large base classes have high probability of breaking lsp
 *** keep interface lean
 ** empty methods, type checking,hardened preconditions, not-implemented exceptions are signs of violating lsp
+* Interface segregation principle
+** find perfect granularity principle for interfaces
+** client should not be forced to depend on methods that they do not use
+** split large interfaces into smaller more focused so that clients that use them will not be forced to depend on things that they do not need
+** interface here could be interface, abstract class, super class or public method
+** reinforces other solid principles
+** benefits
+*** lean interfaces minimize dependencies on unused members and reduce code coupling
+*** code becomes more cohesive and focused
+*** reinforces use of srp and lsp
+** identifying fat interface
+*** interfaces with many methods
+*** interfaces with low cohesion
+**** refers to performance of particular component
+*** symptoms of interface pollution
+**** interface with lots of methods
+**** interface with low cohesion
+**** client throws exception instead of implementing the method
+**** client provides implementation
+**** client forces implementation and becomes highly coupled
+** fixing interface pollution
+*** if we own code break interface into multiple interfaces
+*** if we are using external code use adapter pattern
+* Dependency inversion principle
+** decouples components
+** author thinks this is the most important principle because it enables us to create systems that are loosely coupled, easy to change and maintain
+** definition
+*** high level modules should not depend on low level modules, both should depend on abstractions
+*** abstractions should not depend on details. Details should depend on abstractions
+** high level modules
+*** modules written to solve real problems and use cases
+*** more abstract and map to business domain
+*** we call this business logic
+*** tells what software should do but not how it should do it
+** low level modules
+*** implementation details that require to execute business policies
+*** considered plumbing or internals of the system
+*** tells how software should do various tasks
+*** examples: logging, data access, network communication, io
+*** these modules tend to be very concrete in nature
+** high level modules work with low level modules to deliver business value for our customers
+** high level and low level modules are relative concepts, they are not absolute
+** abstraction is not concrete
+** high level component should depend on an abstraction and low level component should also depend on same abstraction, high level component should not directly depend on low level component
+** in short we should not initialize concrete class using new keyword
+** we should use abstract class reference instead
+** abstraction itself does not depend on any details
+** dependency injection
+*** used a lot in conjuntion with dependency inversion principle
+*** technique that allows creation of dependent objects outside of class and provides those objects to a class
+*** it can be done via setter class also but better approach is to use constructor
+*** it is the callers job to provide dependencies?
