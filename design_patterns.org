@@ -145,6 +145,23 @@
 **  The adaptee is a class in the third-party library or external system to be used.
 **  The adapter class sits in between the client and the adaptee
 ** It will implement a target interface which is the interface that the client will use. The adapter conforms to what the client is expecting to see.
+** pitfalls
+** dont complicate
+** dont add functionality
+** handles legacy code
+* bridge pattern
+** similar to adapter
+** works with new code
+** decouples abstraction and implementation (like dependency inversion?)
+** uses encapsulation, composition and inheritance
+** changes in abstraction wont affect the client
+** we choose this because we know details wont be right to begin with
+** examples
+*** drivers, jdbc
+** uses interfaces and abstract classes
+** places emphasis on composition over inheritance
+** expect changes from both sides
+** abstraction, implementor, refined abstraction, concrete implementor
 * This technique is an example of the factory method design pattern, as we provide a subclass the means to control the type of node that is created within methods of the parent class.
 * proxy
 ** helps defering create resource intensive objects
