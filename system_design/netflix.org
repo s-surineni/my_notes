@@ -26,7 +26,7 @@
 * architecture helping production houses
 ** starts uploading video from outside from ui
 ** for large files upto 40 gb this process doesn't work. so we use sftp
-** ui talks to assest onboarding service
+** ui talks to asset onboarding service
 ** asset onboarding service uploads video to s3
 ** cassandra contains all the info about all the videos
 *** owner, description, images, thumbnails
@@ -66,3 +66,62 @@
 ** we can capture the info about the legth they have watched and use it as proxy for ratings
 *** this task is done by stream stats logger service
 * once the video processing is done asset service pushes event to kafka
+** this event will have lot of info about movie
+** search consumer service listens to this event
+** converts it into format for search friendliness
+** search uses elastic search, because we need fuzzy search
+* search flow
+** searches a string in home screen
+** string is forwarded to search service
+** search consumer and service use same schema
+** searches for the input in multiple fields
+** it could have a flag which checks age filter - I don't this this is the right place for age filter
+** it checks with user service about users age
+** it returs the info to ui
+* all the components are horizontally scalable
+* content tagger info comes to kafka
+** spark streaming service listens to event for tags
+** it takes previous 30 min of events and reduces tags by movie id
+** once we get tag info, spark sends back info to kafka, which asset service will listen and stores in cassandra
+* why cassandra
+** handles massive amounts of reads and writes
+** follows no master strategy
+** good for small number of queries and queries by partition key
+** bad at random queries, aggregations
+* content tagger
+** also chooses thumbnails for the video
+** each thumbnail event is sent to kafka
+** spark listens to these events and forwards them into hadoop cluster
+** when we show home page or search results random thumbnails will be shown to different users
+** analytics service could also send info about which thumbnail works best
+** using hadoop we can also get which category of users like which thumbnail and show them that
+* user classification
+** based on videos they liked, put the genre
+** store this information in cassandra
+** can be used for recommendations
+** the other parameter for classification is the search use is doing
+** these analytics can be used in recommendation engine
+*** uses apache spark cluster
+** collaborative filtering
+** use outputs from recommendation engine into homepage
+** can be used to both rows and content of the rows
+** we can check if recommendations are working using analytics service
+* geo tagging user finger printing
+* traffic predictor
+** how to load, what data to load in local cdn
+** predict what people are going to watch, and cache it before hand
+** saves bandwidth and low buffering nfr
+** new launch could be one input
+** another inputs come from analytics
+** after predicting what videos will be watched in different localities it puts event into kafka
+* cdn writer
+** looks at event from traffic predictor and copies the videos
+** it gets event saying lc1 requires chunks c1, c2, c3
+** queries asset service and finds out what all are missing
+** we are communicating in terms of chunks so we only take care of required formats and quality
+** how is data copied
+** there will be 1 s3 and 2 main cdns
+** instead of copying all chunks from s3 to local cdns. distribute chunks among LC and
+** if we use s3 our cost will increase, single point of failure
+** do the transfer when there is low load
+** optimization netflix is doing giving boxes to isps
