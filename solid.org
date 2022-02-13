@@ -121,3 +121,20 @@
 *** technique that allows creation of dependent objects outside of class and provides those objects to a class
 *** it can be done via setter class also but better approach is to use constructor
 *** it is the callers job to provide dependencies?
+** inversion of control
+*** design principle in which control of object creation, configuration and lifecycle is passed to a container or framework
+*** no need to use new keyword
+*** they are created by something else
+*** control of object creation is inverted
+*** makes sense for objects in application like services, data access and controllers
+*** does not make sense for entities, value objects, data transfer objects
+**** we can create these with new
+*** makes it easy to switch implementations
+*** increases program modularity
+*** manages lifecycle of objects and their configuration
+* static method calls are also signs of coupling
+* pyramid of clean code
+** solid
+** design pattern
+** tdd
+** continuous refactoring
