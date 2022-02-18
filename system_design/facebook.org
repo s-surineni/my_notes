@@ -1,0 +1,83 @@
+* functional requirements
+** post something (image, text, video)
+** like comment and share post
+** add friends
+** timeline
+** user should see others post and others profile
+** a page for others post and others profile
+** activity log, should keep track of all the actions of a user
+* non functional requirements
+** read heavy
+** fast rendering, posting
+** lag is ok (ok for new post to appear after sometime, but page should load quickly)
+** access pattern
+** global
+*** huge variety of devices
+*** multiple languages
+*** internet bandwidth
+* users categorizing
+** famous
+*** has huge number of friends
+** active
+*** people who accessed facebook in last 3 days
+** live
+*** who are online now
+*** we'll send notifications through socket
+** passive
+*** not active regularly
+*** we won't cache any data for them
+** inactive
+*** deactivated accounts
+* user account related tasks are handled by user service
+** get a user by userid, update
+** uses mysql
+** uses redis to cache data
+** events like user creation, login are pushed to kafka
+** using events we can do fraud check, to update other systems
+* adding friend
+** handled by graph service
+** graph service holds relationships and their weightagesj
+** graph service uses mysql database
+** user relations are also stored in redis
+* redis storage format
+** userid
+** user details
+** friends
+** user type
+** relavant tags
+*** can be used to decide what content to show on timeline
+** last access time
+* some service keeps updating the type of user
+* user posting and timeline building
+** url shortener
+** asset service
+*** takes all responsibilities similar to youtube
+*** it also takes care of removing content from cdn after interest on the media died down
+** post goest to post ingestion service
+** distributes the work to url shortener and asset service based on the cotent of the post
+** posts are stored in cassandra
+** there is another service called post service which is source of truth for posts
+*** provides api for post related tasks
+** post ingestion service also puts event into kafkak
+** there is analytics service which listens to new post event.
+** it does ml and tags the post and puts the info into kafka event
+** post processor listens to this event
+** post service gets user info and friends info from user service and group service to find out potential consumers of the post.
+** It also fetches the tags of the user to find out if post is relavant to the user
+** puts all this info into redis, which is the timeline of all the users
+** it updates the data of relavant users in redis
+* user timeline access flow
+** looking at others profile timeline
+** the request will be handled by timeline service, which queries posts service for all the users posts and returs the data
+** looking at his own timeline
+** timeline service first checks if the data is present in redis, this only contains normal users data
+** for posts of famous users, timeline service queries user and group service to find out which famous user, current users follows
+** it queries post service to get posts of famous users
+** it aggregates both these posts and shows it to user
+** before returning it stores this timeline data into redis which timeline
+** live user optimization
+*** during post processor flow it queries user and groups service
+*** at this time it know which users are actually live
+*** it will put another event into different topic for live user
+*** live user service listens to this event
+*** it maintains sockets with all the live users

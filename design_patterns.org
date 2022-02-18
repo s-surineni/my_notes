@@ -153,8 +153,10 @@
 ** similar to adapter
 ** works with new code
 ** decouples abstraction and implementation (like dependency inversion?)
+** reduces number of classes to be created?
 ** uses encapsulation, composition and inheritance
 ** changes in abstraction wont affect the client
+** client is unaware of the abstraction on the backend
 ** we choose this because we know details wont be right to begin with
 ** examples
 *** drivers, jdbc

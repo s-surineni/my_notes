@@ -17,3 +17,7 @@ p4 revert
 * To create a numbered changelist, issue the p4 change command. This command displays the changelist form. Enter a description and make any desired changes;
 ** All files open in the default changelist are moved to the new changelist.
 ** If you delete files from this changelist, the files are moved back to the default changelist.
+* show new files
+
+* show opened files
+** p4 opened -u ssurineni
