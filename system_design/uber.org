@@ -1,0 +1,72 @@
+* functional requirements
+** see cabs
+** get eta and price
+** book a cab
+** location tracking
+*** track for driver and users
+* non functional requirements
+** should be able to operate in all the countries
+* finding closest cab to user
+** given segment boundary and segment of cab, we need to figure out which segment the cab belongs to
+** as cabs keep moving we try to get continuos pings from cabs
+** we'll have maps service, it divides city into segments
+** it also tells from lat, long which segment user belongs and which segment cab belongs
+** calculates eta and route from point a to point b
+** if there are many drivers in a segment, it further reduces the segment size or merges the segment to increase segment size
+* user side
+** there is user app
+** it connects to load balancer it connects to user service
+** user service contains all the user info
+** proxy for user related info
+*** talks to other systems to deliver required for example trips
+** uses mysql
+** uses redis to cache the information
+** booking cab
+** controlled by cab request service
+** has web socket connection to user app
+** talks to cab finder
+* driver side
+** acts similar to user app
+** also talks to location service
+** the driver location is updated regularly in location service
+** this location service keeps talking to map service to find out which segment the cab belongs to
+* matching driver and user
+** all drivers are connected to web socket handler
+** web socket manager keeps track of which driver is connected to which web socket handler
+** web socket manager uses redis to cache mapping of driver to websocket handler
+** the location updates go to location service
+** this information is stored in cassandra
+** the location service also stores the route for the trip
+** location service asks map service about the driver segment and stores the map of segment and drivers in redis
+** trip service
+*** source of truth for all trip information
+*** uses mysql and cassandra
+*** mysql for present data. cassandra is used to archive that data once trip is completed
+*** trip archiver moves data from mysql to cassandra
+** customer requests cab through cab request service.The data in request is source lat, long and dest lat, long
+** cab request service queries cab finder. which returns cab information
+** cab finder publishes information into kafka. which can be used for analytics
+** cab finder asks location service by giving it source lat long, the segment of the user
+** cab finder also asks location service the drivers that are near to user
+** location service asks maps service for all the locations around users location to get nearest 10 drivers
+** it also asks map service to get closest 10 drivers. Its just asking map service everything
+** we need to select one best out of all drivers
+** there can be modes
+*** premium customer assign best cab driver
+*** average user just assign random driver
+** location service asks driver priority engine for drivers rankings
+** once it decides the driver, it asks web socket manager which web socket handler the driver is connected to
+** location service sends notification to driver and user about the confirmation of the trip
+** the trip service comes into play now. It creates a trip with details of start point end point and so on
+** analytics
+** payment service
+** stores payment info need to be paid to the driver
+** using spark streaming cluster create a heatmap for events of not finding drivers
+** put the data into spark cluster also so that we can
+*** classify the customer
+*** driver profiling
+*** driver rating engine
+*** fraud engine
+*** input to maps service
+**** traffic data
+**** highway

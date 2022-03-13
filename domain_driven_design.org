@@ -1,0 +1,5 @@
+* focuses on the problems of business domain. earlier we used to focus on how to share the data
+* ddd works with the clients througout the project. ultimate goal is to solve problem not even building software
+* interacting with domain experts
+* model a single subdomain at a time
+* many applications try to do too many things at once and adding additional behavior gets more and more difficult

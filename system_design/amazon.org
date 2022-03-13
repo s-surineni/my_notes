@@ -1,0 +1,93 @@
+* functional requirements
+** users should be able to search for the product
+** we should be able to tell them if we can deliver the product to them
+** cart and wishlist
+** checkout
+** view order history
+* non functional requirements
+** low latency
+** high availability
+** high consistency
+* user interface
+* home screen
+* search page
+* amazon has many suppliers
+* these suppliers are managed by inbound service
+* it talks to various supplier systems and gets data
+* talks to amazon through kafka
+* item service listens to events and onboards new item
+** source of truth for all items in the eco system
+** item service uses mongodb
+* another consumer of inbound service is search
+** once new item is added it makes it searchable
+** formats the data into searchable and stores it into elastic search
+* at user end search service manages searching
+** it takes input from user or other systems for search queries
+** it uses elastic search
+** we should not show items which we cannot deliver to customer
+** this is handled by serviceability and tat service
+** it knows in what all warehouse the product is in
+** it knows if it can deliver product from warehouse to customer
+** there may be constraint on what kind of products that can be shipped on a route
+** it also tells how long it will take to deliver the items
+** search also talks to user service to get user address to find out if items can be delivered to user location
+** every search pushes an event to kafka. which can be used in recommendation engine
+** from search screen user can wishlist or add it to cart and buy it
+** these will be handled by wishlist service and cart service
+** these two services are very similar
+** they both work on mysql db
+** each addition to cart or wishlist is also published as event to kafka for recommendation engine
+* analytics
+** events are consumed by spark streaming
+** it gets the result of what people are buying currently or wishlisting currently
+** it also puts the data into hadoop
+** like in youtube we can come up with products what this user likes based on current purchase, wishlist
+** all this information from spark cluster is used by recommendation service
+** it stores recommended products by userid and by category
+** serviceability doesn't do any calculations at runtime
+** it pre calculates every thing and returns cached data
+** it does mxn calculations where m pincodes and n warehouses
+* user purchase flow
+** it goes to order taking service
+** it uses mysql database
+** order id gets generated
+** we'll store this order id in redis to expire is sometime
+** the record in mysql database will have status
+** we'll call the inventory service and block them for this order
+** if multiple users want to buy same item , we can use non negative constraint to stop it from ordered by more people than actual count
+** this way only first user gets order others get constraint error
+** once the inventory is updated it goes into payment service
+*** multiple outcomes could come out of payment service
+*** payment successful
+*** order gets confirmed and we update record in order taking service
+*** we'll also trigger order placed event
+*** second outcome is payment failed
+*** we need to cancel order
+*** increment inventory count again
+*** reconcile service to check correctness of order count and inventory count
+*** payment service didn't return at all
+*** as we put expire time for redis, the cache entry gets expired
+*** we'll write expiry call back on this event
+*** order taking service will catch the event
+*** mark the order as cancelled
+*** what should we do if payment confirmation and expiration happen at same time
+*** when payment success comes first, delete entry in redis
+*** when expiry event comes first, refund the money back to customer or create new order and confirm it
+*** dont forget to delete entry in redis when we get success for failure confirmation
+*** we need to be careful about redis expiry as its events are not very punctual with time
+*** alternative implementation could be queue
+*** if item is out of stock we shouldnt show it to users in search and homepage
+*** this is handled by search consumer
+* how do we take care of order db bottleneck
+** we needed mysql as we needed atomicity
+** once the order is confirmed we dont update it
+** archival service keeps moving data from sql to cassandra regularly
+** archival service queries order processing service for all the terminal orders
+** and sends them to historical order service to store them in cassandra
+** past orders can be viewed through view order service
+** notification service is used to send notifications to user seller etc
+* analytics
+** which item has generated the most profit
+** which category has generated the most profit
+** based on previous orders what he may order in future
+** same process as in youtube
