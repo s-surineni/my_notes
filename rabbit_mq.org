@@ -1,3 +1,21 @@
+* open source messaging system
+* uses amqp protocol
+* written in erlang
+* erlang supports distributed fault tolerant applications
+* built for telecom applications
+* rabbitmq server is a message broker. works as message coordinator for applications
+* features
+** reliability
+** routing
+*** works by routing messages through exchanges before stored in a queue
+*** there are different exchange types
+*** clustering and high availability
+**** we can cluster several servers together which forms a single logical message broker
+**** queues can be mirrored across multiple servers
+*** management web interface
+*** command line interface
+* a queue is a temporary storage location, which sends are receives messages when conditions permit
+* rabbit mq is centralized
 * questions
 ** what is the message store
 ** how does it decide which message goes to which consumer if there are multiple consumers of same type

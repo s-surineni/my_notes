@@ -139,18 +139,23 @@ void secondMethod() {
 *** scheduleWithFixedDelay
 **** delay is calculated from the end of the execution of the task
 ** executor has a waiting queue
+** tasks are executed in the order of their submission
 ** we dont have a way to know when a task is done
 ** a tasks execution can be cancelled if the task has not started yet
 *** we remove the task from the waiting queue
 ** not incompatible with runnable pattern
 ** runnable caveats
-*** method cannot return anything, no exception can be raised
+*** method cannot return anything,
+*** no exception can be raised
 *** no way to know if a task is done or not
 ** callable interface
 *** single method call
+*** it can return an object of type V
+*** it may also throw an exception
 *** executor interface does not handle callables directly
 *** ExecutorService interface has a submit method that takes callables
 *** submit returns future object
+*** future is a wrapper returned by the task
 ** future object work
 *** create callable in main
 *** call submit and pass callable
@@ -158,6 +163,7 @@ void secondMethod() {
 *** get method is blocking it will block until result is available
 ** 2 exceptions can be thrown from thread
 *** InterrupedException
+**** happens when thread is interrupted by shutting down the executor
 *** ExecutionException
 ** get method throws Interrupedexception if we pass a timeout to it
 ** shutting down ExecutorService

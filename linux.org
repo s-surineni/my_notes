@@ -57,3 +57,13 @@ git config --global user.signingkey <short Key ID>
 * ~/bin/sqldeveloper.sh > /dev/null 2>&1 &
 * systemctl list-units
 * journalctl -u service2
+* find number of folders
+#+begin_src shell
+find . -maxdepth 1 -type d | wc -l
+#+end_src
+* forward ports
+#+begin_src shell
+# SSH command for setting up tunnel to port 6109 on CIAB VM to localhost 6109
+ssh -L 6109:127.0.0.1:6109 -L 6101:127.0.0.1:6101 CIAB_VM_IP_Address
+# Example: ssh -L -L 6101:127.0.0.1:61019 10.233.196.196
+#+end_src

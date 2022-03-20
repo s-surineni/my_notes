@@ -81,3 +81,44 @@
 *** it will put another event into different topic for live user
 *** live user service listens to this event
 *** it maintains sockets with all the live users
+*** it listens to event from post processor service and updates app
+* archival service
+** redis can't hold much data
+** we store only one days data in archival service
+** timeline gets appended but old values doesn't change(like log_
+** runs periodically, get data from redis and stores in cassandra
+** for users who's timeline is not cached it creates
+** timeline service also queries archival service for old data
+** wherever we are caching we just cache ids not content itself
+* issue with cassandra
+** could result in hotspots
+** if partition key is not selected properly, all the traffic could go to only one machine
+* likes and comments
+** like request comes to like service
+** storage is cassandra
+*** content type(commend, photo, media), content id, user id, like type(love, hate)
+*** we store number of likes in redis
+** will trigger an event for kafka
+* comment service
+** storage is cassandra
+** no need for caching
+** comment event also gets added into kafka
+* shared post is like a post with parent id pointing to original post
+* activity tracker
+** like post
+** comment on post
+** we get this info from kafka events which we fire when user does something
+** storage is cassandra
+* analytics
+** content can be classified into tags
+** based on type of posts we can tag user profile
+** have spark streaming cluser, hadoop cluster
+** listens to all activity by user
+** does user profiling, based on posts, comments
+** puts user profile into info kafka, user service listens to this and stores this
+** graph weight
+** whose posts a user likes more
+** this info is stored, and used to show posts from friends
+* trends
+** trends service takes all posts, comments
+** searches for most common words

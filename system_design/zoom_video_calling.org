@@ -1,0 +1,96 @@
+* functional requirements
+** 1 on 1 calls should be supported
+** group calls should be supported
+** the call could be audio, video, screen share
+** allow recording
+* non functional requirements
+** super fast
+*** better performance than youtube, video sharing sites
+*** high availability, fault tolerant, distributed geographically
+*** data loss is ok in some scenarios
+**** consistency could be compromised compared to latency and availability
+* we use udp in video calling
+** its a lossy protocol
+** packets could come out of order
+* establishing connection
+** u1 tells websockethandler  that it wants to have video call with u2
+** handler will check if u2 is online
+** websockethandler will send a message to u2 for accept/reject video call
+** udp is connectionless
+** u1 needs public ip address of u2 to send messages over udp
+** there is a special device called connector which finds out public ip address of u1 and u2 and shares with them
+** then u1 sends it public ip address to u2 and vice-versa through websockethandler
+** as most of the machines are still on ipv4 they dont have public ip address
+** the router and isp has public ip address
+** when u1 calls connector for its public ip address, it gets it from isp's public ip address and port combination. It will reply the same thing to u1
+* how to solve u1 and u2 and different net speed
+** while sharing public ip address they also share more attributes like internet speed
+** based on each devices attributes, the minimum requirements will be finalized
+* some firewalls won't support udp
+** in such a case communication move to tcp and may happen through websocket or http
+* symmetric nat
+** if will stop u2 talking to u1 after finding u1 ip address
+** to solve this issue we can use a call server in between
+*** its combination of connector plus data transfer
+*** it serves are intermediate layer for u1 and u2
+* all this process is called webrtc
+** handshake through websockethandler is called signalling
+** connector is called stun
+** call server is called turn
+* group calling
+** we categorize groups into < 5 users and > 5 users
+** <5 users
+*** u1 sends m1 to u2, u3, u4
+*** this works for smaller group as same message is being sent multiple times for each user
+** >5 users
+*** u1 will send message only to call server
+*** call server gets more load in this case
+** the 5 is not fixed
+*** more users can be accomodated if they all are on same private network
+** if we need to support recording then we must send communication through call server
+** peer to peer communication is not insecure
+*** when handshake happens they will exchange cryptographic keys. that way they could encrypt the messages
+* overall architecture
+** most systems support chat feature too
+** all the live users are connected to websockethandler
+** u1 connecting to u2
+*** u1 talks to websockethandler which in turn talks to signalling service
+*** signalling service initiates call between two parties
+*** you can add some verification in signalling service like if the users are not friends they cannot have chat
+*** signalling service talks to websockethandler of u2 and asks if it accepts the call
+*** once the u2 accepts the call, the control goes to connector
+*** through connector they will find out their public ips
+*** they communicate this info through websockethandler
+*** they also share info like  bitrate, codec, dimensions, bandwidth etc
+*** then the control goes to peer to peer communication
+*** the chunk size of video is much small in terms of milliseconds
+*** if 1-1 connection is not possible due to firewall or symmetric nat the communication happens through turn server
+* bandwidth can differ in between
+** when that happens device sends info through websockethandler
+** signalling service will put those events into kafka
+** more events for analytics is how frequently network is changing, battery usage, network usage etc
+* recording
+** if recording is required all communication happens through call server
+** every message to call server is forwarded to logger service
+** logger service buffers these messages and sends them to distributed file system
+** once the call is ended signalling service gets to know call is finished
+** signalling service sends call terminated event to kafka
+** file creator listens to this event
+** it takes all chunks from distributed file system, process them and put them in s3
+** once the file is uploaded it can send notification to user
+* group calls
+** transcoding is required as different user may have different requirements
+* analytics
+** how many calls happen in a day, bandwidth, duration
+** hadoop cluster can give better analytics
+* client intelligence
+** when the network congested, or public ip is changed, clients will decide to move from peer to peer to call server
+** both need not change the communication to call server at once. they can do it at their own pace
+* live broadcast
+** the input manager send data to call server
+** lot of users on different kinds of devices
+** call server sends data to multiple transcoders
+** good transcoders can do in realtime
+** the output from transcoders will be sent to different call servers
+** these call servers will send the data to multiple call servers
+** call servers are dedicated to types of users, like one for mobile, one for laptop, one for tv etc
