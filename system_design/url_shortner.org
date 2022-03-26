@@ -1,0 +1,44 @@
+* functional requirements
+** get short url out of long url
+** given short url redirect to longer url
+* non functional requirements
+** high availability
+** low latency
+* how many requests per year
+* lets say we are saving short url for an year
+* what all characters could be included
+** a-z, A-Z, 0-9 = 62
+** the number of characters to use is 62 ^ n > number we store in year
+* how to avoid dupliate short urls for requests around same time
+** check in the database and retry ? (would this even work)
+** we need a predictable way to avoid collisions
+** we use redis feature
+** redis has a feature that it will always return unique number
+** the app servers can convert it to base62 and return it
+** problems with this approach
+*** huge load from multiple app servers
+*** single point of failure
+*** no guarantees on redis latency
+** use multiple redis
+*** we need to watch out that redis does not dupliate numbers
+*** this can be avoided by giving different series to different redis
+*** we need to manage which series is given to whom
+** use token service
+*** short url service requests token range from token service
+*** token service runs on single threaded model
+*** it can use mysql
+*** the number of requests are less for token service
+*** (ques) what would happen if same number is given to multiple parallel requests?
+*** once the range is completed, they can request next range
+*** (ques) why to pre populate token range
+*** if massive amount of traffic keep multiple copies of token service
+**** (ques) wouldn't that defeat the purpose of having one token service
+*** we can increase the range of token so that the don't get finished often
+** what to do if short urls service goes down when it used some of the tokens in the range
+*** we can ignore those lost tokens as we have huge numbers available
+* we use cassandra as datastore
+* analytics
+** whenever a request comes store all the information with request like origin site, location, device into kafka
+** because we send this event async we may miss this event, which is ok
+** instead of sending to kafka on each request we can aggregate locally and send at once. this will preserve IO
+** use hadoop or spark streaming to get results out of data
