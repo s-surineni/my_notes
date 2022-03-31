@@ -29,10 +29,12 @@
 ** sfdx force:org:list
 ** setdefaulthubusername?
 ** setting global default devhub
-** scratch orgs with different features
+** scratch orgs with different features can be created
 ** add sample data by setting hasSampleData
 ** we can create upto 7 scratch orgs
 ** set password to scratch org sfdx force:user:password:generate
+* set this config   "adminEmail": "ssurineni@salesforce.com", in project-scratch-def.json
+* add   "hasSampleData": true for getting sample data
 * configuration file
 * 2 types of development org-based and source based
 * source type development
@@ -47,3 +49,12 @@
 ** sfdx tracks changes to source for us
 * dev orgs
 ** ssurineni@mindful-wolf-bv7mfo.com
+** scratch org user test-qbwsz4minlhh@example.com
+* commands
+** sfdx force:auth:web:login --setdefaultdevhubusername --setalias psdevhub
+** sfdx force:org:list
+** sfdx force:user:password:generate
+** sfdx force:user:display -u test-qbwsz4minlhh@example.com
+** sfdx force:user:display -u ps1
+** sfdx force:org:delete
+** sfdx force:auth:web:login -s # sets default org
