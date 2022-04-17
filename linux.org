@@ -5,6 +5,8 @@
 #+begin_src shell
 find . -maxdepth 1 -name *.sh
 #+end_src
+** find number of directories
+** find . -maxdepth 1 -type d | wc -l
 * directories occupying space
 #+begin_src bash
 du -a /home | sort -n -r | head -n 5
@@ -51,6 +53,7 @@ git config --global user.signingkey <short Key ID>
 ** dns server 192.168.29.1
 * echo $P4_PASSWD | p4 -u $P4_USER login
 * sed
+** find . -type f -name 'xa*' | xargs sed -i 's/asd/dsg/g'
 ** sed -i to edit file in place
 ** sed command syntax [addr]X[options]
 ** sed 's/unix/linux/' geekfile.txt substitute replace

@@ -1,0 +1,65 @@
+* functional requirements
+** send notifications
+** pluggable
+*** should be able to add more channels like sms, mail, in-app
+** build as saas product
+*** for accounting
+*** rate limiting
+*** should be able to control the different channels in which to send notifications
+*** we should be able to restrict total number of notifications across all channels and verticals
+*** transactional notification
+*** promotional notification
+*** user level rate limiting
+*** billing tiers, how many requests are allowed
+** prioritization
+* non functional requirements
+** highly available
+** many clients
+*** we should be able to add more clients
+* notification flow
+** starts from clients
+** all the notification requests will come to notification service
+** 2 types of requests
+*** one tells the channel specifically
+*** one lets us choose the channel
+** the requests are queued in kafka
+** notification service does basic validations
+* notification validator and prioritizor
+** prioritizes message based on the message type
+*** otp
+*** transactional
+*** promotional
+** there will be different topics for different priority
+** consumers will first consume high priority messages. Is that possible?
+* rate limiter
+** checks if the client is allowed to call these many number of times
+** checks if it is allowed to send the message to the user these many number of times
+** the implementation is that there will be a key and we'll increment that key for certain timestamp in redis
+** request counter for clients which are pay for use
+*** no limit on requests
+* notification handler and user preferences
+** examples like
+*** dont send me sms only email
+*** unsubscribe from promotional messages
+** will have preferences db
+** it also talks to user service
+*** to get details for user with user id
+** another kind of rate limiting is user may say dont send me more than 3 messages in a week
+* all the information collected so far is put into kafka
+* there are different handlers for different kinds of notifications
+* sms handler
+** will integrate with multiple vendors based on geography
+* notification tracker
+** for auditing
+** puts all the notifications sent out in cassandra
+* bulk notifications
+** starts from bulk notification UI
+** inputs are filter criteria and notification
+*** example like send notification to all users who bought milk in last 3 days
+** user transaction data
+** different services put transactional data into multiple kafka topics
+** transaction data parser listens to all these events
+** it parses all the data into a common format and puts it in mongodb or elastic search
+** a query engine is built on top of data store
+** it queries the data store and returns the user list
+** the bulk notification service calls notification service with all the users and notification info to send out the notification
