@@ -63,3 +63,4 @@
 ** a query engine is built on top of data store
 ** it queries the data store and returns the user list
 ** the bulk notification service calls notification service with all the users and notification info to send out the notification
+** query engine can also be used by rule engine, fraud engine
