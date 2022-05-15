@@ -1,0 +1,68 @@
+* salesforce also includes low code and no code automation
+** workflows, processes and flows
+** these are called automation or declarative development
+* org
+* salesforce is multitenant
+** every company shares same underlying hardware
+** org is unique instace of salesforce? logically ?
+* different types of orgs
+** production
+** sandbox
+*** copy of partial production
+** developer org
+*** used for more than developing
+*** used for authentication
+*** main developer org will become developer hub for managing sfdx scratch orgs
+* configuring dev org
+** setup mydomain
+*** helps using multiple orgs at once
+*** enable dev hub
+**** allows you to manage sfdx scratch orgs
+*** api or security token
+** set password to never expire
+** company informaion
+* sfdx
+** while using sfdx you use scratch orgs instead of developer orgs
+** you create project with sfdx first?
+** force-app/main/default contains actual metadata
+** sfdx-project.json
+** sfdx force:org:list
+** setdefaulthubusername?
+** setting global default devhub
+** scratch orgs with different features can be created
+** add sample data by setting hasSampleData
+** we can create upto 7 scratch orgs
+** set password to scratch org sfdx force:user:password:generate
+* set this config   "adminEmail": "ssurineni@salesforce.com", in project-scratch-def.json
+* add   "hasSampleData": true for getting sample data
+* configuration file
+* 2 types of development org-based and source based
+* source type development
+** packaged model
+** no requirement for packages?
+** instead of sandbox org or developer org development is done on scratch orgs
+** sfdx supports both development
+** development means metadata not code
+** it includes reports, layouts, object schemas etc
+** -d to specify its default devhub
+** -s to specify its default org
+** sfdx tracks changes to source for us
+* dev orgs
+** ssurineni@mindful-wolf-bv7mfo.com
+** scratch org user test-qbwsz4minlhh@example.com
+* commands
+** sfdx force:auth:web:login --setdefaultdevhubusername --setalias psdevhub
+** sfdx force:org:list
+** sfdx force:user:password:generate
+** sfdx force:user:display -u test-qbwsz4minlhh@example.com
+** sfdx force:user:display -u ps1
+** sfdx force:org:delete
+** sfdx force:auth:web:login -s # sets default org
+** sfdx push source to default scratch org
+* automation landscape
+** declarative tools
+** coding tools
+* admin tools
+** workflow rules
+*** same object updates
+*** email notifications

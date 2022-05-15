@@ -1,0 +1,94 @@
+* functional requirements
+** one to one chat
+** group chat
+** supports sending text, images, videos
+** read receipt
+** last seen
+* non functional requirements
+** very low latency
+** high availability
+** no lag
+* message flow
+** user talks to web socket handler
+** keeps open connection with all the active users
+** each machine has 65000 ports
+** one machine can handle 60000 users
+** user1 send m1 to websocket handler to send it to user2
+** websocket handler talks to websocket manager
+** websocket manager keeps track of which device is connected to which websocket handler
+** websocket manager uses redis
+** it stores information like u1 is connected to websocket handler1 and websocket handler1 is connected to u1, u3, u4 etc
+** if a connection is reset, the data is updated from websocket manager to redis
+** websocket handler1 also talks to message service
+** message service is repository of all messages in the system
+** uses cassandra
+** websocket handler1 will talk to websocket manager to get the websocket handler u2 is connected to
+** ws1 will talk to ws2 to send the message to u2
+** there are two possibilities
+** ws2 could still be connected to u2 or it may be disconnected
+** if wsh2 is connected it will send message else
+*** when the message is sent of app is not open, device will send message to wsh2 that I have received the message
+*** if the app is open on chat of u1 device will send reply saying I have seen the message
+*** wsh2 will ask websocket manager which machine is talking to u1 to send read receipt
+** we'll cache user connection data at websocket handler
+*** it will cache all the users connected to itself
+*** it will also for short duration store the in about users connected to other web socket handlers
+** he may have gone offline, it will not do anything
+** we may want to store read receipts in cassandra
+** it should be stored as status in cassandra
+** the storage of read receipts is necessary because u1 may be offline to receive the receipts
+** these will be sent to him when he is online again
+* sending message to offline device
+** u1 sends message to u3 which is offline
+** wsh1 queries websocket manager for the machine connected to u3
+** websocket manager replies saying it cant find u3. Flow ends there
+** when u3 comes online wsh3 will ask message service if there are any messages for u3
+*** these need to be not in received and read status
+*** once those messages are received and read that info will be sent back
+** there could be a race condition where u3 came online in parallel to u1 sending message to u3
+*** wsh1 asks for u3, websocket manager cannot find it
+*** u3 asks for all the messages
+*** websocket manager stores u3 is connected to wsh3
+*** the message from u1 gets stored in message service
+*** wsh3 thinks that it fetched all the messages for u3
+*** to avoid this condition, wsh3 would keep polling if there are any messages I still need
+*** these will be bulk calls
+* sending messages while being offline
+** u1 will try to connect
+** these messages will be store in localdb
+** when the device gets connection these messages will be sent
+* group messages
+** wsh1 sends message to message service which is directed towards g1
+** message service stores this message in cassandra
+** it also puts the message into kafka
+** there is a service called group message handler, which listens to this topic
+** it queries group service to find out all the users in the group
+** it queries websocket manager to find out all the machines the users are connected with
+** forwards the message to individual machines to forward the message to respective users
+* sending assets
+** the files are compressed first
+** uploads the image to server. gets the id and send the id to receiver
+** image get compressed on mobile device?
+** the device sends the message to asset service
+** asset service stores image in s3
+** based on demand it could move messages to CDN
+** the asset service returns id to sender and it will flow regular message path
+** what if multiple people are sending same image video
+*** to save storage first we hash the file
+*** device send the hash to asset service asking if it has the file already
+*** if the asset service already has the file, use that file to send to user
+*** to avoid collision, we can take 5 different hashes and match them
+* remaining services
+** user service
+** group service
+*** maintains information of groups
+*** uses mysql DB
+** analytics service
+*** find out user interests based on content of message
+*** categorize message first, spark streaming service will do this
+** last seen service
+*** listens to any activities of user
+*** uses cassandra
+*** using cassandra because the status is updated very frequently so it will have high throughput
+*** two types are events get generated, by the app and by the user
+* need to do monitoring and alerting to track sla's of no lag

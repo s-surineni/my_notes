@@ -9,6 +9,7 @@
 ** factory
 ** abstract factory
 * singleton pattern
+** many consider it as a code smell
 ** guarantees only one instance is going to be created
 ** guarantees control of the resource
 ** usually lazily loaded
