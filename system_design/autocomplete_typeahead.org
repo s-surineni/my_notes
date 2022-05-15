@@ -1,0 +1,34 @@
+* trie distributed
+* request path
+* dataflow path
+* api
+** we get prefix
+** we send back auto complete words
+* we store top k terms in every node of trie
+* how to distribute try
+* we have t1, t2, t3 replica of same tries
+* zookeeper stores which info is stored in which trie
+* user types ba
+* request comes to load balancer
+* load balacer will delegate the request to one of the nodes from n1 to n4
+* n1 node first checks in redis 
+* if n1 doesn't find the entries it asks zookeeper who is responsible for ba
+* it tells t1, t2, t3
+* if it gets t2, it will return bat or bath
+* n1 will populate this data in cache
+* splitting trie into multiple nodes
+* zookeeper stores ranges like a-k is in t1 etc
+* data collection flow
+** api -> phrase, weight
+** we get phrases with weight
+** we send them to aggregators using consistent hasing
+** the aggregator keeps flushing the data into nosql database
+** we keep hourly data in a row
+** after day we aggregate hourly data
+** we may delete older data or data is below certain limit
+** applier gets data from database and applies them into trie
+** appliers will run in specified intervals in respective ranges
+** applier builds trie based on some formula using weights and pushes into t1, t2, t3
+* optimizations
+** cdn
+** sending populate autocompletes bat, bal along with ba
