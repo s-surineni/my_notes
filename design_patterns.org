@@ -191,6 +191,9 @@
 ** provides client classes with a simplified interface for the subsystem;
 ** acts simply as a point of entry to a subsystem and does not add more functionality to the subsystem.
 * decorator pattern
+** hierarchical pattern that builds functionality by using composition
+** wrap another object to add functionality to it
+** adds behavior to object without affecting others parts of hierarchy
 ** notion of a class and relationships like inheritance are static.
 ** That is, happen at compile time.
 ** This means that we cannot make changes to classes while our program is running
@@ -338,3 +341,23 @@
 *** that classes should know about and interact with as few other classes as possible.
 *** all the rules come down to the principle that you should not allow a method to access another method by reaching through an object
 *** The other way you can reach through an object is when your method receives an object of an unknown type as a return value and you make method calls to the returned object.
+* composite patterns
+composite pattern is hierarchical pattern, dealing with tree structures
+treats part of structure and whole structure the same
+composes objects into tree structures
+we can treat individual objects similar to composite objects
+we can apply operations on individual or composite objects and expect same behavior
+examples: java.awt.Component, jsf widgets
+** restful web services
+** Design
+*** tree structured
+*** component is at the root
+*** component could be a leaf or composite of objects
+*** the difference is that leaf has only operations and composite has operations and also info about child nodes
+*** leaf has only operations, composite has operations plus the child nodes also
+*** parts of uml diagram are component, leaf and composite
+*** component class is the abstraction for all components
+*** declares interface for objects in the composition
+*** can also declare methods to access parent
+*** composite also implements components methods, but delegates tasks to its children
+*** composite also implements methods to modify children
