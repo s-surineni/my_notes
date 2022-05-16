@@ -11,6 +11,7 @@ find . -maxdepth 1 -name *.sh
 #+begin_src bash
 du -a /home | sort -n -r | head -n 5
 du -h --max-depth=1
+du -sh *
 #+end_src
 * grep
 ** grep all files only in current directory
@@ -77,4 +78,48 @@ ssh -L 6109:127.0.0.1:6109 -L 6101:127.0.0.1:6101 CIAB_VM_IP_Address
 ** rg 'cDeleteGenExec.exec_delete_Movie()' -g '*.sql'
 ** rg -l 'cDeleteGenExec.exec_delete_Movie()' -g '*.sql'  # file names only
 
+*
+* installation
+** better to keep separate /var directory hierarchy in separate partition, so system log wont overwhelm rest of the system
+* how boot process works
+** motherboards have mini operating system hard coded into hardware
+** old one is bios new one is uefi
+** it looks for MBR(master book record)
+** it loads GRUB bootloader into
+** GRUB loads os kernel into memory
+** vmlinux is compressed version of working linux kernel
+* run level
+** codes that tell linux how os should be running
+** use systemctl to set run level
+** change run level by systemctl isolate rescue.target
+** to change default run level use systemctl enable multi-user.target
+* file system hierarchy
+** everything in linux is a plain text file
+** file system hierarchy standard
+** root directory is /
+** /bin is for binary files
+** /sbin same as above but for only multi user sessions
+** /dev provides pseudo files for physical and virtual devices
+* configuring environment
+** locale
+*** controls spelling and number format
+** localectl
+** env get all environment variables
+** export sets value in child shells too
+** we can use type to find out how bash runs the command
+** timezonectl is used to set timezone
+* hard disk management
+** df will display all block devices currently mounted on the system, along with mount point
+** mount point is the location on file system where we can find drive and its contents
+** df -ht ext4
+* all devices dvd, usb and modem are represented as file in /dev directory
+* /dev/sda is the first data drive read by the system
+* /dev/sdb is the second drive in the system
+* if device is not mounted check it with lsblk | grep sd
+* mounting the device
+** create new folder in media directory
+** sudo mkdir /media/newplace
+** mount using command sudo mount /dev/sdb2 /media/newplace
+* show all devices connected to system dmesg
+* get hardware details using lshw
 *

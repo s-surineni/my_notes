@@ -10,6 +10,12 @@
 ** abstract factory
 * singleton pattern
 ** many consider it as a code smell
+** singleton pattern ensures a class has only one instance and provides global point of access to it
+** con is because of global accessibility
+*** it is ambigous to understand
+*** hard to find out why something is changed, it hard to reason about
+*** in future we may require multiple instances of object - I doubt this will happen
+*** it makes testing difficult
 ** guarantees only one instance is going to be created
 ** guarantees control of the resource
 ** usually lazily loaded
@@ -339,3 +345,6 @@
 *** that classes should know about and interact with as few other classes as possible.
 *** all the rules come down to the principle that you should not allow a method to access another method by reaching through an object
 *** The other way you can reach through an object is when your method receives an object of an unknown type as a return value and you make method calls to the returned object.
+* strategy pattern
+** using composition rather than inheritance
+** strategy pattern defines family of algorithm's encapsulates each one and makes them interchangeable. Strategy lets algorithm vary independently from clients that use it
