@@ -122,4 +122,32 @@ ssh -L 6109:127.0.0.1:6109 -L 6101:127.0.0.1:6101 CIAB_VM_IP_Address
 ** mount using command sudo mount /dev/sdb2 /media/newplace
 * show all devices connected to system dmesg
 * get hardware details using lshw
-*
+* software management
+** sources.list file is present in /etc/apt
+** software categories
+*** main
+*** restricted
+*** universe
+*** mutliverse: restricted usage
+** third party repositories are added in the folder /etc/apt/sources.list.d/ directory
+** sudo apt update updates the software index
+** apt search helps to search for software, description
+** apt is replacement for apt-get
+* desktop
+** there are 3 majorly
+*** cinnamon/mate
+*** gnome
+*** xfce
+* server
+** server is any computer on which there's at least one process running, whose job is to serve the needs of remote user, usually called client
+* server virtualization
+** subset of techniques for partitioning a subset of physical computer, and uses it to launch independent operating system
+** the operating system would feel that it is running on its own machine
+** for ubuntu its better to use lxc virtualization via the lxd environment
+** systemctl start httpd to start process
+** systemctl enable httpd to start process each time we start the system
+** ip a get the ip address
+** default webroot is /var/www/html
+** nextcloud can be used as own opensource dropbox
+** snap is a kind of virtual partition exist in file system inside its own isolated environment
+* compiling code

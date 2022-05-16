@@ -1,0 +1,7 @@
+* characteristics
+** highly consistent rather than available
+** durability
+** availability over performance
+** database will be strongly consistent
+*** read after most recent succesful write will see result of that write
+** No ACID?
