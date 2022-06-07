@@ -14,6 +14,10 @@ du -h --max-depth=1
 du -sh *
 #+end_src
 * grep
+** grep for whole word
+#+begin_src bash
+grep -rw "Attempt" logs/07Lxx000000511tEAA.log
+#+end_src
 ** grep all files only in current directory
  #+begin_src bash
  grep "string" * .*
@@ -151,3 +155,70 @@ ssh -L 6109:127.0.0.1:6109 -L 6101:127.0.0.1:6101 CIAB_VM_IP_Address
 ** nextcloud can be used as own opensource dropbox
 ** snap is a kind of virtual partition exist in file system inside its own isolated environment
 * compiling code
+* getting command line help
+** man wget
+* type command tells how the command is run by the bash
+* login shell and non login shell gets environment from different files (.profile/.bashrc)
+* /etc/profile system wide shell settings are configured
+* default shell for the user is specified in /etc/passwd
+* linux syntax patterns
+* ls -h gives size in human readable format
+* we can use backslash \ to interpret special characters as literals
+* the stdout can be redirected using 2>
+* wget pluralsight.comm 2> errorfile.txt
+* debugging hw issues
+** check if device is recognised
+** check if kernel module is loaded
+** checking usb devices
+*** lsusb
+*** lspci will show devices connected through pci slots
+*** lshw will show all hardware
+** kernel moduels are stored in /lib/moduels directory
+** uname -r gives kernel module we are currently running
+** subsitute command values ls /lib/moduels/`uname -r`
+** lsmod lists all loaded modules
+** to load module use modprobe command
+* network connection
+** show network ip
+** ip route show
+** check dhcp client
+** sudo dhclient
+** ip addr tells the systems ip address
+** netstat -i
+* dns
+** maps human readable addresses to ip addresses
+** dns server finding out host ip
+** host google.com
+** dns server systemd-resolve --status
+** manually creating dns indices
+** add them in /etc/hosts
+* scripting
+** the first line of script has to tell linux its an executable and which shell interpreter to use, we use shebang line to do that, it contains absolute location of shell binary file too
+** before we can run the script we have to change its mode to executable using chmod +x filename
+** builtin and external commands
+* important information is provided in /proc directory
+** meminfo file contains capacity and usage levels of system memory
+** cpuinfo tells info about cpu
+** get system usage using top
+** the most common culprit of system slowdown is memory unavailability
+** use free to find out available memory
+** know the state of all the storage devices mounted use df
+** df -t ext4 gives only ext4 formatted partitions
+* iftop is networking version of top
+** know interface using ip addr and run sudo iftop -i eno1
+* ps aux prints info about all the process running on the system
+* now linux logs are available from journald interface
+** journalctl --since "10 minutes ago"
+** other log files are stored in /var/log directory
+** most log messages will be sent to /var/log/
+** dmesg manages messages coming from kernel ring buffer
+** kernel ring buffer stores log messages from the most recent boot process
+** any message sent to /dev/null will be instantly deleted
+** kill <pid> kills one process
+** killall kills all instances of program
+* systemctl controls processes
+** sudo systemctl status apache2
+** sudo systemctl disable apache2 - will not run program on boot
+** sudo systemctl start apache2
+* process priorities
+** we can assign process priorities using nice command

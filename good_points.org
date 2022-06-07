@@ -1,0 +1,8 @@
+* storing creds
+#+begin_src
+We recommend you pass tokens in as environment variables, or persist them in a database that is accessed at runtime. You can add a token to the environment by starting your app as:
+SLACK_BOT_TOKEN="xoxb-111-222-xxxxx" python myapp.py
+
+import os
+SLACK_BOT_TOKEN = os.environ["SLACK_BOT_TOKEN"]
+#+end_src

@@ -27,7 +27,7 @@
 ** responsible for creating itself
 ** static in nature
 ** not a static class because it needs to be thread safe
-** private instance
+** privaate instance
 ** private constructor
 ** no parameters - parameters violates rule of singleton
 ** pitfalls
