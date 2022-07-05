@@ -1,3 +1,4 @@
+*
 * lab
 ** virtualbox
 ** hyper-v

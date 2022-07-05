@@ -58,7 +58,11 @@ git config --global user.signingkey <short Key ID>
 ** dns server 192.168.29.1
 * echo $P4_PASSWD | p4 -u $P4_USER login
 * sed
-** find . -type f -name 'xa*' | xargs sed -i 's/asd/dsg/g'
+** replace all occurences in a directory
+#+begin_src shell
+find . -type f -name 'xa*' | xargs sed -i 's/asd/dsg/g'
+find . -type f -name '*.apex' | xargs gsed -i 's/vlocity_digital/vlocity_lwc51/g'
+#+end_src
 ** sed -i to edit file in place
 ** sed command syntax [addr]X[options]
 ** sed 's/unix/linux/' geekfile.txt substitute replace
@@ -222,3 +226,47 @@ ssh -L 6109:127.0.0.1:6109 -L 6101:127.0.0.1:6101 CIAB_VM_IP_Address
 ** sudo systemctl start apache2
 * process priorities
 ** we can assign process priorities using nice command
+* working with users and groups
+** /etc/shadow contains encrypted versions of user passwords
+** /etc/passwd stores information related to each user
+** similarly is /etc/group
+** id returns groups of user
+** who tells which users are currenly logged in
+** w tells what the user is currently doing
+** last gives system logins since the beginning of the
+** creating user sudo useradd -m locke
+** create temp password using sudo passwd locke
+** create group sudo groupadd secret-group
+** change owner ship of directory to group sudo chown :secret-group /var/secret
+** add user to group sudo usermod -a -G secret-group locke
+** give permissions for group members to change files sudo chmod g+w /var/secret/
+* security
+** every file and folder has metadata associated with it
+** su is used to switch as different user
+** ls -dl shows attributes of the directory
+** to change the owner of directory run sudo chown me:secret-group /var/secret/
+** by adding sicky bit value group members can only delete their own created files
+*** we can add sticky value by command sudo chmod +t .
+* updating packages
+** sudo apt update && sudo apt upgrade
+** sudo apt update updates the index
+* network port
+** network port is a number between 0 and 65535
+** used by server to direct incoming requests
+** helps use single network ip address to be used for multiple services
+** stop attackers
+*** restrict ssh login sessions to only clients with valid key pair(not password)
+*** close unused pairs
+** we cant close a particular port
+*** a port is said open if a software is listening on that port
+*** closing the port means shutting down the software
+** firewall
+*** could be a hardware or software like ip tables
+*** firewall is made up of rules that are applied to every packet
+*** how to figure out which software is running to stop it
+**** nmap -v -sT localhost
+** encryption
+*** eCryptfs is popular for encrypting individual files or directories
+*** cryptsetup is popular for encrypting entire volumes
+* docker
+** containers share single kernel along with host

@@ -1,0 +1,7 @@
+* features
+** ability to reserve
+** get confirmation
+** need to be able to pay
+** highly consistent
+** types of parking(pregnant, handicap)
+** rate of slots is flat based on type of vehicle it is

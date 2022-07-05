@@ -1,0 +1,2 @@
+* You can use a connected app to request access to Salesforce data on the behalf of an external application
+* For a connected app to request access, it needs to be integrated with the Salesforce API using the OAuth 2.0 protocol.

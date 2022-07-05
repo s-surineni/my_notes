@@ -1,0 +1,3 @@
+* permission system for features and rows
+* worker queue
+* python fuck

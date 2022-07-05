@@ -1,0 +1,43 @@
+* numbers
+** people during toss 3-4 million
+** people during match 10 million
+** max people are 25.3 million
+* all services need to be scaled well in advance because auto scaling is slow
+* there will be an issue if all 25.3 million users come to homepage because those many calls will be made
+* on the day of match there were 100 million unique users
+* scale
+** 25M peak concurrency
+** 1 Million peak requests per second
+** 10 Terrabytes per second bandwidth consumption
+** 10 Billion plus clickstream messages
+** 100 hours of live transcoding everyday
+* how to prepare for scale
+** game day exercises
+** 3000 c59x machines are used to generate load
+*** 36 cpu and 72 gb of ram,
+*** because load testing for single env is causing issue for customers, it is distributed in 8 different AWS regions, so that single edge location of region is not overwhelmed
+*** it can also be used for tsunami testing where traffice increases and decreases rapidly(like going to homepage from streaming)
+* load balancer has limit of how much it can handle
+** load balancers should be sharded?
+** each single application has 4 or 5 load balancers
+** control it using weighter routing
+* as growth rate is 1M per min high, the scaling should be done in advance
+* user base for push notification 150 to 200M
+* fully baked amis are better as chef, puppet adds delay to application becoming healthy
+* auto scaling issues
+** insufficient capacity error
+** cant use another instance type if one is not available
+** step size(can be scaled in steps of 10 or 20 only)
+** api calls have exponential back off
+* solution
+** prewarm infra
+** custom auto scaling strategy like number of users
+** secondary auto scaling group
+*** if required machine as not available, use the secondary type of machines
+** spot fleet
+* panic mode
+** graceful degradation
+** turn off non-critical services
+** p0 services must be always up
+** by putting payment and login systems in panic mode, user can watch match without paying and logging in
+** at every 10M decisions taken to see if service is necessary for business or it is near to rated capacity. If it is near to 80 or 90 put it manually in panic mode
