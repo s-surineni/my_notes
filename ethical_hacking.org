@@ -1,4 +1,22 @@
-*
+* fundamentals of information security
+** authenticity
+** integrity
+** availability
+** confidentiality
+** non-repudiation
+* terminology
+** exploit
+*** a way of circumventing security
+** hack values
+*** value hacker associates with the system
+** vulnerability
+*** weakness in the implementation of a system
+** target of evaluation
+** zero-day attack
+*** attack where no patch or fix available
+*** ms knows that there is vulnerability but fix is still not available
+** daisy chaining
+*** using one node in environment to attack other nodes in environment
 * lab
 ** virtualbox
 ** hyper-v

@@ -14,6 +14,10 @@ du -h --max-depth=1
 du -sh *
 #+end_src
 * grep
+** grep only file name
+#+begin_src bash
+grep -ilr $search_str logs
+#+end_src
 ** grep for whole word
 #+begin_src bash
 grep -rw "Attempt" logs/07Lxx000000511tEAA.log
@@ -270,3 +274,9 @@ ssh -L 6109:127.0.0.1:6109 -L 6101:127.0.0.1:6101 CIAB_VM_IP_Address
 *** cryptsetup is popular for encrypting entire volumes
 * docker
 ** containers share single kernel along with host
+* useful commands
+#+begin_src bash
+rm -rf logs && sfdx force:apex:log:get -n 1 -d ./logs && find logs -name '07L*' | xargs code
+rm -rf logs && sfdx force:apex:log:get -n 25 -d ./logs && grep -ilr $search_str logs | xargs code
+
+#+end_src
