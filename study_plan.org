@@ -3,9 +3,11 @@
 ** one new
 ** one watched
 * coding
-* design blog
-* coding
 * open source
+** learn how one is built
+** try to contribute
+* coding
+* design blog
 * coding
 * math
 * side project
