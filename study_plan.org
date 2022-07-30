@@ -7,8 +7,8 @@
 ** learn how one is built
 ** try to contribute
 * coding
-* design blog
-* coding
-* math
 * side project
 * coding
+* math
+* coding
+* design blog
