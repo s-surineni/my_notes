@@ -1,0 +1,9 @@
+* bringing data and processing closer to end user
+** latency is the key benefit
+** takes lot of cost for moving data around
+** internet initially was architected for download use cases
+** sending data to central location for processing take lot of bandwidth, latency and has security issues
+** less than 20 ms latency
+** metro level edge
+* where to run logic
+** device, cdn, hierarchy of edges

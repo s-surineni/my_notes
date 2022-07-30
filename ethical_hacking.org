@@ -1,3 +1,8 @@
+* skills required
+** expert with programs and networks
+*** tcp/ip
+** proficient with vulnerability research
+** learn different hacking techniques
 * fundamentals of information security
 ** authenticity
 ** integrity
@@ -17,6 +22,72 @@
 *** ms knows that there is vulnerability but fix is still not available
 ** daisy chaining
 *** using one node in environment to attack other nodes in environment
+* security threat
+** hosts, natural, physical, applications, human, network
+** host
+*** footprinting
+**** we can find out the system by seeing response and decide attacks to launch
+*** physical security
+*** passwords
+*** malware
+*** denial of service
+*** unauthorized access
+*** privilege escalation
+*** back doors
+** natural
+*** earthquakes
+*** hurricanes
+*** floods
+*** natural disasters
+** physial
+*** theft
+*** impact
+*** power
+*** end of life
+** applications
+*** configuration
+*** buffer overflow
+*** lazy coding
+*** data / input validation
+** human
+*** malicious employees
+*** lack of training
+*** social networking
+*** hackers
+** network
+*** sniffing / eavesdropping
+*** ARP poisoning
+**** address resolution protocol
+**** responsible for resolving ip address to mac address
+**** change the default gateway address so that computers connection to internet goes through attacher
+*** denial of service
+*** spoofing
+**** pretending to be someone
+* attack vectors
+** vm and cloud environments
+** unpatched software
+** social networking
+** hacktivism
+** malware
+** botnets
+** secuirty staffing
+** lack of security policies
+** compliance with regulations/laws
+** complexity of network infrastructure
+** mobile devices
+** ransomware
+** advanced persistent threats
+** phishing
+** web applications
+** iot
+* ipv6
+** auto configuration
+** incompatibility of logging systems
+** default activation
+** shortcuts
+** 4to6 translation
+** multiple ips per device
+** network discovery
 * lab
 ** virtualbox
 ** hyper-v

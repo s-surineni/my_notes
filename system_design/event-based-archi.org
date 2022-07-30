@@ -1,0 +1,10 @@
+* use cases
+** ride sharing
+** financial transactions
+* lambda architecture
+** parallel batch systems
+** realtime systems
+** tension in maintaining data models and code that does aggregations in two parallel is a burden
+** answering certain queries across systems becomes a huge problem
+** moving towards event based system and realtime system we may do away with batch processing
+*** but we are not able to do away with batch systems yet. batch and realtime systems may be complimentary
