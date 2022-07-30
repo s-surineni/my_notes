@@ -125,3 +125,70 @@
 ** if we use s3 our cost will increase, single point of failure
 ** do the transfer when there is low load
 ** optimization netflix is doing giving boxes to isps
+* micro services
+** initial days
+*** load balancer
+*** apache
+*** tomcat
+*** java web
+*** jdbc
+*** database
+** difficult to diagonise issues in monolith
+** monolithic database
+** lack of agility due to tightly coupled architecture
+** definition by martin fowler
+*** the microservice architectural style is an approach to developinga single application as a suite of small services each running its own process and communicating with lightweight mechanisms often an http resource API
+** benefits
+*** separation of concerns
+*** modularity
+*** encapsulation
+*** scalability
+*** workload partitioning
+*** virtualization and elasticity
+**** automated operations
+**** on demand provisioning
+** netflix architecture
+*** edge
+**** ELB
+**** Proxy - Zuul does dynamic routing
+**** legacy tier NCCP
+**** API
+*** middle tier and platform
+**** product
+***** bucket testing - A/B testing
+***** Subscriber - info about user profiles
+***** recommendations
+**** Platform
+***** Routing - for microservices to find each other
+***** configuration - dynamic configuration
+***** crypto
+**** Persistence
+***** Cache
+***** Database
+*** Microservices are an abstraction
+**** they included application
+**** database
+**** client libraries - data access?
+**** EVCache client
+**** Client library - Orchestration?
+**** Client application?
+** challenges and solutions
+*** dependency
+**** intra service requests
+***** we are going to call other process in another box.
+***** there could be network latency, congestion, failure
+***** logical or scaling failure
+***** if one service fails if there are no defence mechanisms it can cascade the failure to other services
+**** Solution - Hystrix
+***** structured way of handling timeouts and retries
+***** if we can't call serviceB return static response
+***** isolated thread pools and circuits?
+***** How to know if it works
+****** inoculation - inject dead virus FIT tests - Fault injection test in production
+****** synthetic transactions
+****** % of live traffic - load testing
+****** enforced throughout call paths - direct or indirect
+****** how do we constrain testing scope
+*** scale
+*** variance
+*** change
