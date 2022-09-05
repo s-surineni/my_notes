@@ -1,0 +1,7 @@
+* peer to peer file sharing protocol
+* pure p2p
+* hybrid p2p
+** central entity to for critical role
+* components of architecture
+** torrent is a hybrid architecture
+** tracker

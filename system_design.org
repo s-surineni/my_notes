@@ -10,3 +10,5 @@
 ** issue because of hard consistency?
 *** it will be able to scale with eventual consistency?
 **
+* have lookup fields not master detail. No rollup fields
+* performance data model and persistent data model

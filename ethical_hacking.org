@@ -3,6 +3,11 @@
 *** tcp/ip
 ** proficient with vulnerability research
 ** learn different hacking techniques
+** follow a strict code of conduct
+* types of pen test
+** black box
+** gray box
+** white box
 * fundamentals of information security
 ** authenticity
 ** integrity
