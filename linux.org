@@ -70,7 +70,7 @@ find . -type f -name '*.apex' | xargs gsed -i 's/vlocity_digital/vlocity_lwc51/g
 ** sed -i to edit file in place
 ** sed command syntax [addr]X[options]
 ** sed 's/unix/linux/' geekfile.txt substitute replace
-** sed -i '' '/HEAP_ALLOCATE/d' apex-07L8c00004MUyyvEAD\ edited.log        # deletes lines from file
+** sed -i '' '/HEAP_ALLOCATE/d' edited.log        # deletes lines from file
 * p4 client -o $P4CLIENT  | sed -e '1,/^View:/!d' | sed 's/^Host:.*\$//p' | sed -e '/^View:/a "$workspace"' | p4 client -i
 ** this can include new lines
 * ~/bin/sqldeveloper.sh > /dev/null 2>&1 &

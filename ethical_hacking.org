@@ -100,6 +100,9 @@
 * recon
 ** find out number of ways we can attach the target
 ** methods to do recon
+** trying to understand target and value
+** 2 methods passive , active
+* scanning
 *** NIST - SP 800-115
 *** PTES
 *** OSSTMM

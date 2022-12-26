@@ -1,0 +1,6 @@
+* sending text to tv
+** handleInputText - method
+* handling ui transition
+** createUIHandler
+* lifecycle methods
+** onCreate

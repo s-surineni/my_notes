@@ -1,3 +1,28 @@
+* what is a thread
+** defined at os level
+** all the languages leverages service given by os
+* thread scheduler divides time evenly
+** reasons for scheduler to pause a thread
+** thread waiting for data
+** the time given to it is elapsed
+** the thread is waiting for another thread, to rle
+* race condition
+** deals with access of data concurrently
+** multiple threads reading same variable at the same time
+* how to prevent race condition
+** synchronization
+** synchronization prevents a block of code to be executed by more than one thread at the same time
+** to synchronize method add synchronized keyword to method
+** under the hood jvm uses lock object with key
+*** every object has lock and key
+** when a thread wants to enter synchronized block it will ask lock object to get the key
+** key is also called monitor
+** how do we know which object is chosen to hold key
+** if used on static method it uses same class as lock object
+** if used on non-static method it uses object instance as lock object
+** we can also use dedicated explicit object for synchronization lock
+* reentrant lock
+** when a thread holds a lock.
 * runnable pattern
 ** used for launching threads
 ** we create an instance of runnable interface

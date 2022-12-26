@@ -27,6 +27,7 @@
 ** force-app/main/default contains actual metadata
 ** sfdx-project.json
 ** sfdx force:org:list
+*** lists orgs for the project
 ** setdefaulthubusername?
 ** setting global default devhub
 ** scratch orgs with different features can be created
