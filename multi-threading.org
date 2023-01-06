@@ -38,6 +38,7 @@ Runnable task = () -> {
     }
 }
 #+end_src
+** it sends a singal to task the thread is running
 * producer consumer pattern
 ** most simple way is to use wait and notify
 ** a way to park thread while waiting for data to be produced, without blocking all other threads

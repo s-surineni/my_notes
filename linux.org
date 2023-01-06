@@ -66,6 +66,7 @@ git config --global user.signingkey <short Key ID>
 #+begin_src shell
 find . -type f -name 'xa*' | xargs sed -i 's/asd/dsg/g'
 find . -type f -name '*.apex' | xargs gsed -i 's/vlocity_digital/vlocity_lwc51/g'
+find ./ -type f -exec sed -i -e 's/apple/orange/g' {} \;
 #+end_src
 ** sed -i to edit file in place
 ** sed command syntax [addr]X[options]
