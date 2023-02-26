@@ -1,0 +1,35 @@
+* creating project
+** create project without manifest
+** authorize devhub org
+*** from vscode sfdx authorize devhub org
+** sfdx create default scratch org
+* extension lwc builder
+* publish code
+** SFDX: Push Source to Default Scratch Org successfully ran
+* open scratch org
+* sfdx force:user:password:generate
+* offloading to browser and no polyfills?
+* framework abstractions are slow
+* framework features are coming to platform
+* html file should be named in camel case
+* we can easily identify element in the browser
+* meta file to specify how to deploy component
+** apiVersion
+** app.lwc.studio
+* [[https://trailhead.salesforce.com/en/sample-gallery][sample gallery]]
+* https://trailhead.salesforce.com/content/learn/projects/quick-start-tour-the-sample-app-gallery/get-to-know-the-sample-gallery
+* recipes has code for wire too
+* LDS
+* UI API
+* Base components use LDS
+* lightning/ui*Api Module
+** contains wire adapters
+** JS APIs
+* where can we use lwc
+** lightning page
+*** app, record, home
+** utility bar
+** community
+** snap-in
+** flow screen
+** record action

@@ -281,3 +281,7 @@ rm -rf logs && sfdx force:apex:log:get -n 1 -d ./logs && find logs -name '07L*' 
 rm -rf logs && sfdx force:apex:log:get -n 25 -d ./logs && grep -ilr $search_str logs | xargs code
 
 #+end_src
+* find which package a file is present in
+#+begin_src
+sudo apt-cache search libqt5xml5
+#+end_src
