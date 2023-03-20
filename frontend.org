@@ -3,3 +3,5 @@
 ** google
 ** github
 ** django
+* things noticed
+** in grid layout adjusting padding was required, adding margin sent column to next line
