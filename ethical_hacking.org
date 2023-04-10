@@ -1,3 +1,12 @@
+* expectations from ethical hacker
+** privary
+** intellectual property
+** disclosure
+** areas of expertise
+** no unauthorized usage
+** no illegal activities
+** authorization
+** dont be bad guy
 * skills required
 ** expert with programs and networks
 *** tcp/ip
@@ -14,6 +23,22 @@
 ** availability
 ** confidentiality
 ** non-repudiation
+* motivations for attackers
+** disrupt business continuity
+** steal data
+** create fear and chaos
+** financial losses
+** publicize political or relegious beliefs
+** achieve states military objectives
+** reputation of target
+** revenge
+** ransom
+* types of attacks
+** passive
+** active attacks
+** close-in attacks
+** insider attacks
+** distribution attacks
 * terminology
 ** exploit
 *** a way of circumventing security
@@ -108,3 +133,32 @@
 *** OSSTMM
 * tools
 ** maltego
+* exam
+** ec council certified ethical hacker exam
+* jobs product secuirty incident response team
+* information security vs cyber security
+** In the past, security programs actually included policies and programs and technology like the traditional firewalls in place to actually block traffic from the outside or even from inside as well.
+** those programs were originally designed only to protect the traditional CIA,
+** cyber security
+*** includes lot other elements
+*** organizations definitely have to be vigilant, resilient, and ready to protect, but also to defend in the case of an incident
+*** dfir - digital forensics incident response
+**** ability for you to build a program in place, not only technology, but also people to be able to respond to incident
+**** Security operation center is basically the heart of an incident response program
+**** security orchestration, automation, and response, a term called SOAR.
+*** risk management and oversight.
+**** prioritize things and create even heatmaps within the environment to see what devices and what environments may be of higher risk,
+*** threat intelligence.
+**** information about a potential attack
+*** third party security.
+**** where we check software we buy from vendor
+*** organization have 2 or 3 level soc
+* cyber kill chain
+** framework that was part of the intelligence driven defense solution provided by a company called Lockheed Martin.
+* MITRE ATT&CK Framework
+* penetration testing
+** penetration testing execution standard
+** OWASP testing guide
+** nist 800-115
+**  open source security testing methodology manual, or the OSS TMM
+* get out of jail free card and that is a statement or a document that your customer, right? will actually give you as the pen tester to basically prove that they are permitting you and they're allowing you to perform this type of testing and that you are authorized to basically demonstrate what an attacker can actually do

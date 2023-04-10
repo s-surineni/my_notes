@@ -1,0 +1,36 @@
+* react is a library not framework
+* react is not a complete solution. needs to be used by other libraries
+* react is used to build user interface
+* react is declarative
+* framework take design decisions for us
+* framework disadvantage
+** lack of flexibility
+** large and full of features
+* react gives ability to work with virtual browser which is friendlier rather than browser dom
+** virtual dom performs better
+** react is just javascript
+** we can user react in react native too
+** declarative and state
+* react basics
+** components
+** take input: props, state and output ui
+** can contain private state
+** reactive updates
+*** when state changes, the ui changes
+** virtual views in memory
+*** we use js to generate html
+*** no html template language
+*** tree reconciliation, virtual dom
+* component
+** function or class
+** prefer function over class
+** they take props and state and output jsx
+** props is similar to list of attributes and HTML can have
+** props is explicit and state is implicit?
+** state can be changed while props is fixed
+** html in react component gets compiled to pure js calls React.createElement
+* jsx compiles html in javascript. not browser
+* babel compiles jsx into react react element
+* first letter capital in react
+* useState to createState
+** returns getter and setter

@@ -1,0 +1,7 @@
+* exams
+** comptia
+* threats attacks and vulnerabilities
+* compare social engineering techniques
+* social engineering principles
+** class of techniques to manipulate people by deception into divulging information or performing action
+** social engineering is conduit for reconnaissance, credential harvesting, identity theft, credit card fraud, espionage, influence campaign, malware distribution
