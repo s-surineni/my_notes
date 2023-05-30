@@ -34,3 +34,4 @@
 * first letter capital in react
 * useState to createState
 ** returns getter and setter
+* onClick takes function reference

@@ -162,3 +162,53 @@
 ** nist 800-115
 **  open source security testing methodology manual, or the OSS TMM
 * get out of jail free card and that is a statement or a document that your customer, right? will actually give you as the pen tester to basically prove that they are permitting you and they're allowing you to perform this type of testing and that you are authorized to basically demonstrate what an attacker can actually do
+* foot printing
+** first step in hacking methodology
+** we gather information in this step
+* type of scanning we can do
+** tcp connect scan
+*** tries to establish a session
+*** uses full 3 way hand shake syn, syn/ack, ack/rst
+*** if syn > rst means port closed
+*** if there are any network firewalls we may not even get reset
+*** we can do syn flood by not sending reset after syn/syn/ack
+*** we send reset to tell destination that it can tear down session
+** xmas scan
+*** in this we set fin, psh, urg flags to 1 in the header
+*** if port is open you won't get any response
+** null scan
+*** TCP segment with no flag set
+*** if we get no response port is open
+*** if we get RST back port is closed
+** idle scan
+*** we will use a zombie host
+**** someone unknowingly participating in this scan
+*** we derive IP ID from zombie
+*** we send SYN packet spoofing zombie IP
+*** process
+**** send SYN/ACK to zombie host
+**** we will get RST back
+**** there will be IP in that RST
+**** we send SYN to destination with spoofed IP
+**** if destination port is closed we will get RST to zombie
+**** when we run SYN/ACK again, we'll get IP ID incremented by 1
+**** we require zombie host to be silent
+**** for port open IP ID will incremented by 2
+**** operating system increments IP ID by one, for every packet it sends. it may increment it by some random number too
+** inverse TCP flag scan
+*** FIN/URG/PSH/NULL uses combination of these flags to determine if port is open
+*** if port is open no response
+*** if port is closed reset
+** ACK flag scan
+** network firewalls with stateful feature can filter these scans?
+*** because these are invalid flag combinations
+* network scanning tools
+** nmap
+** counter measures
+*** stateful firewalls will protect from most but TCP connect and Half-open
+*** IDS, IPS, signatures can detect those bad segment flags
+*** proactively scan your assets both from inside and outside
+**** don't want to have a service that should be available on the inside of your network, be available on the outside
+*** Filtering ICMP
+**** Filter ICMP at least to and from the internet
+**** Employ HIPS with behavior monitoring to detect and block scanning sources
