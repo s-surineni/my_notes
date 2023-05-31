@@ -1,0 +1,14 @@
+* setting size for element
+#+begin_src css
+ .box {
+    width: 100px;
+     height: 100px;
+    margin-bottom: 10px;
+}
+#+end_src
+* fixed positioning
+** other elements will ignore fixed box
+** it stays relative to browser window
+* positioning allows to changes position from regular document flow
+* after using positioning we can move element in 4 different directions
+*
