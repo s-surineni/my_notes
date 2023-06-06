@@ -36,3 +36,8 @@
 ** returns getter and setter
 * onClick takes function reference
 * use paranthesis to break statement into mutiple lines
+* even though rendering whole node, react is only updating timestamp and not whole dom
+* react has smart diffing - only updates what actually needs to be regenerated
+** it is possible because of reacts virtual dom
+* props sent to component can be accessed by name of first argument to the function
+* props cannot be changed by the component
