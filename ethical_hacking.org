@@ -207,8 +207,49 @@
 ** counter measures
 *** stateful firewalls will protect from most but TCP connect and Half-open
 *** IDS, IPS, signatures can detect those bad segment flags
-*** proactively scan your assets both from inside and outside
+*** proactively scan your assets b
+oth from inside and outside
 **** don't want to have a service that should be available on the inside of your network, be available on the outside
 *** Filtering ICMP
 **** Filter ICMP at least to and from the internet
 **** Employ HIPS with behavior monitoring to detect and block scanning sources
+* scanning network demo
+** to find your ip do
+#+begin_src
+ip addr
+#+end_src
+** we can do nmap to find other systems in the network
+#+begin_src
+nmap -n -sn ip/mask
+# -n means dont connvert to names
+# -sn means arp scan
+#+end_src
+** next we do tcp scan
+*** this is active scan
+#+begin_src
+nmap -sT -p1-1000 -Tinsane ip/mask
+#+end_src
+*** find default gateway
+#+begin_src bash
+ip router
+#+end_src
+** /etc/services is distributed by most linux/unix systems
+* banner grabbing
+** goal is to figure out the service on the machine and which OS it is running on
+** two types active, passive
+** active
+*** we connect and try to get information
+** passive
+*** we sniff network, capture packets
+** counter measures
+*** apache gives ability to hide this info in response
+*** we can return fals response
+*** IIS has lockdown wizard
+* scanning beyond ids and firewall
+** these need access to something inside network already
+** ssh tunneling
+*** provides methods to tunnel network traffic
+*** you can actually reverse proxy traffic through an SSH tunnel as well.
+#+begin_src
+ssh -L 5900:10.1.1.20:5900 nick@10.1.1.10
+#+end_src

@@ -1,0 +1,4 @@
+* binary search
+** https://leetcode.com/problems/find-smallest-letter-greater-than-target
+*** how will low point to required index
+*** why should the condition be low <= high and not low < high
