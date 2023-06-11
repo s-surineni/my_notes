@@ -1,0 +1,4 @@
+* bin search
+** https://leetcode.com/problems/snapshot-array
+** https://leetcode.com/problems/find-smallest-letter-greater-than-target/
+** https://leetcode.com/problems/maximum-value-at-a-given-index-in-a-bounded-array/
