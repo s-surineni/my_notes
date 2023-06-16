@@ -139,15 +139,32 @@
 * information security vs cyber security
 ** In the past, security programs actually included policies and programs and technology like the traditional firewalls in place to actually block traffic from the outside or even from inside as well.
 ** those programs were originally designed only to protect the traditional CIA,
+*** confidentiality, integrity, availability
+*** confidentiality
+**** protect sensitive data from being accessed and being read by unauthorized users.
+**** use encryption for mitigation
+*** integrity
+**** data or systems have not been altered or modified by an attacker
+**** hashing
+*** availability
+**** make sure that all systems are available at all the time to authorized users
+**** ddos is major attack
 ** cyber security
 *** includes lot other elements
 *** organizations definitely have to be vigilant, resilient, and ready to protect, but also to defend in the case of an incident
 *** dfir - digital forensics incident response
 **** ability for you to build a program in place, not only technology, but also people to be able to respond to incident
 **** Security operation center is basically the heart of an incident response program
+***** Security Information and Event Management (SIEM)
+***** security orchestration, automation, and response
+****** analysts basically,act and work in a tier deployment
 **** security orchestration, automation, and response, a term called SOAR.
 *** risk management and oversight.
-**** prioritize things and create even heatmaps within the environment to see what devices and what environments may be of higher risk,
+**** operationalize the way that you look at risk
+**** prioritize things
+**** create even heatmaps to see what devices and what environments may be of higher risk
+**** potentially shift risk
+**** able to discover the hidden risk
 *** threat intelligence.
 **** information about a potential attack
 *** third party security.

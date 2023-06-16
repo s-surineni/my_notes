@@ -11,4 +11,14 @@
 ** it stays relative to browser window
 * positioning allows to changes position from regular document flow
 * after using positioning we can move element in 4 different directions
-*
+* CSS custom properties
+** CSS variables or cascading variables
+** set using custom property notation (e.g., --main-color: black;) and
+**  are accessed using the var() function (e.g., color: var(--main-color);).
+** Declaring a custom property is done using a custom property name that begins with a double hyphen (--), and a property value that can be any valid CSS value. Like any other property, this is written inside a ruleset, like so:
+#+begin_src css
+element {
+  --main-bg-color: brown;
+}
+#+end_src
+A common best practice is to define custom properties on the :root pseudo-class, so that it can be applied globally across your HTML document:
