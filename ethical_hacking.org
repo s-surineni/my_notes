@@ -166,12 +166,27 @@
 **** potentially shift risk
 **** able to discover the hidden risk
 *** threat intelligence.
+**** may be from a business peer that observed an indicator of a compromise or attack or attack behavior that can be shared with others
+**** organization can pay to a company to receive a threat intelligence feed
 **** information about a potential attack
 *** third party security.
+**** business partner
 **** where we check software we buy from vendor
+**** you actually have to take into consideration the risk that you may actually be introducing within your organization
 *** organization have 2 or 3 level soc
 * cyber kill chain
+** will allow you to gain information about the tactics, techniques, and procedures that attackers use in real life scenarios.
 ** framework that was part of the intelligence driven defense solution provided by a company called Lockheed Martin.
+** goes over is the day in the life of an attack
+** reconnaissance
+** WEAPONIZATION
+*** Coupling exploit with backdoor into deliverable payload
+** delivery
+** exploitation
+** installation
+** command and control
+*** add some backdoor into the system
+** ACTIONS ON OBJECTIVES
 * MITRE ATT&CK Framework
 * penetration testing
 ** penetration testing execution standard

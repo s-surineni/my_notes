@@ -41,3 +41,24 @@
 ** it is possible because of reacts virtual dom
 * props sent to component can be accessed by name of first argument to the function
 * props cannot be changed by the component
+** modern javascript
+*** ECMAScript, which is the official specification that JavaScript conforms to
+*** variables and block scopes
+*** block scope is created by curly braces {}
+*** they are different from function scopes
+*** var in block scope is visible outside it too
+*** we can use let to hide variables in block scope
+*** let, const variable respect nested blocks too
+*** references assigned with const cant be changed
+*** if const variable holds mutable object, we can modify the object. but the reference is not changed
+*** arrow functions
+**** example
+#+begin_src js
+const afn = () => {
+    console.log('Hello');
+    }
+#+end_src
+**** regular function defined with function keywords, binds this to its caller
+**** if there is no explicit caller, it will be tied to calling env
+**** arrow fun not caring about who called it, will close over the value of the this keyword for its scope at the time it was defined.
+**** Regular functions give access to their “calling" environment while arrow functions give access to their "defining" environment

@@ -1,3 +1,30 @@
+* companies using
+** linkedin
+** netflix
+** uber
+** airbnb
+* intro
+** its a messaging system
+** tailored for high throughput use cases
+* Messaging makes a lot of sense because it establishes a fairly simple paradigm for moving data between applications and datastores.
+* messaging challenges
+** scalability
+** broker bottleneck
+** reliability and performance issues
+*** data packet size
+*** consumer consumption rate
+*** fault tolerance (message is gone once consumer gets it)
+** middleware challenges
+*** increasingly complex
+*** deceiving
+*** consistency concerns
+*** potentially expensive
+* kafka project goals
+** handle data in terrabytes
+** horizontally scalable
+** reliable and durable (messages don't go away after consuming)
+** loosly coupled producers and consumers
+** have flexible publish subscribe semantics
 * use cases
 ** capabilities
 *** publish and subscribe
