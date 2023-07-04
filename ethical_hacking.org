@@ -188,6 +188,8 @@
 *** add some backdoor into the system
 ** ACTIONS ON OBJECTIVES
 * MITRE ATT&CK Framework
+** similar to cyber kill chain
+** including a plethora of additional information
 * penetration testing
 ** penetration testing execution standard
 ** OWASP testing guide
