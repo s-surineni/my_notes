@@ -190,6 +190,17 @@
 * MITRE ATT&CK Framework
 ** similar to cyber kill chain
 ** including a plethora of additional information
+* Surveying Ethical Hacking Methodologies
+** main difference of course, is that you are actually have permission to perform those attacks and something that we actually call scope,
+dictates what you can or cannot do against a system.
+
+different ethical hacking methodologies
+penetration testing execution standard
+OWASP testing guide
+NIST 800-115: Technical Guide to Information Security Testing and Assessment
+open source security testing methodology manual
+pre engagement interactions
+Scoping things like NDAs or non-disclosure agreements, different disclosures
 * penetration testing
 ** penetration testing execution standard
 ** OWASP testing guide
@@ -199,6 +210,7 @@
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
+* information security controls, laws
 * type of scanning we can do
 ** tcp connect scan
 *** tries to establish a session
