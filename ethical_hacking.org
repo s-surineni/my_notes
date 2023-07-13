@@ -207,6 +207,13 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 ** OWASP testing guide
 ** nist 800-115
 **  open source security testing methodology manual, or the OSS TMM
+* 2.1 Introducing Footprinting Concepts and Methodologies
+** first step in the hacking methodology
+** also called recon
+** public info from things like  DNS, WHOIS
+* Performing Footprinting through Search Engines
+** attackers  use these search engines to gather sensitive information that is exposed on the internet.
+** exploit database or exploit DB
 * get out of jail free card and that is a statement or a document that your customer, right? will actually give you as the pen tester to basically prove that they are permitting you and they're allowing you to perform this type of testing and that you are authorized to basically demonstrate what an attacker can actually do
 * foot printing
 ** first step in hacking methodology
