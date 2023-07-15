@@ -16,7 +16,7 @@
 ** git rebase --abort
 * get fetch remote branches
 #+begin_src
-change=
+change=u/ssurineni/design
 git fetch origin refs/heads/${change}:refs/remotes/origin/$change
 git checkout -b $change origin/$change
 #+end_src
