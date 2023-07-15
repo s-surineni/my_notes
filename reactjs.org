@@ -67,3 +67,5 @@ const afn = () => {
 *** property that holds a function
 *** dynamic properties
 *** property names to map values that exist in the current scope with the exact same name.
+** Destructuring and Rest/Spread
+** const {PI, E, SQRT2} = Math;
