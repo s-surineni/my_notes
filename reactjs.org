@@ -68,4 +68,9 @@ const afn = () => {
 *** dynamic properties
 *** property names to map values that exist in the current scope with the exact same name.
 ** Destructuring and Rest/Spread
-** const {PI, E, SQRT2} = Math;
+*** const {PI, E, SQRT2} = Math;
+*** in function parameters
+#+begin_src javascript
+const circleArea = ({radius}) => {
+        (PI * radius * radius).toFixed(2); }
+#+end_src
