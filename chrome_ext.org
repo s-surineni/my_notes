@@ -1,0 +1,25 @@
+* important files
+#+begin_src
+manifest.json
+#+end_src
+* app is created with
+* its npm project
+* Chrome extension is a web application
+* reload the extension by running refresh icon
+* configurations for the extensions belong in the manifest.json
+* actions allow you to customize the buttons that appear on the Chrome toolbar, which usually trigger a pop-up with the extension UI
+* app commands
+** start
+#+begin_src shell
+npm start
+#+end_src
+** build
+#+begin_src shell
+npm run build
+#+end_src
+* The action icon is the main entry point to our extension. When pressed, it launches a pop-up that contains index.html.
+* project setup
+** install all dependencies first
+#+begin_src shell
+npm install
+#+end_src
