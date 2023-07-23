@@ -214,6 +214,8 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 * Performing Footprinting through Search Engines
 ** attackers  use these search engines to gather sensitive information that is exposed on the internet.
 ** exploit database or exploit DB
+* Performing Footprinting through Web Services and Websites
+**
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
