@@ -224,6 +224,8 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 ** website owners use these robots.TXT file to give instructions about their sites to web crawlers.
 ** you actually can get a lot of different information about different content that the website may actually have without even navigating through it
 * 2.4 Performing Footprinting through Social Networking Sites
+** Shodan is an amazing platform tool to perform reconnaissance of what is actually exposed out on the internet
+** scanning the internet 24/7 from many different locations around the world
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
