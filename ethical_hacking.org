@@ -226,6 +226,7 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 * 2.4 Performing Footprinting through Social Networking Sites
 ** Shodan is an amazing platform tool to perform reconnaissance of what is actually exposed out on the internet
 ** scanning the internet 24/7 from many different locations around the world
+** you will see that there are tons and tons of different devices that are exposed on the internet with misconfigurations, with tons of vulnerabilities that have not been patched and also with weak crypto implementations or default credentials.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
