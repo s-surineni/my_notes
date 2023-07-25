@@ -220,6 +220,9 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 ** get information about the organization and underlying systems by just looking at the digital certificates
 ** At the very minimum, you have the root CA, but you can also have subordinate CAs
 ** You may actually see that if the organization is using weak crypto algorithms for their implementation here.
+** trying to see if they have a robot.TXT file
+** website owners use these robots.TXT file to give instructions about their sites to web crawlers.
+** you actually can get a lot of different information about different content that the website may actually have without even navigating through it
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
