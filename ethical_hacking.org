@@ -223,6 +223,7 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 ** trying to see if they have a robot.TXT file
 ** website owners use these robots.TXT file to give instructions about their sites to web crawlers.
 ** you actually can get a lot of different information about different content that the website may actually have without even navigating through it
+* 2.4 Performing Footprinting through Social Networking Sites
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
