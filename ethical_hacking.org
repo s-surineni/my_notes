@@ -216,6 +216,9 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 ** exploit database or exploit DB
 * 2.3 Performing Footprinting through Web Services and Websites
 ** An attacker can get a lot of information about a company or about an organization just navigating through their websites
+** just navigating through their website
+** get information about the organization and underlying systems by just looking at the digital certificates
+** At the very minimum, you have the root CA, but you can also have subordinate CAs
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
