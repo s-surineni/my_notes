@@ -83,3 +83,8 @@ const circleArea = ({radius}) => {
 *** Everything in JavaScript is an object, including functions.
 *** Modern JavaScript also added support for the class syntax
 *** is a template or blueprint for you to define shared structure and behavior between similar objects.
+** Promises and Async/Await
+*** When you need to work with asynchronous operations, usually have to deal with promise objects.
+*** You just await on the asynchronous call that returns a promise
+*** you need to label the function as async, and this will work exactly the same.
+*** The async await syntax is just a way for us to consume
