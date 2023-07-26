@@ -74,3 +74,7 @@ const afn = () => {
 const circleArea = ({radius}) => {
         (PI * radius * radius).toFixed(2); }
 #+end_src
+** Template Strings
+*** the backtick character are called template strings. can be used as a template with dynamic values.
+*** `<div>${Math.randon()}</div>`
+*** you can also have multiple lines in the string
