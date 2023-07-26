@@ -78,3 +78,8 @@ const circleArea = ({radius}) => {
 *** the backtick character are called template strings. can be used as a template with dynamic values.
 *** `<div>${Math.randon()}</div>`
 *** you can also have multiple lines in the string
+** Classes
+*** supports object-oriented programming paradigm
+*** Everything in JavaScript is an object, including functions.
+*** Modern JavaScript also added support for the class syntax
+*** is a template or blueprint for you to define shared structure and behavior between similar objects.
