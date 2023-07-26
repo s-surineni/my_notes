@@ -87,4 +87,4 @@ const circleArea = ({radius}) => {
 *** When you need to work with asynchronous operations, usually have to deal with promise objects.
 *** You just await on the asynchronous call that returns a promise
 *** you need to label the function as async, and this will work exactly the same.
-*** The async await syntax is just a way for us to consume
+*** The async await syntax is just a way for us to consume promises without having to nest .then calls.
