@@ -59,7 +59,7 @@ const afn = () => {
     }
 #+end_src
 **** regular function defined with function keywords, binds this to its caller
-**** if there is no explicit caller, it will be tied to calling env
+**** if there is no explicit caller, it will be determined by calling env
 **** arrow fun not caring about who called it, will close over the value of the this keyword for its scope at the time it was defined.
 **** This makes it great for delayed execution cases like events and listeners
 **** Regular functions give access to their “calling" environment while arrow functions give access to their "defining" environment
