@@ -231,6 +231,12 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 * 2.6 Understanding Email Footprinting
 ** Maltego to find very interesting emails related to any type of company or domain
 ** the attacker can then use this email address to potentially find log-in pages or any type of systems related to hacker.org. Let's say that website may have a slash admin account or area.
+* 2.7 Understanding Whois Footprinting
+**  ICANN in short is the primary body that is in charge of
+*** maintaining and the management of IP address space
+***  allocation of the IP addresses to many organizations.
+*** Also about protocol parameters and the Domain Name System or DNS management,
+*** registration of domains, you know, across the world.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
