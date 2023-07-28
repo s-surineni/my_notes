@@ -14,3 +14,9 @@
 ** git rebase -i HEAD~4
 ** git rebase --edit-todo
 ** git rebase --abort
+* get fetch remote branches
+#+begin_src
+change=u/ssurineni/design
+git fetch origin refs/heads/${change}:refs/remotes/origin/$change
+git checkout -b $change origin/$change
+#+end_src

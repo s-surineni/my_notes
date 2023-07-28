@@ -63,3 +63,28 @@ const afn = () => {
 **** arrow fun not caring about who called it, will close over the value of the this keyword for its scope at the time it was defined.
 **** This makes it great for delayed execution cases like events and listeners
 **** Regular functions give access to their “calling" environment while arrow functions give access to their "defining" environment
+** Object Literals
+*** property that holds a function
+*** dynamic properties
+*** property names to map values that exist in the current scope with the exact same name.
+** Destructuring and Rest/Spread
+*** const {PI, E, SQRT2} = Math;
+*** in function parameters
+#+begin_src javascript
+const circleArea = ({radius}) => {
+        (PI * radius * radius).toFixed(2); }
+#+end_src
+** Template Strings
+*** the backtick character are called template strings. can be used as a template with dynamic values.
+*** `<div>${Math.randon()}</div>`
+*** you can also have multiple lines in the string
+** Classes
+*** supports object-oriented programming paradigm
+*** Everything in JavaScript is an object, including functions.
+*** Modern JavaScript also added support for the class syntax
+*** is a template or blueprint for you to define shared structure and behavior between similar objects.
+** Promises and Async/Await
+*** When you need to work with asynchronous operations, usually have to deal with promise objects.
+*** You just await on the asynchronous call that returns a promise
+*** you need to label the function as async, and this will work exactly the same.
+*** The async await syntax is just a way for us to consume promises without having to nest .then calls.
