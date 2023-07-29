@@ -237,6 +237,14 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 ***  allocation of the IP addresses to many organizations.
 *** Also about protocol parameters and the Domain Name System or DNS management,
 *** registration of domains, you know, across the world.
+** who is utility
+* 2.8 Understanding DNS Footprinting
+** zone transfer attack
+** zone transfer is, is a mechanism used by DNS servers to update another DNS server by transferring the contents of their database
+** DNS is structured as a hierarchy, so that whenever you request DNS information, your request is actually passed up this hierarchy until a DNS server is found that can resolve the domain name request
+** authoritative name servers that will be able to resolve the hacker.org or secretcorp.org or pearson.com, cisco.com, et cetera
+** Nslookup
+** hacker.org has four different IP addresses, and is doing DNS round-robin
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
