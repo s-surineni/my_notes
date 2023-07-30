@@ -254,6 +254,9 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 ** SOA has a serial number that is higher than the secondary will have, then you will need an update.
 ** the attacker can get a lot of information about the organization using a zone transfer attack.
 ** we're actually using the dig command with the AXFR for the zone transfer, and we have two domains, @nsztm1.digininja, and then zone transfer me
+#+begin_src bash
+dig axfr @nsztml.digi.ninja zonetransfer.me
+#+end_src
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
