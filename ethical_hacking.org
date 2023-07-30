@@ -257,6 +257,11 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 #+begin_src bash
 dig axfr @nsztml.digi.ninja zonetransfer.me
 #+end_src
+* 2.9 Understanding Network Footprinting
+** do a quick host resolution
+** do a quick who is, to the first IP address in the results
+** You can use things as simple as a trace route to that IP address
+** trace route becomes a little bit more relevant because now you are seeing things that may be in between. Probably firewalls that may be blocking the trace route, or the different structures like routers or layer three switches and so on
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
