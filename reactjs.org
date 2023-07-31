@@ -88,3 +88,7 @@ const circleArea = ({radius}) => {
 *** You just await on the asynchronous call that returns a promise
 *** you need to label the function as async, and this will work exactly the same.
 *** The async await syntax is just a way for us to consume promises without having to nest .then calls.
+* github app
+** class should extend React.Component
+*** should contain render
+*** the props and the state are managed on an instance of the class.
