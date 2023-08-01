@@ -264,7 +264,8 @@ dig axfr @nsztml.digi.ninja zonetransfer.me
 ** attacker can now focus his efforts or her efforts on the range from the 185.199.111.0. So from .1 all the way to 254.
 ** You can use things as simple as a trace route to that IP address
 ** trace route becomes a little bit more relevant because now you are seeing things that may be in between. Probably firewalls that may be blocking the trace route, or the different structures like routers or layer three switches and so on
-** 
+** on-premise performing a pen test, trace route becomes a little bit more relevant because now you are seeing things that may be in between. Probably firewalls that may be blocking the trace route, or the different structures like routers or layer three switches and so on, that may be in between your PC or your machine all the way to the target device.
+
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
