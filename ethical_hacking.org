@@ -260,8 +260,11 @@ dig axfr @nsztml.digi.ninja zonetransfer.me
 * 2.9 Understanding Network Footprinting
 ** DNS resolution using the host command to the domain hacker.org 
 ** do a quick who is, to the first IP address in the results.
+** network range that the first address that we selected belongs to
+** attacker can now focus his efforts or her efforts on the range from the 185.199.111.0. So from .1 all the way to 254.
 ** You can use things as simple as a trace route to that IP address
 ** trace route becomes a little bit more relevant because now you are seeing things that may be in between. Probably firewalls that may be blocking the trace route, or the different structures like routers or layer three switches and so on
+** 
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
