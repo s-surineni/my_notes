@@ -240,7 +240,7 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 ** who is utility
 * 2.8 Understanding DNS Footprinting
 ** zone transfer attack
-** zone transfer is, is a mechanism used by DNS servers to update another DNS server by transferring the contents of their database
+** zone transfer is, is a mechanism used by DNS servers to update another DNS server by transferring the  contents of their database
 ** DNS is structured as a hierarchy, so that whenever you request DNS information, your request is actually passed up this hierarchy until a DNS server is found that can resolve the domain name request
 ** authoritative name servers that will be able to resolve the hacker.org or secretcorp.org or pearson.com, cisco.com, et cetera
 ** Nslookup
@@ -265,7 +265,9 @@ dig axfr @nsztml.digi.ninja zonetransfer.me
 ** You can use things as simple as a trace route to that IP address
 ** trace route becomes a little bit more relevant because now you are seeing things that may be in between. Probably firewalls that may be blocking the trace route, or the different structures like routers or layer three switches and so on
 ** on-premise performing a pen test, trace route becomes a little bit more relevant because now you are seeing things that may be in between. Probably firewalls that may be blocking the trace route, or the different structures like routers or layer three switches and so on, that may be in between your PC or your machine all the way to the target device.
-
+* 2.10 Surveying Footprinting Tools
+** popular tool that help you automate a lot of the open source intelligence on footprinting enumeration called Recon-NG
+** it has different modules that you can install and use things like DNS, reconnaissance, host enumeration, domain enumerations and so on.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
