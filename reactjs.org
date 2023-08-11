@@ -92,3 +92,5 @@ const circleArea = ({radius}) => {
 ** class should extend React.Component
 *** should contain render
 *** the props and the state are managed on an instance of the class.
+* styling react components
+** Just like events, instead of passing a string, we pass this special React property, a JavaScript object.
