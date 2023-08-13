@@ -272,6 +272,7 @@ dig axfr @nsztml.digi.ninja zonetransfer.me
 #+begin_src bash
 marketplace install netcraft
 #+end_src
+** Brute_host, which is basically part of the domain host modules within the Recon-NG.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
