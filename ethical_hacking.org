@@ -258,7 +258,7 @@ Scoping things like NDAs or non-disclosure agreements, different disclosures
 dig axfr @nsztml.digi.ninja zonetransfer.me
 #+end_src
 * 2.9 Understanding Network Footprinting
-** DNS resolution using the host command to the domain hacker.org 
+** DNS resolution using the host command to the domain hacker.org
 ** do a quick who is, to the first IP address in the results.
 ** network range that the first address that we selected belongs to
 ** attacker can now focus his efforts or her efforts on the range from the 185.199.111.0. So from .1 all the way to 254.
@@ -268,6 +268,10 @@ dig axfr @nsztml.digi.ninja zonetransfer.me
 * 2.10 Surveying Footprinting Tools
 ** popular tool that help you automate a lot of the open source intelligence on footprinting enumeration called Recon-NG
 ** it has different modules that you can install and use things like DNS, reconnaissance, host enumeration, domain enumerations and so on.
+** Netcraft, which basically is a repository of DNS base information that is very useful for numerating sub domains of a company.
+#+begin_src bash
+marketplace install netcraft
+#+end_src
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
