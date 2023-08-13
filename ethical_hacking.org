@@ -273,9 +273,17 @@ dig axfr @nsztml.digi.ninja zonetransfer.me
 marketplace install netcraft
 #+end_src
 ** Brute_host, which is basically part of the domain host modules within the Recon-NG.
+* 2.11 Understanding Footprinting Countermeasures
+** start by creating some awareness among your employees about the dangers of social engineering
+** limiting sensitive information that can be otherwise not thought of sensitive information.
+** always encrypt things
+** Using privacy services on WhoIs lookup database
+** disable directory listings on web servers
+** many organizations subscribe to the tools such as shodan
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
+*
 * 1.4 information security controls, laws
 ** get out of jail free card and that is a statement or a document that your customer, right? will actually give you as the pen tester to basically prove that they are permitting you and they're allowing you to perform this type of testing and that you are authorized to basically demonstrate what an attacker can actually do
 ** computer fraud and abuse act
