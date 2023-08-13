@@ -280,6 +280,8 @@ marketplace install netcraft
 ** Using privacy services on WhoIs lookup database
 ** disable directory listings on web servers
 ** many organizations subscribe to the tools such as shodan
+* 3: Scanning Networks
+** The common path to discover these hosts is to scan those networks using easily-accessible tools to find hosts with services exposed.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
