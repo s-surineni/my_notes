@@ -285,6 +285,11 @@ marketplace install netcraft
 * 3.2 Exploiting Scanning Tools
 ** metasploit is a framework for penetration testing
 *** running the TCP port scanner against
+** Nmap is a network mapper
+** hping3
+*** You can craft packets with hping
+*** ping tool operating on ICMP
+** https://owasp.org/www-community/Vulnerability_Scanning_Tools list of scanning tools
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
