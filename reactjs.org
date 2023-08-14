@@ -96,3 +96,17 @@ const circleArea = ({radius}) => {
 ** using a global CSS style sheet.
 ** you pass a style property.
 ** Just like events, instead of passing a string, we pass this special React property, a JavaScript object.
+#+begin_src
+render() { 5
+return ( |
+<div className="github-profile" style={{ margin: 'irem' }}>
+<ing src="https://placehold.it/75" /> |
+<div className="info" style={{display: 'inline-block', marginLeft: 10}}> |
+<div className="name" style={{fontSize: '125%'}}>Name here...</div>
+<div className="company">Company here. ..</div> |
+</div> |
+</div> |
+) |
+#+end_src
+** We can use conditional styles here without having to
+** this is JavaScript, no strings
