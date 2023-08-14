@@ -290,6 +290,14 @@ marketplace install netcraft
 *** You can craft packets with hping
 *** ping tool operating on ICMP
 ** https://owasp.org/www-community/Vulnerability_Scanning_Tools list of scanning tools
+* 3.3 Understanding Host Discovery
+** we need to detect hosts that are alive, as well as the services that are running on those hosts.
+** There's three common methods used, ICMP scanning, ARP scanning, and passive listening using sniffing
+** if you are on the same line segment that system does not have a firewall running that is blocking ICMP, then you should expect to see an echo reply
+** ICMP scanning ping sweep.
+*** if you wanted to determine what hosts are online on this entire network sub-net?
+*** Nmap is commonly used for this task.
+** in order for a system to talk on a network, it needs to know a destination IP address, of course. Right? And, it needs to know a destination Mac address.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
