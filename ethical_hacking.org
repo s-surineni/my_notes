@@ -282,6 +282,9 @@ marketplace install netcraft
 ** many organizations subscribe to the tools such as shodan
 * 3: Scanning Networks
 ** The common path to discover these hosts is to scan those networks using easily-accessible tools to find hosts with services exposed.
+* 3.2 Exploiting Scanning Tools
+** metasploit is a framework for penetration testing
+*** running the TCP port scanner against
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
