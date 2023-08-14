@@ -298,6 +298,11 @@ marketplace install netcraft
 *** if you wanted to determine what hosts are online on this entire network sub-net?
 *** Nmap is commonly used for this task.
 ** in order for a system to talk on a network, it needs to know a destination IP address, of course. Right? And, it needs to know a destination Mac address.
+** If you need to get outside of your sub-net, then you need to talk to a router.
+** who has the Mac address for, in this case, this network's case, 10.1.0.1
+** ARP is another way determine live systems
+** A couple of more tools for scanning ICMP, Angry IP scanner and What's Up Gold.
+** if you are able to put your wireless interface into promiscuous mode, you can just listen to those wireless frames as they're floating around
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
