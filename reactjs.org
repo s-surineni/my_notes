@@ -110,3 +110,6 @@ return ( |
 #+end_src
 ** We can use conditional styles here without having to
 ** this is JavaScript, no strings
+* To take input from the user, we need to define an event handler in the React UI.
+** this argument is just a wrapper around the native JavaScript event object.
+** React has a special property named ref that we can use
