@@ -93,4 +93,6 @@ const circleArea = ({radius}) => {
 *** should contain render
 *** the props and the state are managed on an instance of the class.
 * styling react components
+** using a global CSS style sheet.
+** you pass a style property.
 ** Just like events, instead of passing a string, we pass this special React property, a JavaScript object.
