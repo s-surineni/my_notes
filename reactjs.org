@@ -118,3 +118,6 @@ return ( |
 value={this.state.userName}
 #+end_src
 ** you need an onChange event
+#+begin_src javascript
+onChange={event => this.setState({ userName: event.target.value})}
+#+end_src
