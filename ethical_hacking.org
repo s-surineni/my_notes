@@ -326,6 +326,8 @@ marketplace install netcraft
 *** nmap
 **** live  host, operating system detection, service discovery, and service version discovery
 *** for packet crafting, we have Hping.
+* 3.5 Network Scanning Methods
+** various types of scanning that we can do in order to determine if services are available
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
