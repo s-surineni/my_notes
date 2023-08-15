@@ -328,6 +328,13 @@ marketplace install netcraft
 *** for packet crafting, we have Hping.
 * 3.5 Network Scanning Methods
 ** various types of scanning that we can do in order to determine if services are available
+**
+** countermeasures
+*** stateful firewalls will protect against the majority of these attacks
+*** IDS, IPS, signatures can detect those bad segment flags
+*** proactively scan your assets both from inside and outside
+*** Filtering ICMP at least from internet
+*** host intrusion prevention in order to monitor your hosts. So if it does get past the firewall, we want the host to be able to protect themselves.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
