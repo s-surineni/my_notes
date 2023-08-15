@@ -317,7 +317,15 @@ marketplace install netcraft
 ** udp
 *** ip protocol 17
 *** connectionless
-**
+** tcp threeway handshake
+*** they need to synchronize what are called Sequence Numbers
+*** sequence number informs the remote system where it thinks it knows the data is
+***  SYN SYN ACK ACK
+** tcp flags
+** tools
+*** nmap
+**** live  host, operating system detection, service discovery, and service version discovery
+*** for packet crafting, we have Hping.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
