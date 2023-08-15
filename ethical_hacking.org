@@ -356,6 +356,8 @@ nmap -sV -P0 192.168.1.4
 ** different ways to grab the banner active and passive
 ** countermeasures
 *** Apache, gives you options to protect against it.
+* 3.8 Scanning Beyond IDS and Firewall
+** these methods rely upon the fact that you have access to something inside the network already.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
