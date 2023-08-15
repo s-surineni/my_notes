@@ -344,6 +344,11 @@ marketplace install netcraft
 nmap -n -sn 192.168.1.0/28
 #+end_src
 ** Now let's do a TCP port scan and I'm gonna do a connect scan.
+#+begin_src bash
+nmap -sT -p1-1000 -Tinsane 192.168.1.0/28
+nmap -sT 192.168.1.4
+nmap -sV -P0 192.168.1.4
+#+end_src
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
