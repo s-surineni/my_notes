@@ -304,6 +304,8 @@ marketplace install netcraft
 ** A couple of more tools for scanning ICMP, Angry IP scanner and What's Up Gold.
 ** if you are able to put your wireless interface into promiscuous mode, you can just listen to those wireless frames as they're floating around
 * 3.4 Network Scanning Overview
+** Next step is to determine what services are up and running on those hosts
+** Common tools for that Nmap and Hping
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
