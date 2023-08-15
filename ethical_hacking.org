@@ -349,6 +349,7 @@ nmap -sT -p1-1000 -Tinsane 192.168.1.0/28
 nmap -sT 192.168.1.4
 nmap -sV -P0 192.168.1.4
 #+end_src
+* 3.7 Performing OS Discovery (Banner Grabbing/OS Fingerprinting)
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
