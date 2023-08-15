@@ -358,6 +358,9 @@ nmap -sV -P0 192.168.1.4
 *** Apache, gives you options to protect against it.
 * 3.8 Scanning Beyond IDS and Firewall
 ** these methods rely upon the fact that you have access to something inside the network already.
+** using applications on the inside of firewalls and intrusion detection systems in order to get your traffic through those perimeter defenses
+** SSH tunneling.
+** reverse proxy traffic through an SSH tunnel as well.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
