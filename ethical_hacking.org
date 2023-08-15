@@ -341,7 +341,7 @@ marketplace install netcraft
 ** ip addr to find out ip address
 ** So let's see what's out there arp scan
 #+begin_src bash
-nmap -n -sn 192.168.0.0/28
+nmap -n -sn 192.168.1.0/28
 #+end_src
 ** Now let's do a TCP port scan and I'm gonna do a connect scan.
 * foot printing
