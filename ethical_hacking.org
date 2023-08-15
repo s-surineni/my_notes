@@ -354,6 +354,8 @@ nmap -sV -P0 192.168.1.4
 ** One is the service that's running and secondly, the operating system that that service is running on.
 ** we consult vulnerability databases. We find something matching OpenSSH version 3.
 ** different ways to grab the banner active and passive
+** countermeasures
+*** Apache, gives you options to protect against it.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
