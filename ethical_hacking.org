@@ -313,8 +313,11 @@ marketplace install netcraft
 ** two common routed layer four protocols tcp, udp
 ** TCP
 *** ip protocol 6
+*** connection oriented
 ** udp
 *** ip protocol 17
+*** connectionless
+**
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
