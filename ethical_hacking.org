@@ -339,6 +339,11 @@ marketplace install netcraft
 ** we've just connected our laptop to the network and we need to figure out what's out there
 ** first thing we need to do is see what IP address we received on our computer
 ** ip addr to find out ip address
+** So let's see what's out there arp scan
+#+begin_src bash
+nmap -n -sn 192.168.0.0/28
+#+end_src
+** Now let's do a TCP port scan and I'm gonna do a connect scan.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
