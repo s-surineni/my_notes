@@ -303,6 +303,7 @@ marketplace install netcraft
 ** ARP is another way determine live systems
 ** A couple of more tools for scanning ICMP, Angry IP scanner and What's Up Gold.
 ** if you are able to put your wireless interface into promiscuous mode, you can just listen to those wireless frames as they're floating around
+* 3.4 Network Scanning Overview
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
