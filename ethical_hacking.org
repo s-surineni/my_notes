@@ -335,6 +335,9 @@ marketplace install netcraft
 *** proactively scan your assets both from inside and outside
 *** Filtering ICMP at least from internet
 *** host intrusion prevention in order to monitor your hosts. So if it does get past the firewall, we want the host to be able to protect themselves.
+* 3.6 Network Scanning Demo
+** we've just connected our laptop to the network and we need to figure out what's out there
+** first thing we need to do is see what IP address we received on our computer
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
