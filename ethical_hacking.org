@@ -306,6 +306,15 @@ marketplace install netcraft
 * 3.4 Network Scanning Overview
 ** Next step is to determine what services are up and running on those hosts
 ** Common tools for that Nmap and Hping
+** several service scanning techniques that are common.
+*** full open
+*** idle
+*** stealth
+** two common routed layer four protocols tcp, udp
+** TCP
+*** ip protocol 6
+** udp
+*** ip protocol 17
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
