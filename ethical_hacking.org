@@ -361,6 +361,8 @@ nmap -sV -P0 192.168.1.4
 ** using applications on the inside of firewalls and intrusion detection systems in order to get your traffic through those perimeter defenses
 ** SSH tunneling.
 ** reverse proxy traffic through an SSH tunnel as well.
+** HTTP tunneling
+**  if you have a demilitarized zone that is being protected by a firewall, it's going to permit HTTP type protocols through it, if there's a web server on the other side of it.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
