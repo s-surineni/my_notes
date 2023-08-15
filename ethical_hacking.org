@@ -350,6 +350,10 @@ nmap -sT 192.168.1.4
 nmap -sV -P0 192.168.1.4
 #+end_src
 * 3.7 Performing OS Discovery (Banner Grabbing/OS Fingerprinting)
+** Our goal with banner-grabbing is to deduce information about two things.
+** One is the service that's running and secondly, the operating system that that service is running on.
+** we consult vulnerability databases. We find something matching OpenSSH version 3.
+** different ways to grab the banner active and passive
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
