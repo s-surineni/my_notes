@@ -385,6 +385,14 @@ nmap -sV -P0 192.168.1.4
 ***  Proxy switcher
 *** onion
 **** Tor is to anonymize sources, and it does this by using relay routers
+* 3.9 Creating Network Diagrams
+** Network diagramming falls into the documentation category
+** when you are investigating a network, and finding those systems that are alive, and the services that are listening, the services that are responding, the vulnerabilities that exist. Creating a network diagram can help you map out the state of the network so you know where your traffic is flowing throughout the network
+** A network diagram can exist as either a physical diagram or a logical diagram.
+** we have a layer 2 broadcast domains.
+*** Those could be virtual lans on a switch
+*** Today's networks often consolidate networks onto single devices, multiple virtual lans, or V-lans, multiple routed IP networks, even traffic can leave a device, and then come back into the device.
+*** virtual routing forwarding instance into another VRF in the same system
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
