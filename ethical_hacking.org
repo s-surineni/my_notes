@@ -376,6 +376,10 @@ nmap -sV -P0 192.168.1.4
 ** attacker benefits
 *** hide the original requester
 *** Man in the middle
+**** alter data as well intercept data
+*** internal access
+**** If a compromised host has access to the internal network, attack traffic can be proxied through it to compromise other hosts.
+*** chaining
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
