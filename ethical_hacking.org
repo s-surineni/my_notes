@@ -393,6 +393,11 @@ nmap -sV -P0 192.168.1.4
 *** Those could be virtual lans on a switch
 *** Today's networks often consolidate networks onto single devices, multiple virtual lans, or V-lans, multiple routed IP networks, even traffic can leave a device, and then come back into the device.
 *** virtual routing forwarding instance into another VRF in the same system
+** software
+*** Solar Winds called Lan Surveyor
+*** SNMP, ICMP, WMI and VMware for this discovery
+*** OPManager. from a company called ManageEngine
+*** SNMP not just provides configuration information, but also provides utilization information for physical interfaces.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
