@@ -380,6 +380,11 @@ nmap -sV -P0 192.168.1.4
 *** internal access
 **** If a compromised host has access to the internal network, attack traffic can be proxied through it to compromise other hosts.
 *** chaining
+** software
+*** Proxy fire
+***  Proxy switcher
+*** onion
+**** Tor is to anonymize sources, and it does this by using relay routers
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
