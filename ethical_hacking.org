@@ -414,6 +414,7 @@ nmap -sV -P0 192.168.1.4
 ** SNMP or Simple Network Management Protocol
 ** primarily used on networking devices so for example, Cisco routers and switches
 ** SNMP is used for management and monitoring of devices on the network
+** SNMP, it's a tree like structure. It's a database of information
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
