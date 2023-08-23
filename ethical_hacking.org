@@ -399,6 +399,14 @@ nmap -sV -P0 192.168.1.4
 *** OPManager. from a company called ManageEngine
 *** SNMP not just provides configuration information, but also provides utilization information for physical interfaces.
 * 4: Enumeration
+** gathering of usernames, machine names, shares, et cetera from hosts that are up and available on the network.
+* 4.1 Introducing Enumeration Techniques
+** goal for enumeration is to extract information about the systems that we are trying to compromise
+** If we're able to figure out usernames by querying an LDAP database, we know what usernames to try when we're doing our brute force dictionary attack to try to log in as those users
+* 4.2 Performing NetBIOS Enumeration
+** NetBIOS is a protocol that you will often see on corporate environments or even your home network
+** So the Windows systems today, even today still run NetBIOS for backward compatibility
+** Server Message Block, or Microsoft SMB, is slowly replacing NetBIOS.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
