@@ -407,6 +407,13 @@ nmap -sV -P0 192.168.1.4
 ** NetBIOS is a protocol that you will often see on corporate environments or even your home network
 ** So the Windows systems today, even today still run NetBIOS for backward compatibility
 ** Server Message Block, or Microsoft SMB, is slowly replacing NetBIOS.
+** tools
+*** nbtstat
+** looking for hosts that are offering NetBIOS shares or server message block shares. We want to look for essentially Windows systems that might be sharing files on the network
+* 4.3 Performing SNMP Enumeration
+** SNMP or Simple Network Management Protocol
+** primarily used on networking devices so for example, Cisco routers and switches
+** SNMP is used for management and monitoring of devices on the network
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
