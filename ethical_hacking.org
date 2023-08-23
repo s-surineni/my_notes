@@ -398,6 +398,7 @@ nmap -sV -P0 192.168.1.4
 *** SNMP, ICMP, WMI and VMware for this discovery
 *** OPManager. from a company called ManageEngine
 *** SNMP not just provides configuration information, but also provides utilization information for physical interfaces.
+* 4: Enumeration
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
