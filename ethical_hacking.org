@@ -415,6 +415,10 @@ nmap -sV -P0 192.168.1.4
 ** primarily used on networking devices so for example, Cisco routers and switches
 ** SNMP is used for management and monitoring of devices on the network
 ** SNMP, it's a tree like structure. It's a database of information
+* 4.4 Performing LDAP Enumeration
+** Lightweight Directory Access Protocol
+** LDAP is a Directory service.
+** It's a store for usernames and you can authenticate against it.
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
