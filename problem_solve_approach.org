@@ -1,0 +1,3 @@
+* take the smallest input and work on it
+* try all the methods you know and try applying on it
+** sort, stack, dp, greedy
