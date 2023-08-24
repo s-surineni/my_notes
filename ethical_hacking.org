@@ -423,6 +423,9 @@ nmap -sV -P0 192.168.1.4
 ** It uses things called stratums. Stratum zero is you're talking to a satellite in the sky, it's got a nuclear doohickey in it that is deriving valid time.
 ** you can see hosts that are talking to NTP servers through the use of listing the peers that they're talking to.
 ** network file shares, it's a Unix thing
+* 4.6 Performing SMTP and DNS Enumeration
+** SMTP is used to send email
+** DNS is used for translating names to IP addresses
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
