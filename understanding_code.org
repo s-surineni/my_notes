@@ -1,0 +1,4 @@
+* talk to dev
+* see commit history
+* see if any documentation is available
+** seen an entry into BusinessKnowledgeModel.java search slack for the class
