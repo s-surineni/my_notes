@@ -1,0 +1,4 @@
+* expo install commands
+#+begin_src bash
+npx expo install expo-font
+#+end_src
