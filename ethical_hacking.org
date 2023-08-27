@@ -426,6 +426,8 @@ nmap -sV -P0 192.168.1.4
 * 4.6 Performing SMTP and DNS Enumeration
 ** SMTP is used to send email
 ** DNS is used for translating names to IP addresses
+* 4.7 Conducting Additional Enumeration Techniques
+** IPSEC, file transfer, Server Message Block and Voice over IP
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
