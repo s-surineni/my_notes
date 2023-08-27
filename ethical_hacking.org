@@ -428,6 +428,7 @@ nmap -sV -P0 192.168.1.4
 ** DNS is used for translating names to IP addresses
 * 4.7 Conducting Additional Enumeration Techniques
 ** IPSEC, file transfer, Server Message Block and Voice over IP
+* 4.8 Surveying Enumeration Countermeasures
 * foot printing
 ** first step in hacking methodology
 ** we gather information in this step
