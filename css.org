@@ -23,4 +23,8 @@ element {
 #+end_src
 A common best practice is to define custom properties on the :root pseudo-class, so that it can be applied globally across your HTML document:
 * flexbox
-**
+** used to organize child elements in one dimension
+** if width and height are not given they only take as much space as the content requires
+** child elements align themselves on cross axis by stretching
+** justifyContent to align elements on main axis
+** alignItems to align elements on cross axis
