@@ -429,7 +429,9 @@ nmap -sV -P0 192.168.1.4
 * 4.7 Conducting Additional Enumeration Techniques
 ** IPSEC, file transfer, Server Message Block and Voice over IP
 * 4.8 Surveying Enumeration Countermeasures
+* sniffing
 * 5.1 Introducing Sniffing Concepts
+**  capture and analysis of traffic as it flows across a network
 ** wiretap through hubs or taps
 * foot printingp
 ** first step in hacking methodology
