@@ -436,6 +436,9 @@ nmap -sV -P0 192.168.1.4
 ** Hubs will share traffic amongst everybody in a broadcast domain
 ** tap wherein you are physically inserting yourself in the path of the wire
 ** lawful intercept
+* 5.2 Performing MAC Attacks
+* 5.3 Conducting DHCP Attacks
+** used to assign an IP address
 * foot printingp
 ** first step in hacking methodology
 ** we gather information in this step
