@@ -433,6 +433,9 @@ nmap -sV -P0 192.168.1.4
 * 5.1 Introducing Sniffing Concepts
 **  capture and analysis of traffic as it flows across a network
 ** wiretap through hubs or taps
+** Hubs will share traffic amongst everybody in a broadcast domain
+** tap wherein you are physically inserting yourself in the path of the wire
+** lawful intercept
 * foot printingp
 ** first step in hacking methodology
 ** we gather information in this step
