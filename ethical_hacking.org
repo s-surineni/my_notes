@@ -441,6 +441,9 @@ nmap -sV -P0 192.168.1.4
 ** used to assign an IP address
 * 5.4 Performing ARP Poisoning
 ** Address Resolution Protocol is used to map a layer two MAC address to an IP address
+** tools
+*** ettercap
+* 5.5 Performing Spoofing Attacks
 * foot printingp
 ** first step in hacking methodology
 ** we gather information in this step
