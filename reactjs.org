@@ -121,3 +121,4 @@ value={this.state.userName}
 #+begin_src javascript
 onChange={event => this.setState({ userName: event.target.value})}
 #+end_src
+* dont call hooks inside loops or conditions
