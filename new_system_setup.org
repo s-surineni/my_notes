@@ -1,3 +1,24 @@
+* install zsh
+#+begin_src shell
+sudo apt install zsh
+#+end_src
+* set default shell as zsh
+#+begin_src bash
+chsh -s $(which zsh)
+#+end_src
+* install ohmyzsh
+#+BEGIN_SRC bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#+END_SRC
+* install tmux
+* install copyq
+#+begin_src
+If CopyQ autostarts, you can change Exec=... line in
+~/.config/autostart/copyq.desktop:
+
+Exec=env QT_QPA_PLATFORM=xcb copyq
+#+end_src
+* install gnome tweak tools
 * clone my_notes
 #+BEGIN_SRC bash
 git clone git@github.com:s-surineni/my_notes.git
@@ -10,6 +31,12 @@ git clone git@gitlab.com:high-on-code/settings.git
 #+BEGIN_SRC bash
 brew cask install emacs
 #+END_SRC
+* setup prelude
+#+begin_src
+$ git clone https://github.com/bbatsov/prelude.git path/to/local/repo
+$ ln -s path/to/local/repo ~/.emacs.d
+$ cd ~/.emacs.d
+#+end_src
 ** setup python env
 #+BEGIN_SRC shell
 
@@ -40,10 +67,6 @@ git clone git@gitlab.com:high-on-code/sample-inits.git
 ** vs code
 #+BEGIN_SRC bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-#+END_SRC
-** install ohmyzsh
-#+BEGIN_SRC bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 #+END_SRC
 * download code
 * download settings repo from gitlab
