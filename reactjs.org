@@ -122,3 +122,5 @@ value={this.state.userName}
 onChange={event => this.setState({ userName: event.target.value})}
 #+end_src
 * dont call hooks inside loops or conditions
+* why is redux popular
+** First, Redux centralizes all of your application state in a single store.
