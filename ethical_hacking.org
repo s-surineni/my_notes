@@ -448,6 +448,10 @@ nmap -sV -P0 192.168.1.4
 *** can change mac address
 ** layer 3 spoofing
 ** can do denial of service
+* 5.6 Performing DNS Poisoning
+** if we can respond faster, then we can mess up the communication.
+** they'll probably see an error about SSL certificates not matching, things like that. Most of the time, the user's just going to hit go
+** Cache poisoning
 * foot printingp
 ** first step in hacking methodology
 ** we gather information in this step
