@@ -444,6 +444,10 @@ nmap -sV -P0 192.168.1.4
 ** tools
 *** ettercap
 * 5.5 Performing Spoofing Attacks
+** layer2 spoofing
+*** can change mac address
+** layer 3 spoofing
+** can do denial of service
 * foot printingp
 ** first step in hacking methodology
 ** we gather information in this step
