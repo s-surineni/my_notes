@@ -28,3 +28,5 @@ A common best practice is to define custom properties on the :root pseudo-class,
 ** child elements align themselves on cross axis by stretching
 ** justifyContent to align elements on main axis
 ** alignItems to align elements on cross axis
+* common css styles
+** box-sizing: border-box;
