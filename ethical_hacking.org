@@ -453,6 +453,9 @@ nmap -sV -P0 192.168.1.4
 ** they'll probably see an error about SSL certificates not matching, things like that. Most of the time, the user's just going to hit go
 ** Cache poisoning
 ** proxy server machine in the middle
+* 5.7 Surveying Sniffing Tools
+** wireshark
+** tcpdump
 * foot printingp
 ** first step in hacking methodology
 ** we gather information in this step
