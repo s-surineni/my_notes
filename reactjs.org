@@ -126,3 +126,4 @@ onChange={event => this.setState({ userName: event.target.value})}
 ** First, Redux centralizes all of your application state in a single store.
 * babel
 ** can check actual javascript by checking try it out in babel website
+* Npm scripts are a simple automation tool that's built into npm.
