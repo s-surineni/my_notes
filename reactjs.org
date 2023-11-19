@@ -1,4 +1,4 @@
-* react is a library not framework
+ * react is a library not framework
 * react is not a complete solution. needs to be used by other libraries
 * react is used to build user interface
 * react is declarative
@@ -124,3 +124,5 @@ onChange={event => this.setState({ userName: event.target.value})}
 * dont call hooks inside loops or conditions
 * why is redux popular
 ** First, Redux centralizes all of your application state in a single store.
+* babel
+** can check actual javascript by checking try it out in babel website
