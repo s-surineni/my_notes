@@ -37,7 +37,7 @@ $ git clone https://github.com/bbatsov/prelude.git path/to/local/repo
 $ ln -s path/to/local/repo ~/.emacs.d
 $ cd ~/.emacs.d
 #+end_src
-** setup python env
+* setup python env
 #+BEGIN_SRC shell
 
 #+END_SRC
@@ -55,6 +55,7 @@ if [ -f ~/ironman/settings/terminalconfig.sh ]; then
 	. ~/ironman/settings/terminalconfig.sh
 fi
 #+END_SRC
+* install thefuck
 * clone sample-inits repo
 #+BEGIN_SRC bash
 git clone git@gitlab.com:high-on-code/sample-inits.git
