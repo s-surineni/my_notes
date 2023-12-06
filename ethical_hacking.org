@@ -463,6 +463,14 @@ nmap -sV -P0 192.168.1.4
 ** first step in hacking methodology
 ** we gather information in this step
 * 6.1 Introducing Social Engineering Concepts
+* 6.2 Exploring Social Engineering Techniques
+* 6.3 Understanding the Insider Threat
+** phishing
+** whailing
+** vishing
+** sms phishing
+** usb drop key
+** watering hole attacks
 * 1.4 information security controls, laws
 ** get out of jail free card and that is a statement or a document that your customer, right? will actually give you as the pen tester to basically prove that they are permitting you and they're allowing you to perform this type of testing and that you are authorized to basically demonstrate what an attacker can actually do
 ** computer fraud and abuse act
