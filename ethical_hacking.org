@@ -474,6 +474,9 @@ nmap -sV -P0 192.168.1.4
 * 6.4 Impersonation on Social Networking Sites
 * 6.5 Understanding Identity Theft
 * 6.6 Understanding Social Engineering Countermeasures
+* 7.1 Introducing DoS/DDoS Concepts and Attack Techniques
+** three different types
+** Volumetric, protocol, and application.
 * 1.4 information security controls, laws
 ** get out of jail free card and that is a statement or a document that your customer, right? will actually give you as the pen tester to basically prove that they are permitting you and they're allowing you to perform this type of testing and that you are authorized to basically demonstrate what an attacker can actually do
 ** computer fraud and abuse act
