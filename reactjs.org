@@ -1,4 +1,7 @@
- * react is a library not framework
+* basic app structure
+** index.html
+** index.js
+* react is a library not framework
 * react is not a complete solution. needs to be used by other libraries
 * react is used to build user interface
 * react is declarative
