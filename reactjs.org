@@ -1,6 +1,17 @@
 * basic app structure
 ** index.html
 ** index.js
+** render
+#+begin_src javascript
+import React from "react";
+import { render } from "react-dom";
+
+function Hi() {
+    return <p>Hi.</p>;
+}
+
+render(<Hi />, document.getElementById("app"));
+#+end_src
 * react is a library not framework
 * react is not a complete solution. needs to be used by other libraries
 * react is used to build user interface
