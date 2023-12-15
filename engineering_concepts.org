@@ -1,3 +1,5 @@
 * javascript
 ** webpack
 *** bundles javascript into single file
+* react
+** action creators
