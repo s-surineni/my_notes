@@ -1,1 +1,2 @@
 * when got to exception check the stacktrace
+* check logs for info
