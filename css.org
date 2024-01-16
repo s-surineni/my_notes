@@ -1,3 +1,6 @@
+* thinking html
+** html page elements should make sense to you
+** break down the page into elements and think in terms of elements
 * setting size for element
 #+begin_src css
  .box {
