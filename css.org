@@ -30,3 +30,13 @@ A common best practice is to define custom properties on the :root pseudo-class,
 ** alignItems to align elements on cross axis
 * common css styles
 ** box-sizing: border-box;
+* html 100%
+#+begin_src
+If you want to use this method to make the div 100% of the page's height, you have to specify the height as 100% of the body and html as well.
+
+body, html {
+  height: 100%;
+}
+
+When you don't specify a html or body height, their heights are the sum of the heights of the elements in it.
+#+end_src
