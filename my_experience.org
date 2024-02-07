@@ -1,4 +1,7 @@
 * when got to exception check the stacktrace
 * check logs for info
 * misses
-** not testing select all with customer
+** not testing select all with customer setup
+* work
+** understand requirements clearly
+** write test plan
