@@ -4,4 +4,5 @@
 ** not testing select all with customer setup
 * work
 ** understand requirements clearly
+** make sure if all are feasible
 ** write test plan
