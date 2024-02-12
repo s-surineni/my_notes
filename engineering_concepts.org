@@ -3,3 +3,4 @@
 *** bundles javascript into single file
 * react
 ** action creators
+* The basic rule of thumb for catching exceptions is to catch exceptions if and only if you have a meaningful way of handling them.
