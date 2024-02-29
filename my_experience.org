@@ -6,3 +6,5 @@
 ** understand requirements clearly
 ** make sure if all are feasible
 ** write test plan
+* tests help a lot in understanding code
+* check commits and history to understand code
