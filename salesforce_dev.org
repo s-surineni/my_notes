@@ -54,6 +54,7 @@
 ** scratch org user test-qbwsz4minlhh@example.com
 * commands
 ** sfdx force:auth:web:login --setdefaultdevhubusername --setalias psdevhub
+** sfdx org:login:web  --set-default-dev-hub --alias psdevhub
 ** sfdx force:org:list
 ** sfdx force:user:password:generate
 ** sfdx force:user:display -u test-qbwsz4minlhh@example.com
