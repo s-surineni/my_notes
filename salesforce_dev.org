@@ -55,6 +55,7 @@
 * commands
 ** sfdx force:auth:web:login --setdefaultdevhubusername --setalias psdevhub
 ** sfdx org:login:web  --set-default-dev-hub --alias psdevhub
+** sfdx force:org:create -f config/project-scratch-def.json --durationdays 30 -a MyScratchOrg # creates scratch org
 ** sfdx force:org:list
 ** sfdx force:user:password:generate
 ** sfdx force:user:display -u test-qbwsz4minlhh@example.com
