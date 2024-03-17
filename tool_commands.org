@@ -1,0 +1,37 @@
+* jest
+#+begin_src
+cd /Users/ssurinen
+i/projects/lds-lightning-platform/packages/lds-adapters-industries-cpq ; /usr/bin/env 'NO
+DE_OPTIONS= --require "/Applications/Visual Studio Code.app/Contents/Resources/app/extens
+ions/ms-vscode.js-debug/src/bootloader.js"  --inspect-publish-uid=http' 'VSCODE_INSPECTOR
+_OPTIONS=:::{"inspectorIpc":"/var/folders/xw/bjzcfbsx123483m1vx948m6h0000gp/T/node-cdp.74
+018-a111347c-4.sock","deferredMode":false,"waitForDebugger":"","onlyEntrypoint":false,"au
+toAttachMode":"always","fileCallback":"/var/folders/xw/bjzcfbsx123483m1vx948m6h0000gp/T/n
+ode-debug-callback-4cd83b1aac8e1807"}' /Users/ssurineni/.volta/bin/node /Users/ssurineni/
+projects/lds-lightning-platform/node_modules/.bin/jest --runInBand -t test\ product\ deta
+ils\ api
+#+end_src
+* launch json for jest vscode
+#+begin_src json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Jest Tests",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "/Users/ssurineni/.volta/bin/node",
+            "runtimeArgs": [
+                "--inspect-brk",
+                "/Users/ssurineni/projects/lds-lightning-platform/node_modules/.bin/jest",
+                "--runInBand",
+                "-t",
+                "test product details api"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
+}
+#+end_src
+** This works for me but it also skips every single other test in the project which is slow for large projects. Specifying a specific test file that the test is in really helps: ./node_modules/.bin/jest --config=./.jest.config.json ./src/x/y/sites.js/sitesWorker.test.js -t 'given only incorrect sites'
