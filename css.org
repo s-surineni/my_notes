@@ -1,3 +1,8 @@
+* what is responsiveness
+** the size of the box should reduce along with browser width
+** the font size should increase decrease with browser zoom
+** the font size should react to viewport size?
+** everything should look proper(non overlapping) at different sizes
 * thinking html
 ** html page elements should make sense to you
 ** break down the page into elements and think in terms of elements
