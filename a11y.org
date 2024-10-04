@@ -1,0 +1,1 @@
+* Blind users rely on a good page structure that incorporates headings and landmarks, as well as other semantic structures, to gain a holistic understanding of a page.
