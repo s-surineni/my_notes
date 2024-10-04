@@ -4,3 +4,5 @@
 * heading structure, we want engineers to use semantic HTML landmarks to help people identify where they are on a page. These include:
 * Header, Navigation, Main content area, Articles, Asides (tangentially related content, often used for sidebars or call-outs), Body, Footer
 * There are two types of icons, which screen readers handle differently: decorative (skip over) and informational (convey content to the user)
+** Redundant icons and images also fall into this category because they reinforce adjacent text’s meaning but don’t add new information
+**
