@@ -1,3 +1,6 @@
 * Blind users rely on a good page structure that incorporates headings and landmarks, as well as other semantic structures, to gain a holistic understanding of a page.
 * skim the page by navigating all the headings or landmarks.
 * headings give structure to your webpage
+* heading structure, we want engineers to use semantic HTML landmarks to help people identify where they are on a page. These include:
+* Header, Navigation, Main content area, Articles, Asides (tangentially related content, often used for sidebars or call-outs), Body, Footer
+* There are two types of icons, which screen readers handle differently: decorative (skip over) and informational (convey content to the user)
