@@ -48,3 +48,34 @@ body, html {
 
 When you don't specify a html or body height, their heights are the sum of the heights of the elements in it.
 #+end_src
+* grid
+** two steps
+*** define grid
+*** position items
+** properties
+*** display: grid
+*** grid-template-colums: 200px 200px;
+**** takes list of track sizes
+*** grid-column-start
+*** grid-column-end
+*** min-content
+**** element should be large enough to hold its content
+*** minmax
+**** we want the content size to be responsive but not smaller to break content
+**** works best when combined with content determined track size and viewport determined track size
+**** minmax(max-content, 50%)
+*** fit-content
+*** grid-auto-flow
+*** grid-auto-rows
+*** grid-column-end: span 2;
+**** each item takes two colums
+*** grid-column
+**** combines grid-column-start and grid-column-end
+*** grid-area
+*** grid-template-areas
+** track sizes
+*** static values
+*** percentages
+*** auto
+*** fractional units - fr
+*** min-content

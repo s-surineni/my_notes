@@ -6,6 +6,13 @@
 * salesforce is multitenant
 ** every company shares same underlying hardware
 ** org is unique instace of salesforce? logically ?
+* metadaga
+** contains orgs configuration
+*** database schema
+*** user interface
+*** automation
+*** reports
+*** code
 * different types of orgs
 ** production
 ** sandbox
