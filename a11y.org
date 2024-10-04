@@ -5,4 +5,6 @@
 * Header, Navigation, Main content area, Articles, Asides (tangentially related content, often used for sidebars or call-outs), Body, Footer
 * There are two types of icons, which screen readers handle differently: decorative (skip over) and informational (convey content to the user)
 ** Redundant icons and images also fall into this category because they reinforce adjacent text’s meaning but don’t add new information
-**
+** Icons don’t need anything special to mark them as decorative, but images need an empty alt tag, which forces screen readers to skip over them
+** Informational icons and images convey important information that the surrounding text doesn’t. Icon buttons and stand-alone avatars are common examples.
+** Even though it has text adjacent to it, it’s still informational because the icon indicates that the object is an Account and the text is the account name. Without the icon, users would not know if it was a contact, opportunity, or different kind of object.
