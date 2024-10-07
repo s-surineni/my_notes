@@ -8,3 +8,4 @@
 ** Icons don’t need anything special to mark them as decorative, but images need an empty alt tag, which forces screen readers to skip over them
 ** Informational icons and images convey important information that the surrounding text doesn’t. Icon buttons and stand-alone avatars are common examples.
 ** Even though it has text adjacent to it, it’s still informational because the icon indicates that the object is an Account and the text is the account name. Without the icon, users would not know if it was a contact, opportunity, or different kind of object.
+* it’s important to avoid using color alone to present information or to request an action
