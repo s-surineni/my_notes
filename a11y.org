@@ -13,3 +13,8 @@
 ** color contrast ration
 * color category
 ** However, text on non-solid backgrounds can negatively affect users with cognitive disabilities such as dyslexia.
+* semantic markup
+* ARIA
+** three types of attributes available in ARIA: roles, states, and properties.
+** Roles
+*** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
