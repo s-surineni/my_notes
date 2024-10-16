@@ -1,23 +1,8 @@
-* Blind users rely on a good page structure that incorporates headings and landmarks, as well as other semantic structures, to gain a holistic understanding of a page.
-* skim the page by navigating all the headings or landmarks.
-* headings give structure to your webpage
-* heading structure, we want engineers to use semantic HTML landmarks to help people identify where they are on a page. These include:
-* Header, Navigation, Main content area, Articles, Asides (tangentially related content, often used for sidebars or call-outs), Body, Footer
-* There are two types of icons, which screen readers handle differently: decorative (skip over) and informational (convey content to the user)
-** Redundant icons and images also fall into this category because they reinforce adjacent text’s meaning but don’t add new information
-** Icons don’t need anything special to mark them as decorative, but images need an empty alt tag, which forces screen readers to skip over them
-** Informational icons and images convey important information that the surrounding text doesn’t. Icon buttons and stand-alone avatars are common examples.
-** Even though it has text adjacent to it, it’s still informational because the icon indicates that the object is an Account and the text is the account name. Without the icon, users would not know if it was a contact, opportunity, or different kind of object.
-* it’s important to avoid using color alone to present information or to request an action
 * categories
-** color contrast ration
-* color category
-** However, text on non-solid backgrounds can negatively affect users with cognitive disabilities such as dyslexia.
-* semantic markup
-* ARIA
-** three types of attributes available in ARIA: roles, states, and properties.
-** Roles
-*** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
+** color contrast ratio
+** semantic web
+** keyboard access
+** aria
 * web development guidelines
 ** use semantic html
 *** proper use of links and buttons
@@ -31,3 +16,14 @@
 ** Make sure your headings are in order; avoid skip-level headings, such as an <h3> immediately following an <h1>
 ** Ensure your UI is fully keyboard-accessible and follows expected keyboard interaction patterns.
 ** If your UI includes expandable sections, use proper HTML markup to indicate this behavior
+* There are two types of icons, which screen readers handle differently: decorative (skip over) and informational (convey content to the user)
+** Redundant icons and images also fall into this category because they reinforce adjacent text’s meaning but don’t add new information
+** Icons don’t need anything special to mark them as decorative, but images need an empty alt tag, which forces screen readers to skip over them
+** Informational icons and images convey important information that the surrounding text doesn’t. Icon buttons and stand-alone avatars are common examples.
+** Even though it has text adjacent to it, it’s still informational because the icon indicates that the object is an Account and the text is the account name. Without the icon, users would not know if it was a contact, opportunity, or different kind of object.
+* color category
+** However, text on non-solid backgrounds can negatively affect users with cognitive disabilities such as dyslexia.
+* ARIA
+** three types of attributes available in ARIA: roles, states, and properties.
+** Roles
+*** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
