@@ -18,3 +18,5 @@
 ** three types of attributes available in ARIA: roles, states, and properties.
 ** Roles
 *** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
+* web development guidelines
+** use semantic html
