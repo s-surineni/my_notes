@@ -20,3 +20,14 @@
 *** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
 * web development guidelines
 ** use semantic html
+*** proper use of links and buttons
+*** Avoid "clickable" <span>s or <div>s
+** Build proper form HTML markup and relationships
+*** form elements have associated visual <label>s
+*** errors are clearly conveyed visually and to assistive technology
+*** related fields are grouped in a <fieldset> with a <legend>
+*** A placeholder attribute is not a substitute for a label
+** Add alternative text to Informational icons & images and an empty alt attribute to Decorative images.
+** Make sure your headings are in order; avoid skip-level headings, such as an <h3> immediately following an <h1>
+** Ensure your UI is fully keyboard-accessible and follows expected keyboard interaction patterns.
+** If your UI includes expandable sections, use proper HTML markup to indicate this behavior
