@@ -1,6 +1,6 @@
 * categories
 ** color contrast ratio
-** semantic web
+** semantic web html
 ** keyboard access
 ** aria
 * web development guidelines
@@ -16,13 +16,6 @@
 ** Make sure your headings are in order; avoid skip-level headings, such as an <h3> immediately following an <h1>
 ** Ensure your UI is fully keyboard-accessible and follows expected keyboard interaction patterns.
 ** If your UI includes expandable sections, use proper HTML markup to indicate this behavior
-* There are two types of icons, which screen readers handle differently: decorative (skip over) and informational (convey content to the user)
-** Redundant icons and images also fall into this category because they reinforce adjacent text’s meaning but don’t add new information
-** Icons don’t need anything special to mark them as decorative, but images need an empty alt tag, which forces screen readers to skip over them
-** Informational icons and images convey important information that the surrounding text doesn’t. Icon buttons and stand-alone avatars are common examples.
-** Even though it has text adjacent to it, it’s still informational because the icon indicates that the object is an Account and the text is the account name. Without the icon, users would not know if it was a contact, opportunity, or different kind of object.
-* color category
-** However, text on non-solid backgrounds can negatively affect users with cognitive disabilities such as dyslexia.
 * ARIA
 ** three types of attributes available in ARIA: roles, states, and properties.
 ** Roles
