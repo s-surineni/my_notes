@@ -3,6 +3,7 @@
 ** semantic web html
 ** keyboard access
 ** aria
+** screen reader
 * web development guidelines
 ** use semantic html
 *** proper use of links and buttons
