@@ -1,3 +1,6 @@
+* guidelines
+** WCAG
+** need to meet for AA
 * categories
 ** color contrast ratio
 ** semantic web html
