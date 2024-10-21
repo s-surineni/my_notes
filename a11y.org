@@ -9,6 +9,9 @@
 ** keyboard access
 ** aria
 ** screen reader
+** text alternatives
+*** informative images
+*** information though color coding
 * web development guidelines
 ** use semantic html
 *** proper use of links and buttons
