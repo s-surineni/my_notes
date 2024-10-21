@@ -1,6 +1,8 @@
 * guidelines
 ** WCAG
 ** need to meet for AA
+** ARIA
+*** for dynamic content and custom components
 * categories
 ** color contrast ratio
 ** semantic web html
