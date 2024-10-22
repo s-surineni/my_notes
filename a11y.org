@@ -32,3 +32,6 @@
 *** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
 * keyboard interaction
 ** keys to use
+* automated tools
+** axe devtools extension
+*** run tool with every state change
