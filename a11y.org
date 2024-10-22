@@ -25,6 +25,7 @@
 ** Make sure your headings are in order; avoid skip-level headings, such as an <h3> immediately following an <h1>
 ** Ensure your UI is fully keyboard-accessible and follows expected keyboard interaction patterns.
 ** If your UI includes expandable sections, use proper HTML markup to indicate this behavior
+** responsive layouts required for low vision users
 * ARIA
 ** three types of attributes available in ARIA: roles, states, and properties.
 ** Roles
