@@ -41,6 +41,8 @@
 *** keyboard trap is critical issue
 *** focused element cannot be offscreen or invisible
 *** inactive elements should not be focusible
+** user control
+*** key timing should not be there
 * automated tools
 ** axe devtools extension
 *** run tool with every state change
