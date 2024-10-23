@@ -46,3 +46,6 @@
 * automated tools
 ** axe devtools extension
 *** run tool with every state change
+* issues encountered
+** sort button not in the table and not announcing sort order
+** notification not announced by screen reader
