@@ -1,9 +1,9 @@
 * categories
+** keyboard access
+** screen reader
 ** color contrast ratio
 ** semantic web html
-** keyboard access
 ** aria
-** screen reader
 ** text alternatives
 *** informative images
 *** information though color coding
@@ -54,3 +54,6 @@
 ** should atleast have name and role
 ** should have headings and landmarks
 ** if text acts as heading we should use heading element
+* screen reader testing
+** check if proper headings and controls are used for rotor
+**
