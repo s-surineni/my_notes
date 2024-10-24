@@ -56,4 +56,5 @@
 ** if text acts as heading we should use heading element
 * screen reader testing
 ** check if proper headings and controls are used for rotor
-**
+* keyboard testing
+** control should go to pop up
