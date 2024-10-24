@@ -49,3 +49,8 @@
 * issues encountered
 ** sort button not in the table and not announcing sort order
 ** notification not announced by screen reader
+* screen reader
+** semantic elements will has name, role and value
+** should atleast have name and role
+** should have headings and landmarks
+** if text acts as heading we should use heading element
