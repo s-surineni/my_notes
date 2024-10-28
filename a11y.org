@@ -58,3 +58,6 @@
 ** check if proper headings and controls are used for rotor
 * keyboard testing
 ** control should go to pop up
+* semantic structure
+** each page should have title
+** use lang="en" code in html
