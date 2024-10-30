@@ -65,3 +65,6 @@
 *** header, footer, main
 ** headings
 ** navigation
+*** put inside <nav> landmark
+*** put them in a list under <nav>
+*** each link must have meaningful text not just click here
