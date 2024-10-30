@@ -61,3 +61,6 @@
 * semantic structure
 ** each page should have title
 ** use lang="en" code in html
+** landmarks
+*** header, footer, main
+** headings
