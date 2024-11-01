@@ -73,4 +73,8 @@
 **** simple, complex
 **** complex like charts
 ***** need supplemental text other than alt text
+*** active images
+**** images used as links, buttons
 *** uninformative
+**** decorative or redundant
+***** put alt=""
