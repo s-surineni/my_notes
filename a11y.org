@@ -70,4 +70,7 @@
 *** each link must have meaningful text not just click here
 ** images
 *** informative
+**** simple, complex
+**** complex like charts
+***** need supplemental text other than alt text
 *** uninformative
