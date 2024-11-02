@@ -1,5 +1,9 @@
 * build an image
 ** docker build -t test/cowsay-dockerfile .
+* list images
+** docker image ls
+* list containers
+** docker container ls
 * run an image
 ** docker run debian echo "Hello World"
 * run and get shell in an image
