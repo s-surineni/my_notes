@@ -10,6 +10,8 @@
 ** docker run debian echo "Hello World"
 * stop container
 ** docker container stop <container-name>
+* delete container
+** docker container rm <container-name>
 * run and get shell in an image
 ** docker run -i -t debian /bin/bash
 * get info about container
