@@ -90,3 +90,6 @@ docker run -it --volume "$(PWD)":/code lol python manage.py makemigrations lists
 #+end_src
 * theory
 ** containers share kernel of the host they are running on
+* docker compose
+** multi container
+** contains network, volume and services
