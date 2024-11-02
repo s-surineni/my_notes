@@ -93,3 +93,4 @@ docker run -it --volume "$(PWD)":/code lol python manage.py makemigrations lists
 * docker compose
 ** multi container
 ** contains network, volume and services
+** looks for compose.yaml
