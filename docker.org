@@ -2,10 +2,14 @@
 ** docker build -t test/cowsay-dockerfile .
 * list images
 ** docker image ls
+* delete an image
+** docker image rm <imagename>
 * list containers
 ** docker container ls
 * run an image
 ** docker run debian echo "Hello World"
+* stop container
+** docker container stop <container-name>
 * run and get shell in an image
 ** docker run -i -t debian /bin/bash
 * get info about container
