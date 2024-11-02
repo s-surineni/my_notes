@@ -1,3 +1,5 @@
+* build an image
+** docker build -t test/cowsay-dockerfile .
 * run an image
 ** docker run debian echo "Hello World"
 * run and get shell in an image
@@ -16,7 +18,7 @@
 ** exec does something in already started container
 * To commit, we need to give the command the name of the container (“cowsay”) a name for the image (“cowsayimage”) and the name of the repository to store it in (“test”):
 ** docker commit cowsay test/cowsayimage
-* docker build -t test/cowsay-dockerfile .
+
 * docker rm -v $(docker ps -aq -f status=exited)
 * run with --rm flag to delete container and file system after exit
 * docker run test/cowsay-dockerfile /usr/games/cowsay "Moo"
