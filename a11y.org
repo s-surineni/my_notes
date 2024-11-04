@@ -78,3 +78,6 @@
 *** uninformative
 **** decorative or redundant
 ***** put alt=""
+** data tables
+*** should have properties markup for header
+*** caption table name
