@@ -81,3 +81,7 @@
 ** data tables
 *** should have properties markup for header
 *** caption table name
+** color contrast
+*** applies to text
+*** default, hover states
+*** icons
