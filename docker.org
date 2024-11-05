@@ -96,3 +96,4 @@ docker run -it --volume "$(PWD)":/code lol python manage.py makemigrations lists
 ** looks for compose.yaml
 * start image with shell
 ** docker compose run my-react-app sh
+** docker compose exec my-react-app bash
