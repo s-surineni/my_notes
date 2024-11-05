@@ -148,3 +148,4 @@ onChange={event => this.setState({ userName: event.target.value})}
 * triggers re-render
 ** using context
 ** using hook state
+* redux is a state management library
