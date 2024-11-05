@@ -83,5 +83,7 @@
 *** caption table name
 ** color contrast
 *** applies to text
-*** default, hover states
+*** default, hover, focus states
 *** icons
+*** user interface elements like form, button, menu
+*** graphical objects like graphs
