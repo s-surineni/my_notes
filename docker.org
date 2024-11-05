@@ -94,3 +94,5 @@ docker run -it --volume "$(PWD)":/code lol python manage.py makemigrations lists
 ** multi container
 ** contains network, volume and services
 ** looks for compose.yaml
+* start image with shell
+** docker compose run my-react-app sh
