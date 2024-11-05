@@ -141,3 +141,10 @@ onChange={event => this.setState({ userName: event.target.value})}
 * babel
 ** can check actual javascript by checking try it out in babel website
 * Npm scripts are a simple automation tool that's built into npm.
+* context
+** all components using context re-render
+* hooks
+** all components using hooks state re-render
+* triggers re-render
+** using context
+** using hook state
