@@ -97,3 +97,17 @@ docker run -it --volume "$(PWD)":/code lol python manage.py makemigrations lists
 * start image with shell
 ** docker compose run my-react-app sh
 ** docker compose exec my-react-app bash
+* inspect docker compose
+#+begin_src
+services:
+  my-react-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    command: ["sh"]
+    stdin_open: true # docker run -i
+    tty: true
+#+end_src
+** then run docker compose run my-react-app
