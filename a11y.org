@@ -87,3 +87,6 @@
 *** icons
 *** user interface elements like form, button, menu
 *** graphical objects like graphs
+** forms
+*** all inputs should contain labels
+*** group labels
