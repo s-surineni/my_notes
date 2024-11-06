@@ -90,3 +90,4 @@
 ** forms
 *** all inputs should contain labels
 *** group labels
+*** include instructions on how to field complex fields like date
