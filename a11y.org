@@ -1,8 +1,8 @@
 * categories
+** semantic web html
 ** keyboard access
 ** screen reader
 ** color contrast ratio
-** semantic web html
 ** aria
 ** text alternatives
 *** informative images
@@ -10,54 +10,7 @@
 * guidelines
 ** WCAG
 ** need to meet for AA
-** ARIA
-*** for dynamic content and custom components
-* web development guidelines
-** use semantic html
-*** proper use of links and buttons
-*** Avoid "clickable" <span>s or <div>s
-** Build proper form HTML markup and relationships
-*** form elements have associated visual <label>s
-*** errors are clearly conveyed visually and to assistive technology
-*** related fields are grouped in a <fieldset> with a <legend>
-*** A placeholder attribute is not a substitute for a label
-** Add alternative text to Informational icons & images and an empty alt attribute to Decorative images.
-** Make sure your headings are in order; avoid skip-level headings, such as an <h3> immediately following an <h1>
-** Ensure your UI is fully keyboard-accessible and follows expected keyboard interaction patterns.
-** If your UI includes expandable sections, use proper HTML markup to indicate this behavior
-** responsive layouts required for low vision users
-* ARIA
-** three types of attributes available in ARIA: roles, states, and properties.
-** Roles
-*** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
-* keyboard interaction
-** keys to use
-** key concepts
-*** focus
-*** functionality
-*** user control
-** focus test
-*** hover over active elements if they are activated on hover same should happen on keyboard focus
-*** keyboard trap is critical issue
-*** focused element cannot be offscreen or invisible
-*** inactive elements should not be focusible
-** user control
-*** key timing should not be there
-* automated tools
-** axe devtools extension
-*** run tool with every state change
-* issues encountered
-** sort button not in the table and not announcing sort order
-** notification not announced by screen reader
-* screen reader
-** semantic elements will has name, role and value
-** should atleast have name and role
-** should have headings and landmarks
-** if text acts as heading we should use heading element
-* screen reader testing
-** check if proper headings and controls are used for rotor
-* keyboard testing
-** control should go to pop up
+
 * semantic structure
 ** each page should have title
 ** use lang="en" code in html
@@ -91,3 +44,52 @@
 *** all inputs should contain labels
 *** group labels
 *** include instructions on how to field complex fields like date
+** links
+*** proper use of links and buttons
+*** Avoid "clickable" <span>s or <div>s
+* web development guidelines
+** Build proper form HTML markup and relationships
+*** form elements have associated visual <label>s
+*** errors are clearly conveyed visually and to assistive technology
+*** related fields are grouped in a <fieldset> with a <legend>
+*** A placeholder attribute is not a substitute for a label
+** Add alternative text to Informational icons & images and an empty alt attribute to Decorative images.
+** Make sure your headings are in order; avoid skip-level headings, such as an <h3> immediately following an <h1>
+** Ensure your UI is fully keyboard-accessible and follows expected keyboard interaction patterns.
+** If your UI includes expandable sections, use proper HTML markup to indicate this behavior
+** responsive layouts required for low vision users
+** tools
+*** a11y tree
+* ARIA
+** for dynamic content and custom components
+** three types of attributes available in ARIA: roles, states, and properties.
+** Roles
+*** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
+* keyboard interaction
+** keys to use
+** key concepts
+*** focus
+*** functionality
+*** user control
+** focus test
+*** hover over active elements if they are activated on hover same should happen on keyboard focus
+*** keyboard trap is critical issue
+*** focused element cannot be offscreen or invisible
+*** inactive elements should not be focusible
+** user control
+*** key timing should not be there
+* automated tools
+** axe devtools extension
+*** run tool with every state change
+* issues encountered
+** sort button not in the table and not announcing sort order
+** notification not announced by screen reader
+* screen reader
+** semantic elements will has name, role and value
+** should atleast have name and role
+** should have headings and landmarks
+** if text acts as heading we should use heading element
+* screen reader testing
+** check if proper headings and controls are used for rotor
+* keyboard testing
+** control should go to pop up
