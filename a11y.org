@@ -60,6 +60,7 @@
 ** responsive layouts required for low vision users
 ** tools
 *** a11y tree
+**** you can check
 * ARIA
 ** for dynamic content and custom components
 ** three types of attributes available in ARIA: roles, states, and properties.
@@ -92,4 +93,7 @@
 * screen reader testing
 ** check if proper headings and controls are used for rotor
 * keyboard testing
-** control should go to pop up
+** control should go to pop
+* tools
+** a11y tree
+**** you can check name, role and attributes
