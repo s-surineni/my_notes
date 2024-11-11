@@ -10,7 +10,6 @@
 * guidelines
 ** WCAG
 ** need to meet for AA
-
 * semantic structure
 ** each page should have title
 ** use lang="en" code in html
@@ -47,7 +46,6 @@
 ** links
 *** proper use of links and buttons
 *** Avoid "clickable" <span>s or <div>s
-* web development guidelines
 ** Build proper form HTML markup and relationships
 *** form elements have associated visual <label>s
 *** errors are clearly conveyed visually and to assistive technology
@@ -63,6 +61,8 @@
 **** you can check
 * ARIA
 ** for dynamic content and custom components
+** helps assistive technology users and screen reader users
+** primary benifi
 ** three types of attributes available in ARIA: roles, states, and properties.
 ** Roles
 *** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
@@ -82,9 +82,6 @@
 * automated tools
 ** axe devtools extension
 *** run tool with every state change
-* issues encountered
-** sort button not in the table and not announcing sort order
-** notification not announced by screen reader
 * screen reader
 ** semantic elements will has name, role and value
 ** should atleast have name and role
@@ -97,3 +94,6 @@
 * tools
 ** a11y tree
 **** you can check name, role and attributes
+* issues encountered
+** sort button not in the table and not announcing sort order
+** notification not announced by screen reader
