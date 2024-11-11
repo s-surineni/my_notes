@@ -62,10 +62,11 @@
 * ARIA
 ** for dynamic content and custom components
 ** helps assistive technology users and screen reader users
-** primary benifi
+** primary beneficiaries are blind and deaf blind people
 ** three types of attributes available in ARIA: roles, states, and properties.
 ** Roles
 *** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
+** extends kinds of components that can be created in html like modals, progress indicators
 * keyboard interaction
 ** keys to use
 ** key concepts
