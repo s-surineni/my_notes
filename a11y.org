@@ -62,6 +62,10 @@
 ** primary beneficiaries are blind and deaf blind people
 ** three types of attributes available in ARIA: roles, states, and properties.
 ** Roles
+*** role is what the thing is semantically
+**** image or list item
+*** When you're working with a predefined composite ARIA pattern where you have more than one role, you'll need to add all of the necessary roles.
+**** like tree and treeitem
 *** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
 ** extends kinds of components that can be created in html like modals, progress indicators
 * keyboard interaction
