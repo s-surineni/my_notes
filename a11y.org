@@ -4,9 +4,6 @@
 ** screen reader
 ** color contrast ratio
 ** aria
-** text alternatives
-*** informative images
-*** information though color coding
 * guidelines
 ** WCAG
 ** need to meet for AA
@@ -88,8 +85,11 @@
 ** should atleast have name and role
 ** should have headings and landmarks
 ** if text acts as heading we should use heading element
-* screen reader testing
-** check if proper headings and controls are used for rotor
+** text alternatives
+*** informative images
+*** information though color coding
+** testing
+*** check if proper headings and controls are used for rotor
 * keyboard testing
 ** control should go to pop
 * tools
