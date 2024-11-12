@@ -1,3 +1,8 @@
+* things to consider
+** how the UI looks in narrower screens
+* todo
+** get the list of most common screen sizes so UI should look good in all of them
+** find most common screen resolutions
 * liked
 ** stackoverflow
 ** google
