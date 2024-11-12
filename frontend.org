@@ -10,6 +10,11 @@
 *** It uses fluid grids and media queries to display the right layout for different screens.
 *** The first step in creating a responsive layout is to implement a fluid grid
 *** The SLDS grid utility provides a mobile-first layout system
+** consider what the min-width of element should be
+*** at what point the slider should kick in
+*** it should not reduce below a limit
+**** so that items shape should not distort
+**** text should not start ellipsizing
 * technologies need to learn
 ** Flexbox
 ** grid
