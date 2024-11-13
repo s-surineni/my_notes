@@ -33,6 +33,7 @@ grep -rw "Attempt" logs/07Lxx000000511tEAA.log
 ** grep only in certain file types
  #+begin_src shell
  grep -r --include="*.java" --include \*.cpp "INSIGHTS_ELT_SCHEDULER_ACTION" .
+ grep -rw --include="*.js"  "applyMiddleware" .
  #+end_src
 ** grep exclude directories
 #+begin_src shell
