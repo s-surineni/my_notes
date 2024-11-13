@@ -94,8 +94,6 @@
 *** information though color coding
 ** testing
 *** check if proper headings and controls are used for rotor
-* keyboard testing
-** control should go to pop
 * tools
 ** a11y tree
 **** you can check name, role and attributes
