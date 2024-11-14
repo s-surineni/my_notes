@@ -71,6 +71,10 @@
 *** accessible names can be given by for attribute, aria-label, aria labelled by
 *** you can have name to non semantic element
 ** extends kinds of components that can be created in html like modals, progress indicators
+** aria-describedby can be used to
+*** link error message to form element
+*** instructions on filling form elements like case sensitive
+*** it contains id of a visible element
 * keyboard interaction
 ** keys to use
 ** key concepts
