@@ -75,6 +75,7 @@
 *** link error message to form element
 *** instructions on filling form elements like case sensitive
 *** it contains id of a visible element
+** static properties aria-valuemin, aria-valuemax
 * keyboard interaction
 ** keys to use
 ** key concepts
