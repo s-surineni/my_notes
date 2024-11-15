@@ -1,17 +1,17 @@
 * categories
-** semantic web html
 ** keyboard access
 ** screen reader
-** color contrast ratio
 ** aria
+** semantic web html
+** color contrast ratio
 * guidelines
 ** WCAG
 ** need to meet for AA
 * semantic structure
 ** each page should have title
-** use lang="en" code in html
 ** landmarks
 *** header, footer, main
+** use lang="en" code in html
 ** headings
 ** navigation
 *** put inside <nav> landmark
