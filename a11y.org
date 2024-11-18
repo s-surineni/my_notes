@@ -76,6 +76,7 @@
 *** instructions on filling form elements like case sensitive
 *** it contains id of a visible element
 ** static properties aria-valuemin, aria-valuemax
+** dont use aria-hidden
 * keyboard interaction
 ** keys to use
 ** key concepts
