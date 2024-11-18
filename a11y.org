@@ -77,6 +77,8 @@
 *** it contains id of a visible element
 ** static properties aria-valuemin, aria-valuemax
 ** dont use aria-hidden
+** To add something to the natural tab order, if it's not already focusable add tabindex="0"
+** To make something available to receive focus via JavaScript, add tabindex="-1" to the element. This is relevant, for example, when sending the focus to a modal dialogue.
 * keyboard interaction
 ** keys to use
 ** key concepts
