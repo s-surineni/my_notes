@@ -1,0 +1,4 @@
+* routing
+** page file in app folder represents landing page
+** does file based routing
+** app folder represents root
