@@ -1,3 +1,9 @@
+* html
+** basic landing page components
+** logo, navigation, content, footer
+** dont lie meta tag
+** <meta name="viewport" contend="widht=device-width, initial-scale=1">
+** should have good title tag
 * what is responsiveness
 ** the size of the box should reduce along with browser width
 ** the font size should increase decrease with browser zoom
