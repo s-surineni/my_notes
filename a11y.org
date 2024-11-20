@@ -57,6 +57,10 @@
 *** a11y tree
 **** you can check
 * ARIA
+** aira-disabled="true" doesnt remove element from tab order.
+*** use aria-live instead to screen readers will annonce them
+** role="alert" is a live region
+** dont move focus for notifications
 ** for dynamic content and custom components
 ** helps assistive technology users and screen reader users
 ** primary beneficiaries are blind and deaf blind people
