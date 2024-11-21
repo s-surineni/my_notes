@@ -117,3 +117,7 @@
 ** notification not announced by screen reader
 * approaches
 ** to make text focusable we can put it in a button and remove styling
+** The main takeaways from this order of events are: number one, don't make something disappear while it still has the keyboard focus.
+*** Number two, you may need to move the focus temporarily to something that is always visible, like the heading on this page, as a way to make sure the focus doesn't get lost.
+And three, before moving the focus to new content that was previously hidden or unavailable, inserting a brief delay is often necessary to allow the screen reader to catch up. The screen reader needs to process the new markup and interpret the accessibility features of that markup. If you send the focus before the screen reader has time to process it, the screen reader is likely to say nothing at all, even though the focus is on the correct item.
+And by the way, you can't send the focus to just any element. It has to be either naturally focusable or it has to have tab index of negative one, which makes it focusable by JavaScript, and that's what I did in this case. It has tabindex of negative one.
