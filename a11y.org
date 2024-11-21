@@ -115,3 +115,5 @@
 * issues encountered
 ** sort button not in the table and not announcing sort order
 ** notification not announced by screen reader
+* approaches
+** to make text focusable we can put it in a button and remove styling
