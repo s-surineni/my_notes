@@ -85,3 +85,4 @@ When you don't specify a html or body height, their heights are the sum of the h
 *** auto
 *** fractional units - fr
 *** min-content
+* clip paths
