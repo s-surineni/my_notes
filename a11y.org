@@ -83,6 +83,9 @@
 ** dont use aria-hidden
 ** To add something to the natural tab order, if it's not already focusable add tabindex="0"
 ** To make something available to receive focus via JavaScript, add tabindex="-1" to the element. This is relevant, for example, when sending the focus to a modal dialogue.
+** SPA move focus to new content or inject text into aria-live region
+** don't send the focus to an empty container on purpose
+** if you inject the content, then immediately send the focus to it, chances are that the focus will arrive before the screen reader realizes there's any content there
 * keyboard interaction
 ** keys to use
 ** key concepts
@@ -119,5 +122,5 @@
 ** to make text focusable we can put it in a button and remove styling
 ** The main takeaways from this order of events are: number one, don't make something disappear while it still has the keyboard focus.
 *** Number two, you may need to move the focus temporarily to something that is always visible, like the heading on this page, as a way to make sure the focus doesn't get lost.
-And three, before moving the focus to new content that was previously hidden or unavailable, inserting a brief delay is often necessary to allow the screen reader to catch up. The screen reader needs to process the new markup and interpret the accessibility features of that markup. If you send the focus before the screen reader has time to process it, the screen reader is likely to say nothing at all, even though the focus is on the correct item.
-And by the way, you can't send the focus to just any element. It has to be either naturally focusable or it has to have tab index of negative one, which makes it focusable by JavaScript, and that's what I did in this case. It has tabindex of negative one.
+*** And three, before moving the focus to new content that was previously hidden or unavailable, inserting a brief delay is often necessary to allow the screen reader to catch up. The screen reader needs to process the new markup and interpret the accessibility features of that markup. If you send the focus before the screen reader has time to process it, the screen reader is likely to say nothing at all, even though the focus is on the correct
+*** And by the way, you can't send the focus to just any element. It has to be either naturally focusable or it has to have tab index of negative one, which makes it focusable by JavaScript, and that's what I did in this case. It has tabindex of negative one.
