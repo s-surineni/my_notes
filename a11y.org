@@ -83,7 +83,7 @@
 **** like tree and treeitem
 *** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
 *** suppress elements role with role="presentation"
-*** accessible names can be given by for attribute, aria-label, aria labelled by
+** accessible names can be given by aria-labelledby, aria-label, for attribute
 *** you can have name to non semantic element
 ** extends kinds of components that can be created in html like modals, progress indicators
 ** aria-describedby can be used to
