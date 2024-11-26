@@ -1,16 +1,16 @@
 * categories
+** semantic web html
 ** keyboard access
 ** screen reader
 ** aria
-** semantic web html
 ** color contrast ratio
 * guidelines
 ** WCAG
 ** need to meet for AA
 * semantic structure
-** each page should have title
 ** landmarks
 *** header, footer, main
+** each page should have title
 ** use lang="en" code in html
 ** headings
 ** navigation
@@ -56,6 +56,19 @@
 ** tools
 *** a11y tree
 **** you can check
+* keyboard interaction
+** keys to use
+** key concepts
+*** focus
+*** functionality
+*** user control
+** focus test
+*** hover over active elements if they are activated on hover same should happen on keyboard focus
+*** keyboard trap is critical issue
+*** focused element cannot be offscreen or invisible
+*** inactive elements should not be focusible
+** user control
+*** key timing should not be there
 * ARIA
 ** Use native HTML elements whenever possible
 ** aira-disabled="true" doesnt remove element from tab order.
@@ -87,19 +100,6 @@
 ** SPA move focus to new content or inject text into aria-live region
 ** don't send the focus to an empty container on purpose
 ** if you inject the content, then immediately send the focus to it, chances are that the focus will arrive before the screen reader realizes there's any content there
-* keyboard interaction
-** keys to use
-** key concepts
-*** focus
-*** functionality
-*** user control
-** focus test
-*** hover over active elements if they are activated on hover same should happen on keyboard focus
-*** keyboard trap is critical issue
-*** focused element cannot be offscreen or invisible
-*** inactive elements should not be focusible
-** user control
-*** key timing should not be there
 * screen reader
 ** semantic elements will has name, role and value
 ** should atleast have name and role
