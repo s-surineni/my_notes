@@ -71,12 +71,9 @@
 *** key timing should not be there
 * ARIA
 ** Use native HTML elements whenever possible
-** aira-disabled="true" doesnt remove element from tab order.
-*** use aria-live instead to screen readers will annonce them
+** aira-disabled="true" doesnt remove element from tab order when navigating via keyboard.
 ** role="alert" is a live region
 ** dont move focus for notifications
-** for dynamic content and custom components
-** helps assistive technology users and screen reader users
 ** primary beneficiaries are blind and deaf blind people
 ** three types of attributes available in ARIA: roles, states, and properties.
 ** Roles
