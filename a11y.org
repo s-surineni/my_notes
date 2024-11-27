@@ -71,7 +71,7 @@
 *** key timing should not be there
 * ARIA
 ** Use native HTML elements whenever possible
-** aira-disabled="true" doesnt remove element from tab order when navigating via keyboard.
+** aira-disabled="true" doesnt remove element from tab order when navigating via keyboard. html disabled attribute will do
 ** role="alert" is a live region
 ** dont move focus for notifications
 ** primary beneficiaries are blind and deaf blind people
@@ -83,7 +83,7 @@
 **** like tree and treeitem
 *** give semantic meaning to HTML elements that traditionally do not have any semantic meaning, such as <div> or <span>
 *** suppress elements role with role="presentation"
-** accessible names can be given by aria-labelledby, aria-label, for attribute
+** accessible names can be given by aria-labelledby, aria-label, for attribute\
 *** you can have name to non semantic element
 ** extends kinds of components that can be created in html like modals, progress indicators
 ** aria-describedby can be used to
