@@ -98,6 +98,7 @@
 ** SPA move focus to new content or inject text into aria-live region
 ** don't send the focus to an empty container on purpose
 ** if you inject the content, then immediately send the focus to it, chances are that the focus will arrive before the screen reader realizes there's any content there
+** aria-labelledby and aria-label  screen reader support is best on focusable elements
 * screen reader
 ** semantic elements will has name, role and value
 ** should atleast have name and role
