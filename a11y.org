@@ -98,7 +98,11 @@
 ** SPA move focus to new content or inject text into aria-live region
 ** don't send the focus to an empty container on purpose
 ** if you inject the content, then immediately send the focus to it, chances are that the focus will arrive before the screen reader realizes there's any content there
-** aria-labelledby and aria-label  screen reader support is best on focusable elements
+** aria-labelledby and aria-label though screen reader support is best on focusable elements
+** Essentially the role defines what the element is.
+** Screen readers and other assistive technologies need to know the role of each element on the web page to be able to interact with it intelligently
+** Landmark Roles
+***  When you define landmark regions, screen reader users can list all regions to understand how the page is organized, then they can navigate directly to the region they're interested in.
 * screen reader
 ** semantic elements will has name, role and value
 ** should atleast have name and role
