@@ -104,7 +104,7 @@
 ** Landmark Roles
 ***  When you define landmark regions, screen reader users can list all regions to understand how the page is organized, then they can navigate directly to the region they're interested in.
 * screen reader
-** semantic elements will has name, role and value
+** semantic elements will have name, role and value
 ** should atleast have name and role
 ** should have headings and landmarks
 ** if text acts as heading we should use heading element
@@ -113,6 +113,7 @@
 *** information though color coding
 ** testing
 *** check if proper headings and controls are used for rotor
+** role
 * tools
 ** a11y tree
 **** you can check name, role and attributes
