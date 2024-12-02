@@ -114,6 +114,7 @@
 ** testing
 *** check if proper headings and controls are used for rotor
 ** role
+*** HTML has only a limited set of roles available, making it difficult to convey the identity or functionality of custom widgets such as hierarchical tree menus, or tab panels, for example.
 * tools
 ** a11y tree
 **** you can check name, role and attributes
