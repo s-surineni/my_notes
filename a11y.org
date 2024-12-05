@@ -91,6 +91,8 @@
 *** link error message to form element
 *** instructions on filling form elements like case sensitive
 *** it contains id of a visible element
+*** The default role for a web page is the document role, so you don't need to do anything to a standard web page to give it that role
+*** only keyboard-focusable items (and their programmatically-associated labels and descriptions) are accessible in application mode
 ** static properties aria-valuemin, aria-valuemax
 ** dont use aria-hidden
 ** To add something to the natural tab order, if it's not already focusable add tabindex="0"
