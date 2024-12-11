@@ -93,6 +93,12 @@
 *** it contains id of a visible element
 *** The default role for a web page is the document role, so you don't need to do anything to a standard web page to give it that role
 *** only keyboard-focusable items (and their programmatically-associated labels and descriptions) are accessible in application mode
+** The document role SHOULD be used inside an application region if part of an application region requires screen reader users to navigate text content.
+*** If you want screen reader users to be able to use their regular keyboard methods within your application, or within part of your application, you can embed role="document" inside of an application region.
+*** Meaningful non-focusable content in an application region MUST be programmatically associated with focusable elements, or MUST be made accessible to screen readers in some other way.
+*** No regular text is available to screen readers in application regions unless it is keyboard focusable. This means all of the following will NOT work at all for screen reader users (unless you set tabindex="0" on them to put them in the regular keyboard tab order):
+*** Non-focusable items SHOULD NOT be made focusable just for the sake of making them readable to screen readers.
+** While it is true that adding tabindex="0" to an element makes it keyboard-focusable
 ** static properties aria-valuemin, aria-valuemax
 ** dont use aria-hidden
 ** To add something to the natural tab order, if it's not already focusable add tabindex="0"

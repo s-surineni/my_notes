@@ -1,3 +1,7 @@
+* thinking in react
+** decompose mock into components
+** build static version
+** Find the minimal but complete representation of UI state
 * basic app structure
 ** index.html
 ** index.js

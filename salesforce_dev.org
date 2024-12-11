@@ -1,3 +1,17 @@
+* flow
+** automate business process with clicks not code
+** 2 types of flows
+*** screen flow
+*** auto launch flow
+** screen flow
+*** launches on click of button
+*** displayed as component
+** auto launch flow
+*** record triggered flow
+*** schedule triggered flow
+*** platform event triggered flow
+*** flows that can be triggered from other flows
+*** record triggered orchestration flow
 * get developer org at https://developer.salesforce.com/
 * salesforce also includes low code and no code automation
 ** workflows, processes and flows
