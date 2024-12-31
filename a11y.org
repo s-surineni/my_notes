@@ -98,6 +98,8 @@
 *** Meaningful non-focusable content in an application region MUST be programmatically associated with focusable elements, or MUST be made accessible to screen readers in some other way.
 *** No regular text is available to screen readers in application regions unless it is keyboard focusable. This means all of the following will NOT work at all for screen reader users (unless you set tabindex="0" on them to put them in the regular keyboard tab order):
 *** Non-focusable items SHOULD NOT be made focusable just for the sake of making them readable to screen readers.
+** presentation role
+*** Marking a section as role="presentation" essentially cancels the native role of the element and turns it into the equivalent of a <span> or <div> which are neutral, un-semantic tags that convey no role.
 ** While it is true that adding tabindex="0" to an element makes it keyboard-focusable
 ** static properties aria-valuemin, aria-valuemax
 ** dont use aria-hidden
