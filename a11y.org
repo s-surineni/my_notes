@@ -138,3 +138,7 @@
 * issues encountered
 ** sort button not in the table and not announcing sort order
 ** notification not announced by screen reader
+* testing
+** keyboard
+*** should be able to focus on it
+** screen reader
