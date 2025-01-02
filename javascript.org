@@ -48,3 +48,37 @@ promise.then((data) => console.log(data))
 
   wait.then(setText);
 #+end_src
+** promise can be resolved only once
+#+begin_src
+  let counter = 0;
+  let wait = new Promise(resolve => {
+    setInterval(() => {
+      console.log("INTERVAL");
+      resolve(`Timeout! ${++counter}`);
+    }, 1500);
+  });
+
+  wait.then(setText).finally(() => appendText(` -- Done ${counter}`));
+#+end_src
+** rejecting promise
+#+begin_src
+  let request = new Promise((resolve, reject) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:3000/users/7");
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        resolve(xhr.responseText);
+      } else {
+        reject(xhr.statusText);
+      }
+    };
+    xhr.onerror = () => {
+      reject("Request failed!");
+    };
+    xhr.send();
+  });
+
+  request.then(setText).catch(setText);
+#+end_src
+** Promise.all triggers all promises at once
+*** it will wait for all to complete or till first promise fails
