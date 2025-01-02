@@ -38,3 +38,13 @@ promise.then((data) => console.log(data))
 #+end_src
 ** we can also add catch at multiple places
 ** use finally to do clean up tasks. it will run no matter promise is success or failure
+** creating promise
+#+begin_src
+  let wait = new Promise(resolve => {
+    setTimeout(() => {
+      resolve("Timeout!");
+    }, 1500);
+  });
+
+  wait.then(setText);
+#+end_src
