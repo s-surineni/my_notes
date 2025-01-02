@@ -7,3 +7,7 @@
 *** fulfilled
 *** rejected
 ** eagerly evaluated
+** consuming promise
+#+begin_src javascript
+promise.then((data) => console.log(data))
+#+end_src
