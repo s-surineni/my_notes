@@ -11,3 +11,6 @@
 #+begin_src javascript
 promise.then((data) => console.log(data))
 #+end_src
+** uncaught in promise comes up if we dont handle rejected state
+** then and catch also return promises (is it the same promise or a different one?)
+** whatever value we
