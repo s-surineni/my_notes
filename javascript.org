@@ -14,3 +14,13 @@ promise.then((data) => console.log(data))
 ** uncaught in promise comes up if we dont handle rejected state
 ** then and catch also return promises (is it the same promise or a different one?)
 ** whatever value we return will be wrapped in promise - what if we dont return anything?
+** chain promise by returning from first and chaining it to then
+#+begin_src
+    axios.get("http://localhost:3000/orders/1")
+    .then(({data}) => {
+        return axios.get(`http://localhost:3000/addresses/${data.shippingAddress}`);
+    })
+    .then(({data}) => {
+        setText(`City: ${data.city}`);
+    })
+#+end_src
