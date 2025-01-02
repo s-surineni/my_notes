@@ -277,6 +277,7 @@ marketplace install netcraft
 ** start by creating some awareness among your employees about the dangers of social engineering
 ** limiting sensitive information that can be otherwise not thought of sensitive information.
 ** always encrypt things
+
 ** Using privacy services on WhoIs lookup database
 ** disable directory listings on web servers
 ** many organizations subscribe to the tools such as shodan
