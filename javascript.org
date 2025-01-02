@@ -102,3 +102,5 @@ promise.then((data) => console.log(data))
 #+end_src
 ** Promise.allSettled
 ** Promise.race returns data from the first api that returns
+* async await
+** async functions will return an implicit promise
