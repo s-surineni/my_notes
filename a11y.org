@@ -100,6 +100,9 @@
 *** Non-focusable items SHOULD NOT be made focusable just for the sake of making them readable to screen readers.
 ** presentation role
 *** Marking a section as role="presentation" essentially cancels the native role of the element and turns it into the equivalent of a <span> or <div> which are neutral, un-semantic tags that convey no role.
+** math role
+*** aria-label applied to the entire object, with the equation written out in words as a backup method for conveying the content within the MathML markup for screen readers and/or browsers that don't support MathML.
+*** In general, screen reader support for math is still not as robust as it could be, but it is improving.
 ** While it is true that adding tabindex="0" to an element makes it keyboard-focusable
 ** static properties aria-valuemin, aria-valuemax
 ** dont use aria-hidden
