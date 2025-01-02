@@ -1,3 +1,9 @@
 #+title: Javascript
 * promises
 ** used in async programming
+** object that represents eventual completion or failure of asynchronous operation and its resulting value
+** states
+*** pending
+*** fulfilled
+*** rejected
+** eagerly evaluated
