@@ -24,3 +24,17 @@ promise.then((data) => console.log(data))
         setText(`City: ${data.city}`);
     })
 #+end_src
+** this catch will handle error that occured at any previous then. this is because we are returning from then and not nesting them
+#+begin_src
+    axios.get("http://localhost:3000/orders/1")
+    .then(({data}) => {
+        axios.get(`http://localhost:3000/addresses/${data.shippingAddress}`);
+        throw new Error('Fake Error');
+    })
+    .then(({data}) => {
+        setText(`City: ${data.city}`);
+    })
+    .catch(setText);
+#+end_src
+** we can also add catch at multiple places
+** use finally to do clean up tasks. it will run no matter promise is success or failure
