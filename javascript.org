@@ -121,3 +121,8 @@ promise.then((data) => console.log(data))
 *** use Promise.all
 * Object oriented
 ** javascript is not a typical object oriented language
+** javascript is a loosely typed prototype based language
+** object is a piece of code that models something in real world
+** object is grouping of data and functionality
+** polymorphism
+*** one child can be used where parent is expected
