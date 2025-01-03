@@ -120,3 +120,4 @@ promise.then((data) => console.log(data))
 ** parallel execution
 *** use Promise.all
 * Object oriented
+** javascript is not a typical object oriented language
