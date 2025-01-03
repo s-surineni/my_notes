@@ -119,3 +119,4 @@ promise.then((data) => console.log(data))
 #+end_src
 ** parallel execution
 *** use Promise.all
+* Object oriented
